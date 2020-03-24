@@ -1,18 +1,19 @@
-var equal = require('assert').equal;
-var quote = require('../quote');
-var q = require('../').q;
+import assert_assert from "assert";
+import { quotejs as quote_quotejsjs } from "../quote";
+import { q as _sjs } from "../";
+var equal = assert_assert.equal;
 
 
 test('#quote', function(){
-  equal(quote('foo'), '"foo"');
-  equal(quote('"foo"'), '""foo""');
-  equal(quote(1), '"1"');
-  equal(quote('foo', '\''), '\'foo\'');
+  equal(quote_quotejsjs('foo'), '"foo"');
+  equal(quote_quotejsjs('"foo"'), '""foo""');
+  equal(quote_quotejsjs(1), '"1"');
+  equal(quote_quotejsjs('foo', '\''), '\'foo\'');
 
   // alias
-  equal(q('foo'), '"foo"');
-  equal(q(''), '""');
-  equal(q(null), '""');
-  equal(q(undefined), '""');
+  equal(_sjs('foo'), '"foo"');
+  equal(_sjs(''), '""');
+  equal(_sjs(null), '""');
+  equal(_sjs(undefined), '""');
 });
 

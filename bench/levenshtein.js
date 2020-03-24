@@ -1,8 +1,9 @@
-var levenshtein = require('../levenshtein');
+import { levenshteinjs as levenshtein_levenshteinjsjs } from "../levenshtein";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  levenshtein('pineapple', 'potato');
-  levenshtein('seven', 'eight');
-  levenshtein('the very same string', 'the very same string');
-  levenshtein('very very very long string', 'something completely different');
+encapsulated_anonymus = function() {
+  levenshtein_levenshteinjsjs('pineapple', 'potato');
+  levenshtein_levenshteinjsjs('seven', 'eight');
+  levenshtein_levenshteinjsjs('the very same string', 'the very same string');
+  levenshtein_levenshteinjsjs('very very very long string', 'something completely different');
 };

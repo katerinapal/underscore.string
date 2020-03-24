@@ -1,5 +1,6 @@
-var toNumber = require('../toNumber');
+import { toNumberjs as toNumber_toNumberjsjs } from "../toNumber";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  toNumber('10.232323', 2);
+encapsulated_anonymus = function() {
+  toNumber_toNumberjsjs('10.232323', 2);
 };

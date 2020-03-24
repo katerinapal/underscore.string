@@ -1,17 +1,19 @@
-var makeString = require('./helper/makeString');
-var escapeChars = require('./helper/escapeChars');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
+import { escapeChars as helperescapeChars_escapeCharsjs } from "./helper/escapeChars";
 
 var regexString = '[';
-for(var key in escapeChars) {
+for(var key in helperescapeChars_escapeCharsjs) {
   regexString += key;
 }
 regexString += ']';
 
 var regex = new RegExp( regexString, 'g');
 
-module.exports = function escapeHTML(str) {
+var exportedObject = function escapeHTML(str) {
 
-  return makeString(str).replace(regex, function(m) {
-    return '&' + escapeChars[m] + ';';
+  return helpermakeString_makeStringjsjs(str).replace(regex, function(m) {
+    return '&' + helperescapeChars_escapeCharsjs[m] + ';';
   });
 };
+
+export { exportedObject as escapeHTMLjs };;

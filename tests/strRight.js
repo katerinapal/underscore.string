@@ -1,17 +1,18 @@
-var equal = require('assert').equal;
-var strRight = require('../strRight');
+import assert_assert from "assert";
+import { strRightjs as strRight_strRightjsjs } from "../strRight";
+var equal = assert_assert.equal;
 
 
 test('#strRight', function() {
-  equal(strRight('This_is_a_test_string', '_'), 'is_a_test_string');
-  equal(strRight('This_is_a_test_string', 'string'), '');
-  equal(strRight('This_is_a_test_string'), 'This_is_a_test_string');
-  equal(strRight('This_is_a_test_string', ''), 'This_is_a_test_string');
-  equal(strRight('This_is_a_test_string', '-'), 'This_is_a_test_string');
-  equal(strRight('This_is_a_test_string', ''), 'This_is_a_test_string');
-  equal(strRight('', 'foo'), '');
-  equal(strRight(null, 'foo'), '');
-  equal(strRight(undefined, 'foo'), '');
-  equal(strRight(12345, 2), '345');
+  equal(strRight_strRightjsjs('This_is_a_test_string', '_'), 'is_a_test_string');
+  equal(strRight_strRightjsjs('This_is_a_test_string', 'string'), '');
+  equal(strRight_strRightjsjs('This_is_a_test_string'), 'This_is_a_test_string');
+  equal(strRight_strRightjsjs('This_is_a_test_string', ''), 'This_is_a_test_string');
+  equal(strRight_strRightjsjs('This_is_a_test_string', '-'), 'This_is_a_test_string');
+  equal(strRight_strRightjsjs('This_is_a_test_string', ''), 'This_is_a_test_string');
+  equal(strRight_strRightjsjs('', 'foo'), '');
+  equal(strRight_strRightjsjs(null, 'foo'), '');
+  equal(strRight_strRightjsjs(undefined, 'foo'), '');
+  equal(strRight_strRightjsjs(12345, 2), '345');
 });
 

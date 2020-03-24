@@ -1,18 +1,20 @@
-var s = require('../');
+import { s as _sjs } from "../";
 var tests = {};
 
 tests['trimNoNative'] = function() {
-  return s.trim('  foobar  ', ' ');
+  return _sjs.trim('  foobar  ', ' ');
 };
 
 tests['trim'] = function() {
-  return s.trim('  foobar  ');
+  return _sjs.trim('  foobar  ');
 };
 
 tests['trim object-oriented'] = function() {
-  return s('  foobar  ').trim().value();
+  return _sjs('  foobar  ').trim().value();
 };
 
-module.exports = {
+var trimjs;
+
+trimjs = {
   tests: tests
 };

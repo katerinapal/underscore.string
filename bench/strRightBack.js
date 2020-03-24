@@ -1,5 +1,6 @@
-var strRightBack = require('../strRightBack');
+import { strRightBackjs as strRightBack_strRightBackjsjs } from "../strRightBack";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  strRightBack('aaa_bbb_ccc', '_');
+encapsulated_anonymus = function() {
+  strRightBack_strRightBackjsjs('aaa_bbb_ccc', '_');
 };

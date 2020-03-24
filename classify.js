@@ -1,8 +1,10 @@
-var capitalize = require('./capitalize');
-var camelize = require('./camelize');
-var makeString = require('./helper/makeString');
+import { capitalizejs as capitalize_capitalizejsjs } from "./capitalize";
+import { camelizejs as camelize_camelizejsjs } from "./camelize";
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
 
-module.exports = function classify(str) {
-  str = makeString(str);
-  return capitalize(camelize(str.replace(/[\W_]/g, ' ')).replace(/\s/g, ''));
+var exportedObject = function classify(str) {
+  str = helpermakeString_makeStringjsjs(str);
+  return capitalize_capitalizejsjs(camelize_camelizejsjs(str.replace(/[\W_]/g, ' ')).replace(/\s/g, ''));
 };
+
+export { exportedObject as classifyjs };;
