@@ -34,7 +34,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "npm run test:lint && npm run test:unit && npm run coverage",
+    "test": "npm run test:unit && npm run coverage",
     "test:unit": "mocha --ui=qunit tests",
     "test:lint": "eslint -c .eslintrc .",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha  -- --report=lcov --ui=qunit tests",
