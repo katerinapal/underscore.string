@@ -1,5 +1,5 @@
-var equal = require('assert').equal;
-var underscored = require('../underscored');
+var equal = null;
+var underscored = {};
 
 
 test('#underscored', function(){

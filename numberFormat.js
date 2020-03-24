@@ -1,4 +1,4 @@
-module.exports = function numberFormat(number, dec, dsep, tsep) {
+var exportedObject = function numberFormat(number, dec, dsep, tsep) {
   if (isNaN(number) || number == null) return '';
 
   number = number.toFixed(~~dec);
@@ -10,3 +10,5 @@ module.exports = function numberFormat(number, dec, dsep, tsep) {
 
   return fnums.replace(/(\d)(?=(?:\d{3})+$)/g, '$1' + tsep) + decimals;
 };
+
+export { exportedObject as numberFormatjs };;

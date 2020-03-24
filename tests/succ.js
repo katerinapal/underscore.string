@@ -1,20 +1,21 @@
-var equal = require('assert').equal;
-var deepEqual = require('assert').deepEqual;
-var succ = require('../succ');
+import assert_assert from "assert";
+import { succjs as succ_succjsjs } from "../succ";
+var equal = assert_assert.equal;
+var deepEqual = assert_assert.deepEqual;
 
 
 test('#succ', function(){
-  equal(succ('a'), 'b');
-  equal(succ('A'), 'B');
-  equal(succ('+'), ',');
-  equal(succ(1), '2');
-  deepEqual(succ().length, 0);
-  deepEqual(succ('').length, 0);
-  deepEqual(succ(null).length, 0);
-  deepEqual(succ(undefined).length, 0);
-  deepEqual(succ(), '');
-  deepEqual(succ(''), '');
-  deepEqual(succ(null), '');
-  deepEqual(succ(undefined), '');
+  equal(succ_succjsjs('a'), 'b');
+  equal(succ_succjsjs('A'), 'B');
+  equal(succ_succjsjs('+'), ',');
+  equal(succ_succjsjs(1), '2');
+  deepEqual(succ_succjsjs().length, 0);
+  deepEqual(succ_succjsjs('').length, 0);
+  deepEqual(succ_succjsjs(null).length, 0);
+  deepEqual(succ_succjsjs(undefined).length, 0);
+  deepEqual(succ_succjsjs(), '');
+  deepEqual(succ_succjsjs(''), '');
+  deepEqual(succ_succjsjs(null), '');
+  deepEqual(succ_succjsjs(undefined), '');
 });
 

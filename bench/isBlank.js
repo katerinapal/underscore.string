@@ -1,5 +1,6 @@
-var isBlank = require('../isBlank');
+import { isBlankjs as isBlank_isBlankjsjs } from "../isBlank";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  isBlank('');
+encapsulated_anonymus = function() {
+  isBlank_isBlankjsjs('');
 };
