@@ -1,7 +1,15 @@
-import { toSentencejs as toSentence_toSentencejsjs } from "./toSentence";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.toSentenceSerialjs = undefined;
+
+var _toSentence = require("./toSentence");
 
 var exportedObject = function toSentenceSerial(array, sep, lastSep) {
-  return toSentence_toSentencejsjs(array, sep, lastSep, true);
+  return (0, _toSentence.toSentencejs)(array, sep, lastSep, true);
 };
 
-export { exportedObject as toSentenceSerialjs };;
+exports.toSentenceSerialjs = exportedObject;
+;

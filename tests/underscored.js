@@ -1,8 +1,9 @@
+'use strict';
+
 var equal = null;
 var underscored = {};
 
-
-test('#underscored', function(){
+test('#underscored', function () {
   equal(underscored('the-underscored-string-method'), 'the_underscored_string_method');
   equal(underscored('theUnderscoredStringMethod'), 'the_underscored_string_method');
   equal(underscored('TheUnderscoredStringMethod'), 'the_underscored_string_method');
@@ -12,4 +13,3 @@ test('#underscored', function(){
   equal(underscored(undefined), '');
   equal(underscored(123), '123');
 });
-

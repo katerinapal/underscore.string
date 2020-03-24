@@ -1,19 +1,28 @@
-import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
-import { escapeChars as helperescapeChars_escapeCharsjs } from "./helper/escapeChars";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.escapeHTMLjs = undefined;
+
+var _makeString = require("./helper/makeString");
+
+var _escapeChars = require("./helper/escapeChars");
 
 var regexString = '[';
-for(var key in helperescapeChars_escapeCharsjs) {
+for (var key in _escapeChars.escapeChars) {
   regexString += key;
 }
 regexString += ']';
 
-var regex = new RegExp( regexString, 'g');
+var regex = new RegExp(regexString, 'g');
 
 var exportedObject = function escapeHTML(str) {
 
-  return helpermakeString_makeStringjsjs(str).replace(regex, function(m) {
-    return '&' + helperescapeChars_escapeCharsjs[m] + ';';
+  return (0, _makeString.makeStringjs)(str).replace(regex, function (m) {
+    return '&' + _escapeChars.escapeChars[m] + ';';
   });
 };
 
-export { exportedObject as escapeHTMLjs };;
+exports.escapeHTMLjs = exportedObject;
+;

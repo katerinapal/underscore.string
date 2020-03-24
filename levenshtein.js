@@ -1,9 +1,17 @@
-import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.levenshteinjs = undefined;
+
+var _makeString = require("./helper/makeString");
 
 var exportedObject = function levenshtein(str1, str2) {
   'use strict';
-  str1 = helpermakeString_makeStringjsjs(str1);
-  str2 = helpermakeString_makeStringjsjs(str2);
+
+  str1 = (0, _makeString.makeStringjs)(str1);
+  str2 = (0, _makeString.makeStringjs)(str2);
 
   // Short cut cases  
   if (str1 === str2) return 0;
@@ -25,7 +33,7 @@ var exportedObject = function levenshtein(str1, str2) {
       var curCol = nextCol;
 
       // substution
-      nextCol = prevRow[j] + ( (str1.charAt(i) === str2.charAt(j)) ? 0 : 1 );
+      nextCol = prevRow[j] + (str1.charAt(i) === str2.charAt(j) ? 0 : 1);
       // insertion
       var tmp = curCol + 1;
       if (nextCol > tmp) {
@@ -54,4 +62,5 @@ var exportedObject = function levenshtein(str1, str2) {
 /**
  * Based on the implementation here: https://github.com/hiddentao/fast-levenshtein
  */
-export { exportedObject as levenshteinjs };;
+exports.levenshteinjs = exportedObject;
+;

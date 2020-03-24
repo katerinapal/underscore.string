@@ -1,3 +1,8 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var exportedObject = function makeString(object) {
   if (object == null) return '';
   return '' + object;
@@ -9,4 +14,5 @@ var exportedObject = function makeString(object) {
 /**
  * Ensure some object is a coerced to a string
  **/
-export { exportedObject as makeStringjs };;
+exports.makeStringjs = exportedObject;
+;

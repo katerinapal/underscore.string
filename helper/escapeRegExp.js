@@ -1,7 +1,15 @@
-import { makeStringjs as makeString_makeStringjsjs } from "./makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.escapeRegExpjs = undefined;
+
+var _makeString = require("./makeString");
 
 var exportedObject = function escapeRegExp(str) {
-  return makeString_makeStringjsjs(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
+  return (0, _makeString.makeStringjs)(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
 };
 
-export { exportedObject as escapeRegExpjs };;
+exports.escapeRegExpjs = exportedObject;
+;

@@ -1,3 +1,5 @@
+'use strict';
+
 var trim = {};
 
 module.exports = function underscored(str) {

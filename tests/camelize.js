@@ -1,36 +1,42 @@
-import assert_assert from "assert";
-import { camelizejs as camelize_camelizejsjs } from "../camelize";
-var equal = assert_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#camelize', function(){
-  equal(camelize_camelizejsjs('the_camelize_string_method'), 'theCamelizeStringMethod');
-  equal(camelize_camelizejsjs('webkit-transform'), 'webkitTransform');
-  equal(camelize_camelizejsjs('-the-camelize-string-method'), 'TheCamelizeStringMethod');
-  equal(camelize_camelizejsjs('_the_camelize_string_method'), 'TheCamelizeStringMethod');
-  equal(camelize_camelizejsjs('The-camelize-string-method'), 'TheCamelizeStringMethod');
-  equal(camelize_camelizejsjs('the camelize string method'), 'theCamelizeStringMethod');
-  equal(camelize_camelizejsjs(' the camelize  string method'), 'theCamelizeStringMethod');
-  equal(camelize_camelizejsjs('the camelize   string method'), 'theCamelizeStringMethod');
-  equal(camelize_camelizejsjs(' with   spaces'), 'withSpaces');
-  equal(camelize_camelizejsjs('_som eWeird---name-'), 'SomEWeirdName');
-  equal(camelize_camelizejsjs(''), '', 'Camelize empty string returns empty string');
-  equal(camelize_camelizejsjs(null), '', 'Camelize null returns empty string');
-  equal(camelize_camelizejsjs(undefined), '', 'Camelize undefined returns empty string');
-  equal(camelize_camelizejsjs(123), '123');
-  equal(camelize_camelizejsjs('the_camelize_string_method', true), 'theCamelizeStringMethod');
-  equal(camelize_camelizejsjs('webkit-transform', true), 'webkitTransform');
-  equal(camelize_camelizejsjs('-the-camelize-string-method', true), 'theCamelizeStringMethod');
-  equal(camelize_camelizejsjs('_the_camelize_string_method', true), 'theCamelizeStringMethod');
-  equal(camelize_camelizejsjs('The-camelize-string-method', true), 'theCamelizeStringMethod');
-  equal(camelize_camelizejsjs('the camelize string method', true), 'theCamelizeStringMethod');
-  equal(camelize_camelizejsjs(' the camelize  string method', true), 'theCamelizeStringMethod');
-  equal(camelize_camelizejsjs('the camelize   string method', true), 'theCamelizeStringMethod');
-  equal(camelize_camelizejsjs(' with   spaces', true), 'withSpaces');
-  equal(camelize_camelizejsjs('_som eWeird---name-', true), 'somEWeirdName');
-  equal(camelize_camelizejsjs('', true), '', 'Camelize empty string returns empty string');
-  equal(camelize_camelizejsjs(null, true), '', 'Camelize null returns empty string');
-  equal(camelize_camelizejsjs(undefined, true), '', 'Camelize undefined returns empty string');
-  equal(camelize_camelizejsjs(123, true), '123');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _camelize = require("../camelize");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#camelize', function () {
+  equal((0, _camelize.camelizejs)('the_camelize_string_method'), 'theCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)('webkit-transform'), 'webkitTransform');
+  equal((0, _camelize.camelizejs)('-the-camelize-string-method'), 'TheCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)('_the_camelize_string_method'), 'TheCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)('The-camelize-string-method'), 'TheCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)('the camelize string method'), 'theCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)(' the camelize  string method'), 'theCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)('the camelize   string method'), 'theCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)(' with   spaces'), 'withSpaces');
+  equal((0, _camelize.camelizejs)('_som eWeird---name-'), 'SomEWeirdName');
+  equal((0, _camelize.camelizejs)(''), '', 'Camelize empty string returns empty string');
+  equal((0, _camelize.camelizejs)(null), '', 'Camelize null returns empty string');
+  equal((0, _camelize.camelizejs)(undefined), '', 'Camelize undefined returns empty string');
+  equal((0, _camelize.camelizejs)(123), '123');
+  equal((0, _camelize.camelizejs)('the_camelize_string_method', true), 'theCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)('webkit-transform', true), 'webkitTransform');
+  equal((0, _camelize.camelizejs)('-the-camelize-string-method', true), 'theCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)('_the_camelize_string_method', true), 'theCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)('The-camelize-string-method', true), 'theCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)('the camelize string method', true), 'theCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)(' the camelize  string method', true), 'theCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)('the camelize   string method', true), 'theCamelizeStringMethod');
+  equal((0, _camelize.camelizejs)(' with   spaces', true), 'withSpaces');
+  equal((0, _camelize.camelizejs)('_som eWeird---name-', true), 'somEWeirdName');
+  equal((0, _camelize.camelizejs)('', true), '', 'Camelize empty string returns empty string');
+  equal((0, _camelize.camelizejs)(null, true), '', 'Camelize null returns empty string');
+  equal((0, _camelize.camelizejs)(undefined, true), '', 'Camelize undefined returns empty string');
+  equal((0, _camelize.camelizejs)(123, true), '123');
 });
-

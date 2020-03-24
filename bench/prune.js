@@ -1,6 +1,9 @@
-import { prunejs as prune_prunejsjs } from "../prune";
+"use strict";
+
+var _prune = require("../prune");
+
 var encapsulated_anonymus;
 
-encapsulated_anonymus = function() {
-  prune_prunejsjs('Hello world', 5);
+encapsulated_anonymus = function encapsulated_anonymus() {
+  (0, _prune.prunejs)('Hello world', 5);
 };

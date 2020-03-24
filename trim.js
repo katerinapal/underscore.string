@@ -1,12 +1,22 @@
-import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
-import { defaultToWhiteSpacejs as helperdefaultToWhiteSpace_defaultToWhiteSpacejsjs } from "./helper/defaultToWhiteSpace";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.trimjs = undefined;
+
+var _makeString = require("./helper/makeString");
+
+var _defaultToWhiteSpace = require("./helper/defaultToWhiteSpace");
+
 var nativeTrim = String.prototype.trim;
 
 var exportedObject = function trim(str, characters) {
-  str = helpermakeString_makeStringjsjs(str);
+  str = (0, _makeString.makeStringjs)(str);
   if (!characters && nativeTrim) return nativeTrim.call(str);
-  characters = helperdefaultToWhiteSpace_defaultToWhiteSpacejsjs(characters);
+  characters = (0, _defaultToWhiteSpace.defaultToWhiteSpacejs)(characters);
   return str.replace(new RegExp('^' + characters + '+|' + characters + '+$', 'g'), '');
 };
 
-export { exportedObject as trimjs };;
+exports.trimjs = exportedObject;
+;

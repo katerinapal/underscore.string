@@ -1,30 +1,37 @@
-import assert_assert from "assert";
-import { toBooleanjs as toBoolean_toBooleanjsjs } from "../toBoolean";
-var strictEqual = assert_assert.strictEqual;
+"use strict";
 
-test('#toBoolean', function() {
-  strictEqual(toBoolean_toBooleanjsjs('false'), false);
-  strictEqual(toBoolean_toBooleanjsjs('false'), false);
-  strictEqual(toBoolean_toBooleanjsjs('False'), false);
-  strictEqual(toBoolean_toBooleanjsjs('Falsy',null,['false', 'falsy']), false);
-  strictEqual(toBoolean_toBooleanjsjs('true'), true);
-  strictEqual(toBoolean_toBooleanjsjs('the truth', 'the truth', 'this is falsy'), true);
-  strictEqual(toBoolean_toBooleanjsjs('this is falsy', 'the truth', 'this is falsy'), false);
-  strictEqual(toBoolean_toBooleanjsjs('true'), true);
-  strictEqual(toBoolean_toBooleanjsjs('trUe'), true);
-  strictEqual(toBoolean_toBooleanjsjs('trUe', /tru?/i), true);
-  strictEqual(toBoolean_toBooleanjsjs('something else'), undefined);
-  strictEqual(toBoolean_toBooleanjsjs(function(){}), true);
-  strictEqual(toBoolean_toBooleanjsjs(/regexp/), true);
-  strictEqual(toBoolean_toBooleanjsjs(''), undefined);
-  strictEqual(toBoolean_toBooleanjsjs(0), false);
-  strictEqual(toBoolean_toBooleanjsjs(1), true);
-  strictEqual(toBoolean_toBooleanjsjs('1'), true);
-  strictEqual(toBoolean_toBooleanjsjs('0'), false);
-  strictEqual(toBoolean_toBooleanjsjs(2), undefined);
-  strictEqual(toBoolean_toBooleanjsjs('foo true bar'), undefined);
-  strictEqual(toBoolean_toBooleanjsjs('foo true bar', /true/), true);
-  strictEqual(toBoolean_toBooleanjsjs('foo FALSE bar', null, /FALSE/), false);
-  strictEqual(toBoolean_toBooleanjsjs(' true  '), true);
+var _assert = require("assert");
+
+var _assert2 = _interopRequireDefault(_assert);
+
+var _toBoolean = require("../toBoolean");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var strictEqual = _assert2.default.strictEqual;
+
+test('#toBoolean', function () {
+  strictEqual((0, _toBoolean.toBooleanjs)('false'), false);
+  strictEqual((0, _toBoolean.toBooleanjs)('false'), false);
+  strictEqual((0, _toBoolean.toBooleanjs)('False'), false);
+  strictEqual((0, _toBoolean.toBooleanjs)('Falsy', null, ['false', 'falsy']), false);
+  strictEqual((0, _toBoolean.toBooleanjs)('true'), true);
+  strictEqual((0, _toBoolean.toBooleanjs)('the truth', 'the truth', 'this is falsy'), true);
+  strictEqual((0, _toBoolean.toBooleanjs)('this is falsy', 'the truth', 'this is falsy'), false);
+  strictEqual((0, _toBoolean.toBooleanjs)('true'), true);
+  strictEqual((0, _toBoolean.toBooleanjs)('trUe'), true);
+  strictEqual((0, _toBoolean.toBooleanjs)('trUe', /tru?/i), true);
+  strictEqual((0, _toBoolean.toBooleanjs)('something else'), undefined);
+  strictEqual((0, _toBoolean.toBooleanjs)(function () {}), true);
+  strictEqual((0, _toBoolean.toBooleanjs)(/regexp/), true);
+  strictEqual((0, _toBoolean.toBooleanjs)(''), undefined);
+  strictEqual((0, _toBoolean.toBooleanjs)(0), false);
+  strictEqual((0, _toBoolean.toBooleanjs)(1), true);
+  strictEqual((0, _toBoolean.toBooleanjs)('1'), true);
+  strictEqual((0, _toBoolean.toBooleanjs)('0'), false);
+  strictEqual((0, _toBoolean.toBooleanjs)(2), undefined);
+  strictEqual((0, _toBoolean.toBooleanjs)('foo true bar'), undefined);
+  strictEqual((0, _toBoolean.toBooleanjs)('foo true bar', /true/), true);
+  strictEqual((0, _toBoolean.toBooleanjs)('foo FALSE bar', null, /FALSE/), false);
+  strictEqual((0, _toBoolean.toBooleanjs)(' true  '), true);
 });
-

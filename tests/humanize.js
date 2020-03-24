@@ -1,19 +1,25 @@
-import assert_assert from "assert";
-import { humanizejs as humanize_humanizejsjs } from "../humanize";
-var equal = assert_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#humanize', function(){
-  equal(humanize_humanizejsjs('the_humanize_string_method'), 'The humanize string method');
-  equal(humanize_humanizejsjs('ThehumanizeStringMethod'), 'Thehumanize string method');
-  equal(humanize_humanizejsjs('-ThehumanizeStringMethod'), 'Thehumanize string method');
-  equal(humanize_humanizejsjs('the humanize string method'), 'The humanize string method');
-  equal(humanize_humanizejsjs('the humanize_id string method_id'), 'The humanize id string method');
-  equal(humanize_humanizejsjs('the  humanize string method  '), 'The humanize string method');
-  equal(humanize_humanizejsjs('   capitalize dash-CamelCase_underscore trim  '), 'Capitalize dash camel case underscore trim');
-  equal(humanize_humanizejsjs(123), '123');
-  equal(humanize_humanizejsjs(''), '');
-  equal(humanize_humanizejsjs(null), '');
-  equal(humanize_humanizejsjs(undefined), '');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _humanize = require("../humanize");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#humanize', function () {
+  equal((0, _humanize.humanizejs)('the_humanize_string_method'), 'The humanize string method');
+  equal((0, _humanize.humanizejs)('ThehumanizeStringMethod'), 'Thehumanize string method');
+  equal((0, _humanize.humanizejs)('-ThehumanizeStringMethod'), 'Thehumanize string method');
+  equal((0, _humanize.humanizejs)('the humanize string method'), 'The humanize string method');
+  equal((0, _humanize.humanizejs)('the humanize_id string method_id'), 'The humanize id string method');
+  equal((0, _humanize.humanizejs)('the  humanize string method  '), 'The humanize string method');
+  equal((0, _humanize.humanizejs)('   capitalize dash-CamelCase_underscore trim  '), 'Capitalize dash camel case underscore trim');
+  equal((0, _humanize.humanizejs)(123), '123');
+  equal((0, _humanize.humanizejs)(''), '');
+  equal((0, _humanize.humanizejs)(null), '');
+  equal((0, _humanize.humanizejs)(undefined), '');
 });
-

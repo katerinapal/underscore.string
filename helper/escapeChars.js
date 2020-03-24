@@ -1,16 +1,21 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var escapeChars = {
-  '¢' : 'cent',
-  '£' : 'pound',
-  '¥' : 'yen',
+  '¢': 'cent',
+  '£': 'pound',
+  '¥': 'yen',
   '€': 'euro',
-  '©' :'copy',
-  '®' : 'reg',
-  '<' : 'lt',
-  '>' : 'gt',
-  '"' : 'quot',
-  '&' : 'amp',
-  '\'' : '#39'
+  '©': 'copy',
+  '®': 'reg',
+  '<': 'lt',
+  '>': 'gt',
+  '"': 'quot',
+  '&': 'amp',
+  '\'': '#39'
 };
 
-let exported_escapeChars = escapeChars;
-export { exported_escapeChars as escapeChars };
+var exported_escapeChars = escapeChars;
+exports.escapeChars = exported_escapeChars;

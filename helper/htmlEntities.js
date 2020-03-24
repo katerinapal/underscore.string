@@ -1,3 +1,5 @@
+"use strict";
+
 var htmlEntities_nbsp = " ";
 var htmlEntities_cent = "¢";
 var htmlEntities_pound = "£";

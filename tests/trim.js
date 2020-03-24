@@ -1,30 +1,36 @@
-import { trimjs as trim_trimjsjs } from "../trim";
-import assert_assert from "assert";
-var equal = assert_assert.equal;
+"use strict";
 
-test('#trim', function() {
-  equal(trim_trimjsjs(123), '123', 'Non string');
-  equal(trim_trimjsjs(' foo'), 'foo');
-  equal(trim_trimjsjs('foo '), 'foo');
-  equal(trim_trimjsjs(' foo '), 'foo');
-  equal(trim_trimjsjs('    foo     '), 'foo');
-  equal(trim_trimjsjs('    foo     '), 'foo', 'Manually set whitespace');
-  equal(trim_trimjsjs('\t    foo \t  '), 'foo', 'Manually set RegExp /\\s+/');
+var _trim = require("../trim");
 
-  equal(trim_trimjsjs('ffoo', 'ff'), 'oo');
-  equal(trim_trimjsjs('ooff', 'ff'), 'oo');
-  equal(trim_trimjsjs('ffooff', 'ff'), 'oo');
+var _assert = require("assert");
 
+var _assert2 = _interopRequireDefault(_assert);
 
-  equal(trim_trimjsjs('_-foobar-_', '_-'), 'foobar');
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  equal(trim_trimjsjs('http://foo/', '/'), 'http://foo');
-  equal(trim_trimjsjs('c:\\', '\\'), 'c:');
+var equal = _assert2.default.equal;
 
-  equal(trim_trimjsjs(123), '123');
-  equal(trim_trimjsjs(123, 3), '12');
-  equal(trim_trimjsjs(''), '', 'Trim empty string should return empty string');
-  equal(trim_trimjsjs(null), '', 'Trim null should return empty string');
-  equal(trim_trimjsjs(undefined), '', 'Trim undefined should return empty string');
+test('#trim', function () {
+  equal((0, _trim.trimjs)(123), '123', 'Non string');
+  equal((0, _trim.trimjs)(' foo'), 'foo');
+  equal((0, _trim.trimjs)('foo '), 'foo');
+  equal((0, _trim.trimjs)(' foo '), 'foo');
+  equal((0, _trim.trimjs)('    foo     '), 'foo');
+  equal((0, _trim.trimjs)('    foo     '), 'foo', 'Manually set whitespace');
+  equal((0, _trim.trimjs)('\t    foo \t  '), 'foo', 'Manually set RegExp /\\s+/');
+
+  equal((0, _trim.trimjs)('ffoo', 'ff'), 'oo');
+  equal((0, _trim.trimjs)('ooff', 'ff'), 'oo');
+  equal((0, _trim.trimjs)('ffooff', 'ff'), 'oo');
+
+  equal((0, _trim.trimjs)('_-foobar-_', '_-'), 'foobar');
+
+  equal((0, _trim.trimjs)('http://foo/', '/'), 'http://foo');
+  equal((0, _trim.trimjs)('c:\\', '\\'), 'c:');
+
+  equal((0, _trim.trimjs)(123), '123');
+  equal((0, _trim.trimjs)(123, 3), '12');
+  equal((0, _trim.trimjs)(''), '', 'Trim empty string should return empty string');
+  equal((0, _trim.trimjs)(null), '', 'Trim null should return empty string');
+  equal((0, _trim.trimjs)(undefined), '', 'Trim undefined should return empty string');
 });
-
