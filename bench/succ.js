@@ -1,12 +1,16 @@
-import { succjs as succ_succjsjs } from "../succ";
+"use strict";
+
+var _succ = require("../succ");
+
 var encapsulated_anonymus;
 
-encapsulated_anonymus = function() {
-  var letter = 'a', alphabet = [];
+encapsulated_anonymus = function encapsulated_anonymus() {
+  var letter = 'a',
+      alphabet = [];
 
-  for (var i=0; i < 26; i++) {
+  for (var i = 0; i < 26; i++) {
     alphabet.push(letter);
-    letter = succ_succjsjs(letter);
+    letter = (0, _succ.succjs)(letter);
   }
 
   return alphabet;

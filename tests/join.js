@@ -1,19 +1,25 @@
-import assert_assert from "assert";
-import { joinjs as join_joinjsjs } from "../join";
-var equal = assert_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#join', function() {
-  equal(join_joinjsjs('', 'foo', 'bar'), 'foobar', 'basic join');
-  equal(join_joinjsjs('', 1, 'foo', 2), '1foo2', 'join numbers and strings');
-  equal(join_joinjsjs(' ','foo', 'bar'), 'foo bar', 'join with spaces');
-  equal(join_joinjsjs('1', '2', '2'), '212', 'join number strings');
-  equal(join_joinjsjs(1, 2, 2), '212', 'join numbers');
-  equal(join_joinjsjs('','foo', null), 'foo', 'join null with string returns string');
-  equal(join_joinjsjs(null,'foo', 'bar'), 'foobar', 'join strings with null returns string');
-  equal(join_joinjsjs(1, 2, 3, 4), '21314');
-  equal(join_joinjsjs('|', 'foo', 'bar', 'baz'), 'foo|bar|baz');
-  equal(join_joinjsjs('',2,3,null), '23');
-  equal(join_joinjsjs(null,2,3), '23');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _join = require("../join");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#join', function () {
+  equal((0, _join.joinjs)('', 'foo', 'bar'), 'foobar', 'basic join');
+  equal((0, _join.joinjs)('', 1, 'foo', 2), '1foo2', 'join numbers and strings');
+  equal((0, _join.joinjs)(' ', 'foo', 'bar'), 'foo bar', 'join with spaces');
+  equal((0, _join.joinjs)('1', '2', '2'), '212', 'join number strings');
+  equal((0, _join.joinjs)(1, 2, 2), '212', 'join numbers');
+  equal((0, _join.joinjs)('', 'foo', null), 'foo', 'join null with string returns string');
+  equal((0, _join.joinjs)(null, 'foo', 'bar'), 'foobar', 'join strings with null returns string');
+  equal((0, _join.joinjs)(1, 2, 3, 4), '21314');
+  equal((0, _join.joinjs)('|', 'foo', 'bar', 'baz'), 'foo|bar|baz');
+  equal((0, _join.joinjs)('', 2, 3, null), '23');
+  equal((0, _join.joinjs)(null, 2, 3), '23');
 });
-

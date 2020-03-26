@@ -1,4 +1,9 @@
-var exportedObject = function() {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var exportedObject = function exportedObject() {
   var result = {};
 
   for (var prop in this) {
@@ -9,4 +14,5 @@ var exportedObject = function() {
   return result;
 };
 
-export { exportedObject as exportsjs };;
+exports.exportsjs = exportedObject;
+;

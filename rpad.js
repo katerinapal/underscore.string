@@ -1,7 +1,15 @@
-import { padjs as pad_padjsjs } from "./pad";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.rpadjs = undefined;
+
+var _pad = require("./pad");
 
 var exportedObject = function rpad(str, length, padStr) {
-  return pad_padjsjs(str, length, padStr, 'right');
+  return (0, _pad.padjs)(str, length, padStr, 'right');
 };
 
-export { exportedObject as rpadjs };;
+exports.rpadjs = exportedObject;
+;

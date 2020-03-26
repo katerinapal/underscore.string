@@ -1,12 +1,18 @@
-import assert_assert from "assert";
-import { unquotejs as unquote_unquotejsjs } from "../unquote";
-var equal = assert_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#unquote', function(){
-  equal(unquote_unquotejsjs('"foo"'), 'foo');
-  equal(unquote_unquotejsjs('""foo""'), '"foo"');
-  equal(unquote_unquotejsjs('"1"'), '1');
-  equal(unquote_unquotejsjs('\'foo\'', '\''), 'foo');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _unquote = require("../unquote");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#unquote', function () {
+  equal((0, _unquote.unquotejs)('"foo"'), 'foo');
+  equal((0, _unquote.unquotejs)('""foo""'), '"foo"');
+  equal((0, _unquote.unquotejs)('"1"'), '1');
+  equal((0, _unquote.unquotejs)('\'foo\'', '\''), 'foo');
 });
-

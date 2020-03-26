@@ -1,7 +1,15 @@
-import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.charsjs = undefined;
+
+var _makeString = require("./helper/makeString");
 
 var exportedObject = function chars(str) {
-  return helpermakeString_makeStringjsjs(str).split('');
+  return (0, _makeString.makeStringjs)(str).split('');
 };
 
-export { exportedObject as charsjs };;
+exports.charsjs = exportedObject;
+;

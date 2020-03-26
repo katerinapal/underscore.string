@@ -1,3 +1,8 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var htmlEntities = {
   nbsp: ' ',
   cent: '¢',
@@ -13,5 +18,5 @@ var htmlEntities = {
   apos: '\''
 };
 
-let exported_htmlEntities = htmlEntities;
-export { exported_htmlEntities as htmlEntities };
+var exported_htmlEntities = htmlEntities;
+exports.htmlEntities = exported_htmlEntities;

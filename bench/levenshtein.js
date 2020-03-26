@@ -1,9 +1,12 @@
-import { levenshteinjs as levenshtein_levenshteinjsjs } from "../levenshtein";
+'use strict';
+
+var _levenshtein = require('../levenshtein');
+
 var encapsulated_anonymus;
 
-encapsulated_anonymus = function() {
-  levenshtein_levenshteinjsjs('pineapple', 'potato');
-  levenshtein_levenshteinjsjs('seven', 'eight');
-  levenshtein_levenshteinjsjs('the very same string', 'the very same string');
-  levenshtein_levenshteinjsjs('very very very long string', 'something completely different');
+encapsulated_anonymus = function encapsulated_anonymus() {
+  (0, _levenshtein.levenshteinjs)('pineapple', 'potato');
+  (0, _levenshtein.levenshteinjs)('seven', 'eight');
+  (0, _levenshtein.levenshteinjs)('the very same string', 'the very same string');
+  (0, _levenshtein.levenshteinjs)('very very very long string', 'something completely different');
 };

@@ -1,7 +1,15 @@
-import { splicejs as splice_splicejsjs } from "./splice";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.insertjs = undefined;
+
+var _splice = require("./splice");
 
 var exportedObject = function insert(str, i, substr) {
-  return splice_splicejsjs(str, i, 0, substr);
+  return (0, _splice.splicejs)(str, i, 0, substr);
 };
 
-export { exportedObject as insertjs };;
+exports.insertjs = exportedObject;
+;

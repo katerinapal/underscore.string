@@ -1,7 +1,15 @@
-import { trimjs as trim_trimjsjs } from "./trim";
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.underscoredjs = undefined;
+
+var _trim = require('./trim');
 
 var exportedObject = function underscored(str) {
-  return trim_trimjsjs(str).replace(/([a-z\d])([A-Z]+)/g, '$1_$2').replace(/[-\s]+/g, '_').toLowerCase();
+  return (0, _trim.trimjs)(str).replace(/([a-z\d])([A-Z]+)/g, '$1_$2').replace(/[-\s]+/g, '_').toLowerCase();
 };
 
-export { exportedObject as underscoredjs };;
+exports.underscoredjs = exportedObject;
+;
