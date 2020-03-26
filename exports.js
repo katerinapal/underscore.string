@@ -1,4 +1,4 @@
-module.exports = function() {
+var exportedObject = function() {
   var result = {};
 
   for (var prop in this) {
@@ -8,3 +8,5 @@ module.exports = function() {
 
   return result;
 };
+
+export { exportedObject as exportsjs };;

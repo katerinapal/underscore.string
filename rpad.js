@@ -1,5 +1,7 @@
-var pad = require('./pad');
+import { padjs as pad_padjsjs } from "./pad";
 
-module.exports = function rpad(str, length, padStr) {
-  return pad(str, length, padStr, 'right');
+var exportedObject = function rpad(str, length, padStr) {
+  return pad_padjsjs(str, length, padStr, 'right');
 };
+
+export { exportedObject as rpadjs };;

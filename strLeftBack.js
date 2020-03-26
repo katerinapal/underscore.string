@@ -1,8 +1,10 @@
-var makeString = require('./helper/makeString');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
 
-module.exports = function strLeftBack(str, sep) {
-  str = makeString(str);
-  sep = makeString(sep);
+var exportedObject = function strLeftBack(str, sep) {
+  str = helpermakeString_makeStringjsjs(str);
+  sep = helpermakeString_makeStringjsjs(sep);
   var pos = str.lastIndexOf(sep);
   return~ pos ? str.slice(0, pos) : str;
 };
+
+export { exportedObject as strLeftBackjs };;

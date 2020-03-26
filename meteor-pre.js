@@ -2,5 +2,7 @@
 // Credit to Tim Heckel for this trick - see https://github.com/TimHeckel/meteor-underscore-string
 module = {};
 
+var meteorprejs;
+
 // This also needed, otherwise above doesn't work???
-exports = {};
+meteorprejs = {};
