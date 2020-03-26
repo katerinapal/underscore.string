@@ -1,4 +1,4 @@
-module.exports = function strRepeat(str, qty){
+var exportedObject = function strRepeat(str, qty){
   if (qty < 1) return '';
   var result = '';
   while (qty > 0) {
@@ -7,3 +7,5 @@ module.exports = function strRepeat(str, qty){
   }
   return result;
 };
+
+export { exportedObject as strRepeatjs };;

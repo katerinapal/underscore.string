@@ -1,12 +1,12 @@
-var makeString = require('./helper/makeString');
-var htmlEntities = require('./helper/htmlEntities');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
+import { htmlEntities as helperhtmlEntities_htmlEntitiesjs } from "./helper/htmlEntities";
 
-module.exports = function unescapeHTML(str) {
-  return makeString(str).replace(/\&([^;]+);/g, function(entity, entityCode) {
+var exportedObject = function unescapeHTML(str) {
+  return helpermakeString_makeStringjsjs(str).replace(/\&([^;]+);/g, function(entity, entityCode) {
     var match;
 
-    if (entityCode in htmlEntities) {
-      return htmlEntities[entityCode];
+    if (entityCode in helperhtmlEntities_htmlEntitiesjs) {
+      return helperhtmlEntities_htmlEntitiesjs[entityCode];
     /*eslint no-cond-assign: 0*/
     } else if (match = entityCode.match(/^#x([\da-fA-F]+)$/)) {
       return String.fromCharCode(parseInt(match[1], 16));
@@ -18,3 +18,5 @@ module.exports = function unescapeHTML(str) {
     }
   });
 };
+
+export { exportedObject as unescapeHTMLjs };;

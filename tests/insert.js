@@ -1,15 +1,16 @@
-var equal = require('assert').equal;
-var insert = require('../insert');
+import assert_assert from "assert";
+import { insertjs as insert_insertjsjs } from "../insert";
+var equal = assert_assert.equal;
 
 
 test('#insert', function(){
-  equal(insert('Hello ', 6, 'Jessy'), 'Hello Jessy');
-  equal(insert('Hello', 0, 'Jessy '), 'Jessy Hello');
-  equal(insert('Hello ', 100, 'Jessy'), 'Hello Jessy');
-  equal(insert('', 100, 'Jessy'), 'Jessy');
-  equal(insert(null, 100, 'Jessy'), 'Jessy');
-  equal(insert(undefined, 100, 'Jessy'), 'Jessy');
-  equal(insert(12345, 5, 'Jessy'), '12345Jessy');
-  equal(insert(12345, 3, 'Jessy'), '123Jessy45');
+  equal(insert_insertjsjs('Hello ', 6, 'Jessy'), 'Hello Jessy');
+  equal(insert_insertjsjs('Hello', 0, 'Jessy '), 'Jessy Hello');
+  equal(insert_insertjsjs('Hello ', 100, 'Jessy'), 'Hello Jessy');
+  equal(insert_insertjsjs('', 100, 'Jessy'), 'Jessy');
+  equal(insert_insertjsjs(null, 100, 'Jessy'), 'Jessy');
+  equal(insert_insertjsjs(undefined, 100, 'Jessy'), 'Jessy');
+  equal(insert_insertjsjs(12345, 5, 'Jessy'), '12345Jessy');
+  equal(insert_insertjsjs(12345, 3, 'Jessy'), '123Jessy45');
 });
 

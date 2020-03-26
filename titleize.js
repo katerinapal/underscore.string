@@ -1,7 +1,9 @@
-var makeString = require('./helper/makeString');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
 
-module.exports = function titleize(str) {
-  return makeString(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function(c) {
+var exportedObject = function titleize(str) {
+  return helpermakeString_makeStringjsjs(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function(c) {
     return c.toUpperCase();
   });
 };
+
+export { exportedObject as titleizejs };;

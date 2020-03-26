@@ -1,5 +1,6 @@
-var chop = require('../chop');
+import { chopjs as chop_chopjsjs } from "../chop";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  chop('whitespace', 2);
+encapsulated_anonymus = function() {
+  chop_chopjsjs('whitespace', 2);
 };

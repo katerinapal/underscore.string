@@ -1,5 +1,6 @@
-var splice = require('../splice');
+import { splicejs as splice_splicejsjs } from "../splice";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  splice('https://edtsech@bitbucket.org/edtsech/underscore.strings', 30, 7, 'epeli');
+encapsulated_anonymus = function() {
+  splice_splicejsjs('https://edtsech@bitbucket.org/edtsech/underscore.strings', 30, 7, 'epeli');
 };

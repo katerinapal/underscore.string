@@ -1,11 +1,12 @@
-var equal = require('assert').equal;
-var clean = require('../clean');
+import assert_assert from "assert";
+import { cleanjs as clean_cleanjsjs } from "../clean";
+var equal = assert_assert.equal;
 
 
 test('#clean', function() {
-  equal(clean(' foo    bar   '), 'foo bar');
-  equal(clean(123), '123');
-  equal(clean(''), '', 'claning empty string returns empty string');
-  equal(clean(null), '', 'claning null returns empty string');
-  equal(clean(undefined), '', 'claning undefined returns empty string');
+  equal(clean_cleanjsjs(' foo    bar   '), 'foo bar');
+  equal(clean_cleanjsjs(123), '123');
+  equal(clean_cleanjsjs(''), '', 'claning empty string returns empty string');
+  equal(clean_cleanjsjs(null), '', 'claning null returns empty string');
+  equal(clean_cleanjsjs(undefined), '', 'claning undefined returns empty string');
 });
