@@ -1,17 +1,18 @@
-var ok = require('assert').ok;
-var isBlank = require('../isBlank');
+import assert_assert from "assert";
+import { isBlankjs as isBlank_isBlankjsjs } from "../isBlank";
+var ok = assert_assert.ok;
 
 
 test('#isBlank', function(){
-  ok(isBlank(''));
-  ok(isBlank(' '));
-  ok(isBlank('\n'));
-  ok(!isBlank('a'));
-  ok(!isBlank('0'));
-  ok(!isBlank(0));
-  ok(isBlank(''));
-  ok(isBlank(null));
-  ok(isBlank(undefined));
-  ok(!isBlank(false));
+  ok(isBlank_isBlankjsjs(''));
+  ok(isBlank_isBlankjsjs(' '));
+  ok(isBlank_isBlankjsjs('\n'));
+  ok(!isBlank_isBlankjsjs('a'));
+  ok(!isBlank_isBlankjsjs('0'));
+  ok(!isBlank_isBlankjsjs(0));
+  ok(isBlank_isBlankjsjs(''));
+  ok(isBlank_isBlankjsjs(null));
+  ok(isBlank_isBlankjsjs(undefined));
+  ok(!isBlank_isBlankjsjs(false));
 });
 

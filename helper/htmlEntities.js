@@ -1,6 +1,3 @@
-/*
-We're explicitly defining the list of entities that might see in escape HTML strings
-*/
 var htmlEntities = {
   nbsp: ' ',
   cent: '¢',
@@ -16,4 +13,5 @@ var htmlEntities = {
   apos: '\''
 };
 
-module.exports = htmlEntities;
+let exported_htmlEntities = htmlEntities;
+export { exported_htmlEntities as htmlEntities };

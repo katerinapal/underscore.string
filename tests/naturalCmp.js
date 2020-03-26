@@ -1,6 +1,7 @@
-var naturalCmp = require('../naturalCmp');
-var _ = require('underscore');
-var equal = require('assert').equal;
+import { naturalCmpjs as naturalCmp_naturalCmpjsjs } from "../naturalCmp";
+import _ from "underscore";
+import assert_assert from "assert";
+var equal = assert_assert.equal;
 
 test('#naturalCmp', function() {
   // Should be associative
@@ -24,8 +25,8 @@ test('#naturalCmp', function() {
     ['aBc', 'Abc']
   ], function(vals) {
     var a = vals[0], b = vals[1];
-    equal(naturalCmp(a, b), 1, '\'' + a + '\' >= \'' + b + '\'');
-    equal(naturalCmp(b, a), -1, '\'' + b + '\' <= \'' + a + '\'');
+    equal(naturalCmp_naturalCmpjsjs(a, b), 1, '\'' + a + '\' >= \'' + b + '\'');
+    equal(naturalCmp_naturalCmpjsjs(b, a), -1, '\'' + b + '\' <= \'' + a + '\'');
   });
   _.each([
     ['123', '123'],
@@ -34,7 +35,7 @@ test('#naturalCmp', function() {
     ['12a', '12a']
   ], function(vals) {
     var a = vals[0], b = vals[1];
-    equal(naturalCmp(a, b), 0, '\'' + a + '\' == \'' + b + '\'');
-    equal(naturalCmp(b, a), 0, '\'' + b + '\' == \'' + a + '\'');
+    equal(naturalCmp_naturalCmpjsjs(a, b), 0, '\'' + a + '\' == \'' + b + '\'');
+    equal(naturalCmp_naturalCmpjsjs(b, a), 0, '\'' + b + '\' == \'' + a + '\'');
   });
 });

@@ -1,13 +1,8 @@
-/**
- * _s.prune: a more elegant version of truncate
- * prune extra chars, never leaving a half-chopped word.
- * @author github.com/rwz
- */
-var makeString = require('./helper/makeString');
-var rtrim = require('./rtrim');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
+import { rtrimjs as rtrim_rtrimjsjs } from "./rtrim";
 
-module.exports = function prune(str, length, pruneStr) {
-  str = makeString(str);
+var exportedObject = function prune(str, length, pruneStr) {
+  str = helpermakeString_makeStringjsjs(str);
   length = ~~length;
   pruneStr = pruneStr != null ? String(pruneStr) : '...';
 
@@ -21,7 +16,9 @@ module.exports = function prune(str, length, pruneStr) {
   if (template.slice(template.length - 2).match(/\w\w/))
     template = template.replace(/\s*\S+$/, '');
   else
-    template = rtrim(template.slice(0, template.length - 1));
+    template = rtrim_rtrimjsjs(template.slice(0, template.length - 1));
 
   return (template + pruneStr).length > str.length ? str : str.slice(0, template.length) + pruneStr;
 };
+
+export { exportedObject as prunejs };;

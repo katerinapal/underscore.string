@@ -1,13 +1,14 @@
-var equal = require('assert').equal;
-var decapitalize = require('../decapitalize');
+import assert_assert from "assert";
+import { decapitalizejs as decapitalize_decapitalizejsjs } from "../decapitalize";
+var equal = assert_assert.equal;
 
 
 test('#decapitalize', function() {
-  equal(decapitalize('Fabio'), 'fabio', 'First letter is lower case');
-  equal(decapitalize('FOO'), 'fOO', 'Other letters unchanged');
-  equal(decapitalize(123), '123', 'Non string');
-  equal(decapitalize(''), '', 'Decapitalizing empty string returns empty string');
-  equal(decapitalize(null), '', 'Decapitalizing null returns empty string');
-  equal(decapitalize(undefined), '', 'Decapitalizing undefined returns empty string');
+  equal(decapitalize_decapitalizejsjs('Fabio'), 'fabio', 'First letter is lower case');
+  equal(decapitalize_decapitalizejsjs('FOO'), 'fOO', 'Other letters unchanged');
+  equal(decapitalize_decapitalizejsjs(123), '123', 'Non string');
+  equal(decapitalize_decapitalizejsjs(''), '', 'Decapitalizing empty string returns empty string');
+  equal(decapitalize_decapitalizejsjs(null), '', 'Decapitalizing null returns empty string');
+  equal(decapitalize_decapitalizejsjs(undefined), '', 'Decapitalizing undefined returns empty string');
 });
 

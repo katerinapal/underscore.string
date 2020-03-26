@@ -1,4 +1,4 @@
-var makeString = require('./helper/makeString');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
 
 function getIndent(str) {
   var matches = str.match(/^[\s\\t]*/gm);
@@ -11,8 +11,8 @@ function getIndent(str) {
   return indent;
 }
 
-module.exports = function dedent(str, pattern) {
-  str = makeString(str);
+var exportedObject = function dedent(str, pattern) {
+  str = helpermakeString_makeStringjsjs(str);
   var indent = getIndent(str);
   var reg;
 
@@ -26,3 +26,5 @@ module.exports = function dedent(str, pattern) {
 
   return str.replace(reg, '');
 };
+
+export { exportedObject as dedentjs };;

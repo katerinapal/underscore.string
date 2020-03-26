@@ -1,5 +1,7 @@
-var makeString = require('./helper/makeString');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
 
-module.exports = function chars(str) {
-  return makeString(str).split('');
+var exportedObject = function chars(str) {
+  return helpermakeString_makeStringjsjs(str).split('');
 };
+
+export { exportedObject as charsjs };;

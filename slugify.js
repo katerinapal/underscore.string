@@ -1,7 +1,9 @@
-var trim = require('./trim');
-var dasherize = require('./dasherize');
-var cleanDiacritics = require('./cleanDiacritics');
+import { trimjs as trim_trimjsjs } from "./trim";
+import { dasherizejs as dasherize_dasherizejsjs } from "./dasherize";
+import { cleanDiacriticsjs as cleanDiacritics_cleanDiacriticsjsjs } from "./cleanDiacritics";
 
-module.exports = function slugify(str) {
-  return trim(dasherize(cleanDiacritics(str).replace(/[^\w\s-]/g, '-').toLowerCase()), '-');
+var exportedObject = function slugify(str) {
+  return trim_trimjsjs(dasherize_dasherizejsjs(cleanDiacritics_cleanDiacriticsjsjs(str).replace(/[^\w\s-]/g, '-').toLowerCase()), '-');
 };
+
+export { exportedObject as slugifyjs };;

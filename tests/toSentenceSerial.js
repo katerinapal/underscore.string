@@ -1,10 +1,11 @@
-var equal = require('assert').equal;
-var toSentenceSerial = require('../toSentenceSerial');
+import assert_assert from "assert";
+import { toSentenceSerialjs as toSentenceSerial_toSentenceSerialjsjs } from "../toSentenceSerial";
+var equal = assert_assert.equal;
 
 
 test('#toSentenceSerial', function (){
-  equal(toSentenceSerial(['jQuery']), 'jQuery');
-  equal(toSentenceSerial(['jQuery', 'MooTools']), 'jQuery and MooTools');
-  equal(toSentenceSerial(['jQuery', 'MooTools', 'Prototype']), 'jQuery, MooTools, and Prototype');
+  equal(toSentenceSerial_toSentenceSerialjsjs(['jQuery']), 'jQuery');
+  equal(toSentenceSerial_toSentenceSerialjsjs(['jQuery', 'MooTools']), 'jQuery and MooTools');
+  equal(toSentenceSerial_toSentenceSerialjsjs(['jQuery', 'MooTools', 'Prototype']), 'jQuery, MooTools, and Prototype');
 });
 

@@ -1,6 +1,8 @@
-var makeString = require('./helper/makeString');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
 
-module.exports = function include(str, needle) {
+var exportedObject = function include(str, needle) {
   if (needle === '') return true;
-  return makeString(str).indexOf(needle) !== -1;
+  return helpermakeString_makeStringjsjs(str).indexOf(needle) !== -1;
 };
+
+export { exportedObject as includejs };;
