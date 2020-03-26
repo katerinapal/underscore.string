@@ -1,14 +1,15 @@
-var equal = require('assert').equal;
-var lpad = require('../lpad');
+import assert_assert from "assert";
+import { lpadjs as lpad_lpadjsjs } from "../lpad";
+var equal = assert_assert.equal;
 
 
 test('#lpad', function() {
-  equal(lpad('1', 8), '       1');
-  equal(lpad(1, 8), '       1');
-  equal(lpad('1', 8, '0'), '00000001');
-  equal(lpad('1', 8, '0', 'left'), '00000001');
-  equal(lpad('', 2), '  ');
-  equal(lpad(null, 2), '  ');
-  equal(lpad(undefined, 2), '  ');
+  equal(lpad_lpadjsjs('1', 8), '       1');
+  equal(lpad_lpadjsjs(1, 8), '       1');
+  equal(lpad_lpadjsjs('1', 8, '0'), '00000001');
+  equal(lpad_lpadjsjs('1', 8, '0', 'left'), '00000001');
+  equal(lpad_lpadjsjs('', 2), '  ');
+  equal(lpad_lpadjsjs(null, 2), '  ');
+  equal(lpad_lpadjsjs(undefined, 2), '  ');
 });
 

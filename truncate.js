@@ -1,8 +1,10 @@
-var makeString = require('./helper/makeString');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
 
-module.exports = function truncate(str, length, truncateStr) {
-  str = makeString(str);
+var exportedObject = function truncate(str, length, truncateStr) {
+  str = helpermakeString_makeStringjsjs(str);
   truncateStr = truncateStr || '...';
   length = ~~length;
   return str.length > length ? str.slice(0, length) + truncateStr : str;
 };
+
+export { exportedObject as truncatejs };;

@@ -1,5 +1,6 @@
-var strRight = require('../strRight');
+import { strRightjs as strRight_strRightjsjs } from "../strRight";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  strRight('aaa_bbb_ccc', '_');
+encapsulated_anonymus = function() {
+  strRight_strRightjsjs('aaa_bbb_ccc', '_');
 };

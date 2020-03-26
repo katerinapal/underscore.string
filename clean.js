@@ -1,5 +1,7 @@
-var trim = require('./trim');
+import { trimjs as trim_trimjsjs } from "./trim";
 
-module.exports = function clean(str) {
-  return trim(str).replace(/\s\s+/g, ' ');
+var exportedObject = function clean(str) {
+  return trim_trimjsjs(str).replace(/\s\s+/g, ' ');
 };
+
+export { exportedObject as cleanjs };;
