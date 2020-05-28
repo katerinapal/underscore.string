@@ -1,13 +1,21 @@
-import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
-import { strRepeatjs as helperstrRepeat_strRepeatjsjs } from "./helper/strRepeat";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.repeatjs = undefined;
+
+var _makeString = require("./helper/makeString");
+
+var _strRepeat = require("./helper/strRepeat");
 
 var exportedObject = function repeat(str, qty, separator) {
-  str = helpermakeString_makeStringjsjs(str);
+  str = (0, _makeString.makeStringjs)(str);
 
   qty = ~~qty;
 
   // using faster implementation if separator is not needed;
-  if (separator == null) return helperstrRepeat_strRepeatjsjs(str, qty);
+  if (separator == null) return (0, _strRepeat.strRepeatjs)(str, qty);
 
   // this one is about 300x slower in Google Chrome
   /*eslint no-empty: 0*/
@@ -15,4 +23,4 @@ var exportedObject = function repeat(str, qty, separator) {
   return repeat.join(separator);
 };
 
-export { exportedObject as repeatjs };
+exports.repeatjs = exportedObject;

@@ -1,7 +1,14 @@
-import { adjacentjs as helperadjacent_adjacentjsjs } from "./helper/adjacent";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.predjs = undefined;
+
+var _adjacent = require("./helper/adjacent");
 
 var exportedObject = function succ(str) {
-  return helperadjacent_adjacentjsjs(str, -1);
+  return (0, _adjacent.adjacentjs)(str, -1);
 };
 
-export { exportedObject as predjs };
+exports.predjs = exportedObject;

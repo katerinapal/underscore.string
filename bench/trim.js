@@ -1,16 +1,19 @@
-import { s as index_sjs } from "../";
+'use strict';
+
+var _ = require('../');
+
 var tests = {};
 
-tests['trimNoNative'] = function() {
-  return index_sjs.trim('  foobar  ', ' ');
+tests['trimNoNative'] = function () {
+  return _.s.trim('  foobar  ', ' ');
 };
 
-tests['trim'] = function() {
-  return index_sjs.trim('  foobar  ');
+tests['trim'] = function () {
+  return _.s.trim('  foobar  ');
 };
 
-tests['trim object-oriented'] = function() {
-  return index_sjs('  foobar  ').trim().value();
+tests['trim object-oriented'] = function () {
+  return (0, _.s)('  foobar  ').trim().value();
 };
 
 var trimjs;

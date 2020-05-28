@@ -1,25 +1,30 @@
+"use strict";
 
-import ext_assert_assert from "assert";
-import { cleanDiacriticsjs as cleanDiacritics_cleanDiacriticsjsjs } from "../cleanDiacritics";
-var equal = ext_assert_assert.equal;
+var _assert = require("assert");
 
-var from  = 'ąàáäâãåæăćčĉęèéëêĝĥìíïîĵłľńňòóöőôõðøśșşšŝťțţŭùúüűûñÿýçżźž',
-  to    = 'aaaaaaaaaccceeeeeghiiiijllnnoooooooossssstttuuuuuunyyczzz';
+var _assert2 = _interopRequireDefault(_assert);
 
-test('#cleanDiacritics', function() {
+var _cleanDiacritics = require("../cleanDiacritics");
 
-  equal(cleanDiacritics_cleanDiacriticsjsjs(from), to);
-  equal(cleanDiacritics_cleanDiacriticsjsjs(from.toUpperCase()), to.toUpperCase());
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var equal = _assert2.default.equal;
 
-  equal(cleanDiacritics_cleanDiacriticsjsjs('ä'), 'a');
-  equal(cleanDiacritics_cleanDiacriticsjsjs('Ä Ø'), 'A O');
-  equal(cleanDiacritics_cleanDiacriticsjsjs('1 foo ääkkönen'), '1 foo aakkonen');
-  equal(cleanDiacritics_cleanDiacriticsjsjs('Äöö ÖÖ'), 'Aoo OO');
-  equal(cleanDiacritics_cleanDiacriticsjsjs(' ä '), ' a ');
-  equal(cleanDiacritics_cleanDiacriticsjsjs('- " , £ $ ä'), '- " , £ $ a');
+var from = 'ąàáäâãåæăćčĉęèéëêĝĥìíïîĵłľńňòóöőôõðøśșşšŝťțţŭùúüűûñÿýçżźž',
+    to = 'aaaaaaaaaccceeeeeghiiiijllnnoooooooossssstttuuuuuunyyczzz';
 
-  equal(cleanDiacritics_cleanDiacriticsjsjs('ß'), 'ss');
-  equal(cleanDiacritics_cleanDiacriticsjsjs('Schuß'), 'Schuss');
+test('#cleanDiacritics', function () {
+
+  equal((0, _cleanDiacritics.cleanDiacriticsjs)(from), to);
+  equal((0, _cleanDiacritics.cleanDiacriticsjs)(from.toUpperCase()), to.toUpperCase());
+
+  equal((0, _cleanDiacritics.cleanDiacriticsjs)('ä'), 'a');
+  equal((0, _cleanDiacritics.cleanDiacriticsjs)('Ä Ø'), 'A O');
+  equal((0, _cleanDiacritics.cleanDiacriticsjs)('1 foo ääkkönen'), '1 foo aakkonen');
+  equal((0, _cleanDiacritics.cleanDiacriticsjs)('Äöö ÖÖ'), 'Aoo OO');
+  equal((0, _cleanDiacritics.cleanDiacriticsjs)(' ä '), ' a ');
+  equal((0, _cleanDiacritics.cleanDiacriticsjs)('- " , £ $ ä'), '- " , £ $ a');
+
+  equal((0, _cleanDiacritics.cleanDiacriticsjs)('ß'), 'ss');
+  equal((0, _cleanDiacritics.cleanDiacriticsjs)('Schuß'), 'Schuss');
 });
-

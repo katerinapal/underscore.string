@@ -1,7 +1,14 @@
-import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.stripTagsjs = undefined;
+
+var _makeString = require("./helper/makeString");
 
 var exportedObject = function stripTags(str) {
-  return helpermakeString_makeStringjsjs(str).replace(/<\/?[^>]+>/g, '');
+  return (0, _makeString.makeStringjs)(str).replace(/<\/?[^>]+>/g, '');
 };
 
-export { exportedObject as stripTagsjs };
+exports.stripTagsjs = exportedObject;

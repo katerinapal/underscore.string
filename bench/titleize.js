@@ -1,6 +1,9 @@
-import { titleizejs as titleize_titleizejsjs } from "../titleize";
+"use strict";
+
+var _titleize = require("../titleize");
+
 var encapsulated_anonymus;
 
-encapsulated_anonymus = function() {
-  titleize_titleizejsjs('the titleize string method');
+encapsulated_anonymus = function encapsulated_anonymus() {
+  (0, _titleize.titleizejs)('the titleize string method');
 };

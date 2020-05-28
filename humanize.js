@@ -1,9 +1,18 @@
-import { capitalizejs as capitalize_capitalizejsjs } from "./capitalize";
-import { underscoredjs as underscored_underscoredjsjs } from "./underscored";
-import { trimjs as trim_trimjsjs } from "./trim";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.humanizejs = undefined;
+
+var _capitalize = require("./capitalize");
+
+var _underscored = require("./underscored");
+
+var _trim = require("./trim");
 
 var exportedObject = function humanize(str) {
-  return capitalize_capitalizejsjs(trim_trimjsjs(underscored_underscoredjsjs(str).replace(/_id$/, '').replace(/_/g, ' ')));
+  return (0, _capitalize.capitalizejs)((0, _trim.trimjs)((0, _underscored.underscoredjs)(str).replace(/_id$/, '').replace(/_/g, ' ')));
 };
 
-export { exportedObject as humanizejs };
+exports.humanizejs = exportedObject;
