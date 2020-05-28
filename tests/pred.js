@@ -1,20 +1,21 @@
-var equal = require('assert').equal;
-var deepEqual = require('assert').deepEqual;
-var pred = require('../pred');
+import ext_assert_assert from "assert";
+import { predjs as pred_predjsjs } from "../pred";
+var equal = ext_assert_assert.equal;
+var deepEqual = ext_assert_assert.deepEqual;
 
 
 test('#pred', function(){
-  equal(pred('b'), 'a');
-  equal(pred('B'), 'A');
-  equal(pred(','), '+');
-  equal(pred(2), '1');
-  deepEqual(pred().length, 0);
-  deepEqual(pred('').length, 0);
-  deepEqual(pred(null).length, 0);
-  deepEqual(pred(undefined).length, 0);
-  deepEqual(pred(), '');
-  deepEqual(pred(''), '');
-  deepEqual(pred(null), '');
-  deepEqual(pred(undefined), '');
+  equal(pred_predjsjs('b'), 'a');
+  equal(pred_predjsjs('B'), 'A');
+  equal(pred_predjsjs(','), '+');
+  equal(pred_predjsjs(2), '1');
+  deepEqual(pred_predjsjs().length, 0);
+  deepEqual(pred_predjsjs('').length, 0);
+  deepEqual(pred_predjsjs(null).length, 0);
+  deepEqual(pred_predjsjs(undefined).length, 0);
+  deepEqual(pred_predjsjs(), '');
+  deepEqual(pred_predjsjs(''), '');
+  deepEqual(pred_predjsjs(null), '');
+  deepEqual(pred_predjsjs(undefined), '');
 });
 

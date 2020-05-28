@@ -1,5 +1,7 @@
-var splice = require('./splice');
+import { splicejs as splice_splicejsjs } from "./splice";
 
-module.exports = function insert(str, i, substr) {
-  return splice(str, i, 0, substr);
+var exportedObject = function insert(str, i, substr) {
+  return splice_splicejsjs(str, i, 0, substr);
 };
+
+export { exportedObject as insertjs };

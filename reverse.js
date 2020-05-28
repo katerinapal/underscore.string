@@ -1,5 +1,7 @@
-var chars = require('./chars');
+import { charsjs as chars_charsjsjs } from "./chars";
 
-module.exports = function reverse(str) {
-  return chars(str).reverse().join('');
+var exportedObject = function reverse(str) {
+  return chars_charsjsjs(str).reverse().join('');
 };
+
+export { exportedObject as reversejs };

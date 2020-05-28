@@ -1,5 +1,7 @@
-var makeString = require('./helper/makeString');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
 
-module.exports = function isBlank(str) {
-  return (/^\s*$/).test(makeString(str));
+var exportedObject = function isBlank(str) {
+  return (/^\s*$/).test(helpermakeString_makeStringjsjs(str));
 };
+
+export { exportedObject as isBlankjs };
