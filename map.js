@@ -1,9 +1,11 @@
-var makeString = require('./helper/makeString');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
 
-module.exports = function(str, callback) {
-  str = makeString(str);
+var exportedObject = function(str, callback) {
+  str = helpermakeString_makeStringjsjs(str);
 
   if (str.length === 0 || typeof callback !== 'function') return str;
 
   return str.replace(/./g, callback);
 };
+
+export { exportedObject as mapjs };

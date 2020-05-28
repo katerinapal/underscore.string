@@ -1,10 +1,12 @@
-var escapeRegExp = require('./escapeRegExp');
+import { escapeRegExpjs as escapeRegExp_escapeRegExpjsjs } from "./escapeRegExp";
 
-module.exports = function defaultToWhiteSpace(characters) {
+var exportedObject = function defaultToWhiteSpace(characters) {
   if (characters == null)
     return '\\s';
   else if (characters.source)
     return characters.source;
   else
-    return '[' + escapeRegExp(characters) + ']';
+    return '[' + escapeRegExp_escapeRegExpjsjs(characters) + ']';
 };
+
+export { exportedObject as defaultToWhiteSpacejs };

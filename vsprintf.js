@@ -1,4 +1,7 @@
-var deprecate = require('util-deprecate');
+import ext_utildeprecate_deprecate from "util-deprecate";
+import ext_sprintfjs_sprintfjs from "sprintf-js";
+var vsprintfjs_vsprintfjs;
 
-module.exports = deprecate(require('sprintf-js').vsprintf,
+vsprintfjs_vsprintfjs = ext_utildeprecate_deprecate(ext_sprintfjs_sprintfjs.vsprintf,
   'vsprintf() will be removed in the next major release, use the sprintf-js package instead.');
+export { vsprintfjs_vsprintfjs as vsprintfjs };

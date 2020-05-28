@@ -1,5 +1,6 @@
-var truncate = require('../truncate');
+import { truncatejs as truncate_truncatejsjs } from "../truncate";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  truncate('Hello world', 5);
+encapsulated_anonymus = function() {
+  truncate_truncatejsjs('Hello world', 5);
 };

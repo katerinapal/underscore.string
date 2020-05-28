@@ -1,12 +1,13 @@
-var equal = require('assert').equal;
-var chars = require('../chars');
+import ext_assert_assert from "assert";
+import { charsjs as chars_charsjsjs } from "../chars";
+var equal = ext_assert_assert.equal;
 
 
 test('#chars', function() {
-  equal(chars('Hello').length, 5);
-  equal(chars(123).length, 3);
-  equal(chars('').length, 0);
-  equal(chars(null).length, 0);
-  equal(chars(undefined).length, 0);
+  equal(chars_charsjsjs('Hello').length, 5);
+  equal(chars_charsjsjs(123).length, 3);
+  equal(chars_charsjsjs('').length, 0);
+  equal(chars_charsjsjs(null).length, 0);
+  equal(chars_charsjsjs(undefined).length, 0);
 });
 
