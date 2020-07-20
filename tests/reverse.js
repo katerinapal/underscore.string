@@ -1,16 +1,17 @@
-var equal = require('assert').equal;
-var reverse = require('../reverse');
+import ext_assert_assert from "assert";
+import { reversejs as reverse_reversejsjs } from "../reverse";
+var equal = ext_assert_assert.equal;
 
 
 test('#reverse', function() {
-  equal(reverse('foo'), 'oof' );
-  equal(reverse('foobar'), 'raboof' );
-  equal(reverse('foo bar'), 'rab oof' );
-  equal(reverse('saippuakauppias'), 'saippuakauppias' );
-  equal(reverse(123), '321', 'Non string');
-  equal(reverse(123.45), '54.321', 'Non string');
-  equal(reverse(''), '', 'reversing empty string returns empty string' );
-  equal(reverse(null), '', 'reversing null returns empty string' );
-  equal(reverse(undefined), '', 'reversing undefined returns empty string' );
+  equal(reverse_reversejsjs('foo'), 'oof' );
+  equal(reverse_reversejsjs('foobar'), 'raboof' );
+  equal(reverse_reversejsjs('foo bar'), 'rab oof' );
+  equal(reverse_reversejsjs('saippuakauppias'), 'saippuakauppias' );
+  equal(reverse_reversejsjs(123), '321', 'Non string');
+  equal(reverse_reversejsjs(123.45), '54.321', 'Non string');
+  equal(reverse_reversejsjs(''), '', 'reversing empty string returns empty string' );
+  equal(reverse_reversejsjs(null), '', 'reversing null returns empty string' );
+  equal(reverse_reversejsjs(undefined), '', 'reversing undefined returns empty string' );
 });
 

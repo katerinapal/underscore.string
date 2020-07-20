@@ -1,8 +1,10 @@
-var makeString = require('./helper/makeString');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
 
-module.exports = function replaceAll(str, find, replace, ignorecase) {
+var exportedObject = function replaceAll(str, find, replace, ignorecase) {
   var flags = (ignorecase === true)?'gi':'g';
   var reg = new RegExp(find, flags);
 
-  return makeString(str).replace(reg, replace);
+  return helpermakeString_makeStringjsjs(str).replace(reg, replace);
 };
+
+export { exportedObject as replaceAlljs };

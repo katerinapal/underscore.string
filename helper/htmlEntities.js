@@ -16,4 +16,7 @@ var htmlEntities = {
   apos: '\''
 };
 
-module.exports = htmlEntities;
+var htmlEntities_htmlEntities;
+
+htmlEntities_htmlEntities = htmlEntities;
+export { htmlEntities_htmlEntities as htmlEntities };

@@ -1,11 +1,12 @@
-var equal = require('assert').equal;
-var unquote = require('../unquote');
+import ext_assert_assert from "assert";
+import { unquotejs as unquote_unquotejsjs } from "../unquote";
+var equal = ext_assert_assert.equal;
 
 
 test('#unquote', function(){
-  equal(unquote('"foo"'), 'foo');
-  equal(unquote('""foo""'), '"foo"');
-  equal(unquote('"1"'), '1');
-  equal(unquote('\'foo\'', '\''), 'foo');
+  equal(unquote_unquotejsjs('"foo"'), 'foo');
+  equal(unquote_unquotejsjs('""foo""'), '"foo"');
+  equal(unquote_unquotejsjs('"1"'), '1');
+  equal(unquote_unquotejsjs('\'foo\'', '\''), 'foo');
 });
 

@@ -1,8 +1,8 @@
-var makeString = require('./helper/makeString');
-var strRepeat = require('./helper/strRepeat');
+import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
+import { strRepeatjs as helperstrRepeat_strRepeatjsjs } from "./helper/strRepeat";
 
-module.exports = function pad(str, length, padStr, type) {
-  str = makeString(str);
+var exportedObject = function pad(str, length, padStr, type) {
+  str = helpermakeString_makeStringjsjs(str);
   length = ~~length;
 
   var padlen = 0;
@@ -15,12 +15,14 @@ module.exports = function pad(str, length, padStr, type) {
   switch (type) {
   case 'right':
     padlen = length - str.length;
-    return str + strRepeat(padStr, padlen);
+    return str + helperstrRepeat_strRepeatjsjs(padStr, padlen);
   case 'both':
     padlen = length - str.length;
-    return strRepeat(padStr, Math.ceil(padlen / 2)) + str + strRepeat(padStr, Math.floor(padlen / 2));
+    return helperstrRepeat_strRepeatjsjs(padStr, Math.ceil(padlen / 2)) + str + helperstrRepeat_strRepeatjsjs(padStr, Math.floor(padlen / 2));
   default: // 'left'
     padlen = length - str.length;
-    return strRepeat(padStr, padlen) + str;
+    return helperstrRepeat_strRepeatjsjs(padStr, padlen) + str;
   }
 };
+
+export { exportedObject as padjs };
