@@ -1,66 +1,136 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.s = undefined;
+
+var _isBlank = require("./isBlank");
+
+var _stripTags = require("./stripTags");
+
+var _capitalize = require("./capitalize");
+
+var _decapitalize = require("./decapitalize");
+
+var _chop = require("./chop");
+
+var _trim = require("./trim");
+
+var _clean = require("./clean");
+
+var _cleanDiacritics = require("./cleanDiacritics");
+
+var _count = require("./count");
+
+var _chars = require("./chars");
+
+var _swapCase = require("./swapCase");
+
+var _escapeHTML = require("./escapeHTML");
+
+var _unescapeHTML = require("./unescapeHTML");
+
+var _splice = require("./splice");
+
+var _insert = require("./insert");
+
+var _replaceAll = require("./replaceAll");
+
+var _include = require("./include");
+
+var _join = require("./join");
+
+var _lines = require("./lines");
+
+var _dedent = require("./dedent");
+
+var _reverse = require("./reverse");
+
+var _startsWith = require("./startsWith");
+
+var _endsWith = require("./endsWith");
+
+var _pred = require("./pred");
+
+var _succ = require("./succ");
+
+var _titleize = require("./titleize");
+
+var _camelize = require("./camelize");
+
+var _underscored = require("./underscored");
+
+var _dasherize = require("./dasherize");
+
+var _classify = require("./classify");
+
+var _humanize = require("./humanize");
+
+var _ltrim = require("./ltrim");
+
+var _rtrim = require("./rtrim");
+
+var _truncate = require("./truncate");
+
+var _prune = require("./prune");
+
+var _words = require("./words");
+
+var _pad = require("./pad");
+
+var _lpad = require("./lpad");
+
+var _rpad = require("./rpad");
+
+var _lrpad = require("./lrpad");
+
+var _sprintf = require("./sprintf");
+
+var _vsprintf = require("./vsprintf");
+
+var _toNumber = require("./toNumber");
+
+var _numberFormat = require("./numberFormat");
+
+var _strRight = require("./strRight");
+
+var _strRightBack = require("./strRightBack");
+
+var _strLeft = require("./strLeft");
+
+var _strLeftBack = require("./strLeftBack");
+
+var _toSentence = require("./toSentence");
+
+var _toSentenceSerial = require("./toSentenceSerial");
+
+var _slugify = require("./slugify");
+
+var _surround = require("./surround");
+
+var _quote = require("./quote");
+
+var _unquote = require("./unquote");
+
+var _repeat = require("./repeat");
+
+var _naturalCmp = require("./naturalCmp");
+
+var _levenshtein = require("./levenshtein");
+
+var _toBoolean = require("./toBoolean");
+
+var _exports = require("./exports");
+
+var _escapeRegExp = require("./helper/escapeRegExp");
+
+var _wrap = require("./wrap");
+
+var _map = require("./map");
+
 var index_s = s;
-import { isBlankjs as isBlank_isBlankjsjs } from "./isBlank";
-import { stripTagsjs as stripTags_stripTagsjsjs } from "./stripTags";
-import { capitalizejs as capitalize_capitalizejsjs } from "./capitalize";
-import { decapitalizejs as decapitalize_decapitalizejsjs } from "./decapitalize";
-import { chopjs as chop_chopjsjs } from "./chop";
-import { trimjs as trim_trimjsjs } from "./trim";
-import { cleanjs as clean_cleanjsjs } from "./clean";
-import { cleanDiacriticsjs as cleanDiacritics_cleanDiacriticsjsjs } from "./cleanDiacritics";
-import { countjs as count_countjsjs } from "./count";
-import { charsjs as chars_charsjsjs } from "./chars";
-import { swapCasejs as swapCase_swapCasejsjs } from "./swapCase";
-import { escapeHTMLjs as escapeHTML_escapeHTMLjsjs } from "./escapeHTML";
-import { unescapeHTMLjs as unescapeHTML_unescapeHTMLjsjs } from "./unescapeHTML";
-import { splicejs as splice_splicejsjs } from "./splice";
-import { insertjs as insert_insertjsjs } from "./insert";
-import { replaceAlljs as replaceAll_replaceAlljsjs } from "./replaceAll";
-import { includejs as include_includejsjs } from "./include";
-import { joinjs as join_joinjsjs } from "./join";
-import { linesjs as lines_linesjsjs } from "./lines";
-import { dedentjs as dedent_dedentjsjs } from "./dedent";
-import { reversejs as reverse_reversejsjs } from "./reverse";
-import { startsWithjs as startsWith_startsWithjsjs } from "./startsWith";
-import { endsWithjs as endsWith_endsWithjsjs } from "./endsWith";
-import { predjs as pred_predjsjs } from "./pred";
-import { succjs as succ_succjsjs } from "./succ";
-import { titleizejs as titleize_titleizejsjs } from "./titleize";
-import { camelizejs as camelize_camelizejsjs } from "./camelize";
-import { underscoredjs as underscored_underscoredjsjs } from "./underscored";
-import { dasherizejs as dasherize_dasherizejsjs } from "./dasherize";
-import { classifyjs as classify_classifyjsjs } from "./classify";
-import { humanizejs as humanize_humanizejsjs } from "./humanize";
-import { ltrimjs as ltrim_ltrimjsjs } from "./ltrim";
-import { rtrimjs as rtrim_rtrimjsjs } from "./rtrim";
-import { truncatejs as truncate_truncatejsjs } from "./truncate";
-import { prunejs as prune_prunejsjs } from "./prune";
-import { wordsjs as words_wordsjsjs } from "./words";
-import { padjs as pad_padjsjs } from "./pad";
-import { lpadjs as lpad_lpadjsjs } from "./lpad";
-import { rpadjs as rpad_rpadjsjs } from "./rpad";
-import { lrpadjs as lrpad_lrpadjsjs } from "./lrpad";
-import { sprintfjs as sprintf_sprintfjsjs } from "./sprintf";
-import { vsprintfjs as vsprintf_vsprintfjsjs } from "./vsprintf";
-import { toNumberjs as toNumber_toNumberjsjs } from "./toNumber";
-import { numberFormatjs as numberFormat_numberFormatjsjs } from "./numberFormat";
-import { strRightjs as strRight_strRightjsjs } from "./strRight";
-import { strRightBackjs as strRightBack_strRightBackjsjs } from "./strRightBack";
-import { strLeftjs as strLeft_strLeftjsjs } from "./strLeft";
-import { strLeftBackjs as strLeftBack_strLeftBackjsjs } from "./strLeftBack";
-import { toSentencejs as toSentence_toSentencejsjs } from "./toSentence";
-import { toSentenceSerialjs as toSentenceSerial_toSentenceSerialjsjs } from "./toSentenceSerial";
-import { slugifyjs as slugify_slugifyjsjs } from "./slugify";
-import { surroundjs as surround_surroundjsjs } from "./surround";
-import { quotejs as quote_quotejsjs } from "./quote";
-import { unquotejs as unquote_unquotejsjs } from "./unquote";
-import { repeatjs as repeat_repeatjsjs } from "./repeat";
-import { naturalCmpjs as naturalCmp_naturalCmpjsjs } from "./naturalCmp";
-import { levenshteinjs as levenshtein_levenshteinjsjs } from "./levenshtein";
-import { toBooleanjs as toBoolean_toBooleanjsjs } from "./toBoolean";
-import { exportsjs as exports_exportsjsjs } from "./exports";
-import { escapeRegExpjs as helperescapeRegExp_escapeRegExpjsjs } from "./helper/escapeRegExp";
-import { wrapjs as wrap_wrapjsjs } from "./wrap";
-import { mapjs as map_mapjsjs } from "./map";
+
 /*
 * Underscore.string
 * (c) 2010 Esa-Matti Suuronen <esa-matti aet suuronen dot org>
@@ -81,82 +151,81 @@ function s(value) {
 
 s.VERSION = '3.3.4';
 
-s.isBlank          = isBlank_isBlankjsjs;
-s.stripTags        = stripTags_stripTagsjsjs;
-s.capitalize       = capitalize_capitalizejsjs;
-s.decapitalize     = decapitalize_decapitalizejsjs;
-s.chop             = chop_chopjsjs;
-s.trim             = trim_trimjsjs;
-s.clean            = clean_cleanjsjs;
-s.cleanDiacritics  = cleanDiacritics_cleanDiacriticsjsjs;
-s.count            = count_countjsjs;
-s.chars            = chars_charsjsjs;
-s.swapCase         = swapCase_swapCasejsjs;
-s.escapeHTML       = escapeHTML_escapeHTMLjsjs;
-s.unescapeHTML     = unescapeHTML_unescapeHTMLjsjs;
-s.splice           = splice_splicejsjs;
-s.insert           = insert_insertjsjs;
-s.replaceAll       = replaceAll_replaceAlljsjs;
-s.include          = include_includejsjs;
-s.join             = join_joinjsjs;
-s.lines            = lines_linesjsjs;
-s.dedent           = dedent_dedentjsjs;
-s.reverse          = reverse_reversejsjs;
-s.startsWith       = startsWith_startsWithjsjs;
-s.endsWith         = endsWith_endsWithjsjs;
-s.pred             = pred_predjsjs;
-s.succ             = succ_succjsjs;
-s.titleize         = titleize_titleizejsjs;
-s.camelize         = camelize_camelizejsjs;
-s.underscored      = underscored_underscoredjsjs;
-s.dasherize        = dasherize_dasherizejsjs;
-s.classify         = classify_classifyjsjs;
-s.humanize         = humanize_humanizejsjs;
-s.ltrim            = ltrim_ltrimjsjs;
-s.rtrim            = rtrim_rtrimjsjs;
-s.truncate         = truncate_truncatejsjs;
-s.prune            = prune_prunejsjs;
-s.words            = words_wordsjsjs;
-s.pad              = pad_padjsjs;
-s.lpad             = lpad_lpadjsjs;
-s.rpad             = rpad_rpadjsjs;
-s.lrpad            = lrpad_lrpadjsjs;
-s.sprintf          = sprintf_sprintfjsjs;
-s.vsprintf         = vsprintf_vsprintfjsjs;
-s.toNumber         = toNumber_toNumberjsjs;
-s.numberFormat     = numberFormat_numberFormatjsjs;
-s.strRight         = strRight_strRightjsjs;
-s.strRightBack     = strRightBack_strRightBackjsjs;
-s.strLeft          = strLeft_strLeftjsjs;
-s.strLeftBack      = strLeftBack_strLeftBackjsjs;
-s.toSentence       = toSentence_toSentencejsjs;
-s.toSentenceSerial = toSentenceSerial_toSentenceSerialjsjs;
-s.slugify          = slugify_slugifyjsjs;
-s.surround         = surround_surroundjsjs;
-s.quote            = quote_quotejsjs;
-s.unquote          = unquote_unquotejsjs;
-s.repeat           = repeat_repeatjsjs;
-s.naturalCmp       = naturalCmp_naturalCmpjsjs;
-s.levenshtein      = levenshtein_levenshteinjsjs;
-s.toBoolean        = toBoolean_toBooleanjsjs;
-s.exports          = exports_exportsjsjs;
-s.escapeRegExp     = helperescapeRegExp_escapeRegExpjsjs;
-s.wrap             = wrap_wrapjsjs;
-s.map              = map_mapjsjs;
+s.isBlank = _isBlank.isBlankjs;
+s.stripTags = _stripTags.stripTagsjs;
+s.capitalize = _capitalize.capitalizejs;
+s.decapitalize = _decapitalize.decapitalizejs;
+s.chop = _chop.chopjs;
+s.trim = _trim.trimjs;
+s.clean = _clean.cleanjs;
+s.cleanDiacritics = _cleanDiacritics.cleanDiacriticsjs;
+s.count = _count.countjs;
+s.chars = _chars.charsjs;
+s.swapCase = _swapCase.swapCasejs;
+s.escapeHTML = _escapeHTML.escapeHTMLjs;
+s.unescapeHTML = _unescapeHTML.unescapeHTMLjs;
+s.splice = _splice.splicejs;
+s.insert = _insert.insertjs;
+s.replaceAll = _replaceAll.replaceAlljs;
+s.include = _include.includejs;
+s.join = _join.joinjs;
+s.lines = _lines.linesjs;
+s.dedent = _dedent.dedentjs;
+s.reverse = _reverse.reversejs;
+s.startsWith = _startsWith.startsWithjs;
+s.endsWith = _endsWith.endsWithjs;
+s.pred = _pred.predjs;
+s.succ = _succ.succjs;
+s.titleize = _titleize.titleizejs;
+s.camelize = _camelize.camelizejs;
+s.underscored = _underscored.underscoredjs;
+s.dasherize = _dasherize.dasherizejs;
+s.classify = _classify.classifyjs;
+s.humanize = _humanize.humanizejs;
+s.ltrim = _ltrim.ltrimjs;
+s.rtrim = _rtrim.rtrimjs;
+s.truncate = _truncate.truncatejs;
+s.prune = _prune.prunejs;
+s.words = _words.wordsjs;
+s.pad = _pad.padjs;
+s.lpad = _lpad.lpadjs;
+s.rpad = _rpad.rpadjs;
+s.lrpad = _lrpad.lrpadjs;
+s.sprintf = _sprintf.sprintfjs;
+s.vsprintf = _vsprintf.vsprintfjs;
+s.toNumber = _toNumber.toNumberjs;
+s.numberFormat = _numberFormat.numberFormatjs;
+s.strRight = _strRight.strRightjs;
+s.strRightBack = _strRightBack.strRightBackjs;
+s.strLeft = _strLeft.strLeftjs;
+s.strLeftBack = _strLeftBack.strLeftBackjs;
+s.toSentence = _toSentence.toSentencejs;
+s.toSentenceSerial = _toSentenceSerial.toSentenceSerialjs;
+s.slugify = _slugify.slugifyjs;
+s.surround = _surround.surroundjs;
+s.quote = _quote.quotejs;
+s.unquote = _unquote.unquotejs;
+s.repeat = _repeat.repeatjs;
+s.naturalCmp = _naturalCmp.naturalCmpjs;
+s.levenshtein = _levenshtein.levenshteinjs;
+s.toBoolean = _toBoolean.toBooleanjs;
+s.exports = _exports.exportsjs;
+s.escapeRegExp = _escapeRegExp.escapeRegExpjs;
+s.wrap = _wrap.wrapjs;
+s.map = _map.mapjs;
 
 // Aliases
-s.strip     = s.trim;
-s.lstrip    = s.ltrim;
-s.rstrip    = s.rtrim;
-s.center    = s.lrpad;
-s.rjust     = s.lpad;
-s.ljust     = s.rpad;
-s.contains  = s.include;
-s.q         = s.quote;
-s.toBool    = s.toBoolean;
+s.strip = s.trim;
+s.lstrip = s.ltrim;
+s.rstrip = s.rtrim;
+s.center = s.lrpad;
+s.rjust = s.lpad;
+s.ljust = s.rpad;
+s.contains = s.include;
+s.q = s.quote;
+s.toBool = s.toBoolean;
 s.camelcase = s.camelize;
-s.mapChars  = s.map;
-
+s.mapChars = s.map;
 
 // Implement chaining
 s.prototype = {
@@ -167,7 +236,7 @@ s.prototype = {
 
 function fn2method(key, fn) {
   if (typeof fn !== 'function') return;
-  s.prototype[key] = function() {
+  s.prototype[key] = function () {
     var args = [this._wrapped].concat(Array.prototype.slice.call(arguments));
     var res = fn.apply(null, args);
     // if the result is non-string stop the chain and return the value
@@ -176,31 +245,21 @@ function fn2method(key, fn) {
 }
 
 // Copy functions to instance methods for chaining
-for (var key in s) fn2method(key, s[key]);
-
-fn2method('tap', function tap(string, fn) {
+for (var key in s) {
+  fn2method(key, s[key]);
+}fn2method('tap', function tap(string, fn) {
   return fn(string);
 });
 
 function prototype2method(methodName) {
-  fn2method(methodName, function(context) {
+  fn2method(methodName, function (context) {
     var args = Array.prototype.slice.call(arguments, 1);
     return String.prototype[methodName].apply(context, args);
   });
 }
 
-var prototypeMethods = [
-  'toUpperCase',
-  'toLowerCase',
-  'split',
-  'replace',
-  'slice',
-  'substring',
-  'substr',
-  'concat'
-];
+var prototypeMethods = ['toUpperCase', 'toLowerCase', 'split', 'replace', 'slice', 'substring', 'substr', 'concat'];
 
-for (var method in prototypeMethods) prototype2method(prototypeMethods[method]);
-
-
-export { index_s as s };
+for (var method in prototypeMethods) {
+  prototype2method(prototypeMethods[method]);
+}exports.s = index_s;

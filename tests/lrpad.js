@@ -1,17 +1,23 @@
-import ext_assert_assert from "assert";
-import { lrpadjs as lrpad_lrpadjsjs } from "../lrpad";
-var equal = ext_assert_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#lrpad', function() {
-  equal(lrpad_lrpadjsjs('1', 8), '    1   ');
-  equal(lrpad_lrpadjsjs(1, 8), '    1   ');
-  equal(lrpad_lrpadjsjs('1', 8, '0'), '00001000');
-  equal(lrpad_lrpadjsjs('foo', 8, '0'), '000foo00');
-  equal(lrpad_lrpadjsjs('foo', 7, '0'), '00foo00');
-  equal(lrpad_lrpadjsjs('foo', 7, '!@$%dofjrofj'), '!!foo!!');
-  equal(lrpad_lrpadjsjs('', 2), '  ');
-  equal(lrpad_lrpadjsjs(null, 2), '  ');
-  equal(lrpad_lrpadjsjs(undefined, 2), '  ');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _lrpad = require("../lrpad");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#lrpad', function () {
+  equal((0, _lrpad.lrpadjs)('1', 8), '    1   ');
+  equal((0, _lrpad.lrpadjs)(1, 8), '    1   ');
+  equal((0, _lrpad.lrpadjs)('1', 8, '0'), '00001000');
+  equal((0, _lrpad.lrpadjs)('foo', 8, '0'), '000foo00');
+  equal((0, _lrpad.lrpadjs)('foo', 7, '0'), '00foo00');
+  equal((0, _lrpad.lrpadjs)('foo', 7, '!@$%dofjrofj'), '!!foo!!');
+  equal((0, _lrpad.lrpadjs)('', 2), '  ');
+  equal((0, _lrpad.lrpadjs)(null, 2), '  ');
+  equal((0, _lrpad.lrpadjs)(undefined, 2), '  ');
 });
-

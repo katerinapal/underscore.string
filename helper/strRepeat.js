@@ -1,4 +1,9 @@
-var exportedObject = function strRepeat(str, qty){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var exportedObject = function strRepeat(str, qty) {
   if (qty < 1) return '';
   var result = '';
   while (qty > 0) {
@@ -8,4 +13,4 @@ var exportedObject = function strRepeat(str, qty){
   return result;
 };
 
-export { exportedObject as strRepeatjs };
+exports.strRepeatjs = exportedObject;

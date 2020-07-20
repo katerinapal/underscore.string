@@ -1,7 +1,14 @@
-import { trimjs as trim_trimjsjs } from "./trim";
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.dasherizejs = undefined;
+
+var _trim = require('./trim');
 
 var exportedObject = function dasherize(str) {
-  return trim_trimjsjs(str).replace(/([A-Z])/g, '-$1').replace(/[-_\s]+/g, '-').toLowerCase();
+  return (0, _trim.trimjs)(str).replace(/([A-Z])/g, '-$1').replace(/[-_\s]+/g, '-').toLowerCase();
 };
 
-export { exportedObject as dasherizejs };
+exports.dasherizejs = exportedObject;

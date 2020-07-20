@@ -1,8 +1,15 @@
-import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.decapitalizejs = undefined;
+
+var _makeString = require("./helper/makeString");
 
 var exportedObject = function decapitalize(str) {
-  str = helpermakeString_makeStringjsjs(str);
+  str = (0, _makeString.makeStringjs)(str);
   return str.charAt(0).toLowerCase() + str.slice(1);
 };
 
-export { exportedObject as decapitalizejs };
+exports.decapitalizejs = exportedObject;

@@ -1,12 +1,21 @@
-import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
-import { defaultToWhiteSpacejs as helperdefaultToWhiteSpace_defaultToWhiteSpacejsjs } from "./helper/defaultToWhiteSpace";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ltrimjs = undefined;
+
+var _makeString = require("./helper/makeString");
+
+var _defaultToWhiteSpace = require("./helper/defaultToWhiteSpace");
+
 var nativeTrimLeft = String.prototype.trimLeft;
 
 var exportedObject = function ltrim(str, characters) {
-  str = helpermakeString_makeStringjsjs(str);
+  str = (0, _makeString.makeStringjs)(str);
   if (!characters && nativeTrimLeft) return nativeTrimLeft.call(str);
-  characters = helperdefaultToWhiteSpace_defaultToWhiteSpacejsjs(characters);
+  characters = (0, _defaultToWhiteSpace.defaultToWhiteSpacejs)(characters);
   return str.replace(new RegExp('^' + characters + '+'), '');
 };
 
-export { exportedObject as ltrimjs };
+exports.ltrimjs = exportedObject;

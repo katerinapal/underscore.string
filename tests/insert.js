@@ -1,16 +1,22 @@
-import ext_assert_assert from "assert";
-import { insertjs as insert_insertjsjs } from "../insert";
-var equal = ext_assert_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#insert', function(){
-  equal(insert_insertjsjs('Hello ', 6, 'Jessy'), 'Hello Jessy');
-  equal(insert_insertjsjs('Hello', 0, 'Jessy '), 'Jessy Hello');
-  equal(insert_insertjsjs('Hello ', 100, 'Jessy'), 'Hello Jessy');
-  equal(insert_insertjsjs('', 100, 'Jessy'), 'Jessy');
-  equal(insert_insertjsjs(null, 100, 'Jessy'), 'Jessy');
-  equal(insert_insertjsjs(undefined, 100, 'Jessy'), 'Jessy');
-  equal(insert_insertjsjs(12345, 5, 'Jessy'), '12345Jessy');
-  equal(insert_insertjsjs(12345, 3, 'Jessy'), '123Jessy45');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _insert = require("../insert");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#insert', function () {
+  equal((0, _insert.insertjs)('Hello ', 6, 'Jessy'), 'Hello Jessy');
+  equal((0, _insert.insertjs)('Hello', 0, 'Jessy '), 'Jessy Hello');
+  equal((0, _insert.insertjs)('Hello ', 100, 'Jessy'), 'Hello Jessy');
+  equal((0, _insert.insertjs)('', 100, 'Jessy'), 'Jessy');
+  equal((0, _insert.insertjs)(null, 100, 'Jessy'), 'Jessy');
+  equal((0, _insert.insertjs)(undefined, 100, 'Jessy'), 'Jessy');
+  equal((0, _insert.insertjs)(12345, 5, 'Jessy'), '12345Jessy');
+  equal((0, _insert.insertjs)(12345, 3, 'Jessy'), '123Jessy45');
 });
-
