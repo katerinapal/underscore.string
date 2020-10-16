@@ -1,7 +1,20 @@
-import ext_utildeprecate_deprecate from "util-deprecate";
-import ext_sprintfjs_sprintfjs from "sprintf-js";
+"use strict";
 
-sprintfjs_sprintfjs = ext_utildeprecate_deprecate(ext_sprintfjs_sprintfjs.sprintf,
-  'sprintf() will be removed in the next major release, use the sprintf-js package instead.');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.sprintfjs = undefined;
+
+var _utilDeprecate = require("util-deprecate");
+
+var _utilDeprecate2 = _interopRequireDefault(_utilDeprecate);
+
+var _sprintfJs = require("sprintf-js");
+
+var _sprintfJs2 = _interopRequireDefault(_sprintfJs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.sprintfjs = sprintfjs_sprintfjs = (0, _utilDeprecate2.default)(_sprintfJs2.default.sprintf, 'sprintf() will be removed in the next major release, use the sprintf-js package instead.');
 var sprintfjs_sprintfjs;
-export { sprintfjs_sprintfjs as sprintfjs };
+exports.sprintfjs = sprintfjs_sprintfjs;

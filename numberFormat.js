@@ -1,3 +1,8 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var exportedObject = function numberFormat(number, dec, dsep, tsep) {
   if (isNaN(number) || number == null) return '';
 
@@ -5,10 +10,10 @@ var exportedObject = function numberFormat(number, dec, dsep, tsep) {
   tsep = typeof tsep == 'string' ? tsep : ',';
 
   var parts = number.split('.'),
-    fnums = parts[0],
-    decimals = parts[1] ? (dsep || '.') + parts[1] : '';
+      fnums = parts[0],
+      decimals = parts[1] ? (dsep || '.') + parts[1] : '';
 
   return fnums.replace(/(\d)(?=(?:\d{3})+$)/g, '$1' + tsep) + decimals;
 };
 
-export { exportedObject as numberFormatjs };
+exports.numberFormatjs = exportedObject;

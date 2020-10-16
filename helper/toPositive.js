@@ -1,5 +1,10 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var exportedObject = function toPositive(number) {
-  return number < 0 ? 0 : (+number || 0);
+  return number < 0 ? 0 : +number || 0;
 };
 
-export { exportedObject as toPositivejs };
+exports.toPositivejs = exportedObject;

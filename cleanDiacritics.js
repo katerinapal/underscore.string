@@ -1,8 +1,14 @@
+'use strict';
 
-import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.cleanDiacriticsjs = undefined;
 
-var from  = 'ąàáäâãåæăćčĉęèéëêĝĥìíïîĵłľńňòóöőôõðøśșşšŝťțţŭùúüűûñÿýçżźž',
-  to    = 'aaaaaaaaaccceeeeeghiiiijllnnoooooooossssstttuuuuuunyyczzz';
+var _makeString = require('./helper/makeString');
+
+var from = 'ąàáäâãåæăćčĉęèéëêĝĥìíïîĵłľńňòóöőôõðøśșşšŝťțţŭùúüűûñÿýçżźž',
+    to = 'aaaaaaaaaccceeeeeghiiiijllnnoooooooossssstttuuuuuunyyczzz';
 
 from += from.toUpperCase();
 to += to.toUpperCase();
@@ -13,12 +19,11 @@ to = to.split('');
 from += 'ß';
 to.push('ss');
 
-
 var exportedObject = function cleanDiacritics(str) {
-  return helpermakeString_makeStringjsjs(str).replace(/.{1}/g, function(c){
+  return (0, _makeString.makeStringjs)(str).replace(/.{1}/g, function (c) {
     var index = from.indexOf(c);
     return index === -1 ? c : to[index];
   });
 };
 
-export { exportedObject as cleanDiacriticsjs };
+exports.cleanDiacriticsjs = exportedObject;

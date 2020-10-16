@@ -1,16 +1,24 @@
-import { trimjs as trim_trimjsjs } from "./trim";
-import { decapitalizejs as decapitalize_decapitalizejsjs } from "./decapitalize";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.camelizejs = undefined;
+
+var _trim = require("./trim");
+
+var _decapitalize = require("./decapitalize");
 
 var exportedObject = function camelize(str, decapitalize) {
-  str = trim_trimjsjs(str).replace(/[-_\s]+(.)?/g, function(match, c) {
+  str = (0, _trim.trimjs)(str).replace(/[-_\s]+(.)?/g, function (match, c) {
     return c ? c.toUpperCase() : '';
   });
 
   if (decapitalize === true) {
-    return decapitalize_decapitalizejsjs(str);
+    return (0, _decapitalize.decapitalizejs)(str);
   } else {
     return str;
   }
 };
 
-export { exportedObject as camelizejs };
+exports.camelizejs = exportedObject;

@@ -1,11 +1,17 @@
-import ext_assert_assert from "assert";
-import { toSentenceSerialjs as toSentenceSerial_toSentenceSerialjsjs } from "../toSentenceSerial";
-var equal = ext_assert_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#toSentenceSerial', function (){
-  equal(toSentenceSerial_toSentenceSerialjsjs(['jQuery']), 'jQuery');
-  equal(toSentenceSerial_toSentenceSerialjsjs(['jQuery', 'MooTools']), 'jQuery and MooTools');
-  equal(toSentenceSerial_toSentenceSerialjsjs(['jQuery', 'MooTools', 'Prototype']), 'jQuery, MooTools, and Prototype');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _toSentenceSerial = require("../toSentenceSerial");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#toSentenceSerial', function () {
+  equal((0, _toSentenceSerial.toSentenceSerialjs)(['jQuery']), 'jQuery');
+  equal((0, _toSentenceSerial.toSentenceSerialjs)(['jQuery', 'MooTools']), 'jQuery and MooTools');
+  equal((0, _toSentenceSerial.toSentenceSerialjs)(['jQuery', 'MooTools', 'Prototype']), 'jQuery, MooTools, and Prototype');
 });
-

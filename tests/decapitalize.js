@@ -1,14 +1,20 @@
-import ext_assert_assert from "assert";
-import { decapitalizejs as decapitalize_decapitalizejsjs } from "../decapitalize";
-var equal = ext_assert_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#decapitalize', function() {
-  equal(decapitalize_decapitalizejsjs('Fabio'), 'fabio', 'First letter is lower case');
-  equal(decapitalize_decapitalizejsjs('FOO'), 'fOO', 'Other letters unchanged');
-  equal(decapitalize_decapitalizejsjs(123), '123', 'Non string');
-  equal(decapitalize_decapitalizejsjs(''), '', 'Decapitalizing empty string returns empty string');
-  equal(decapitalize_decapitalizejsjs(null), '', 'Decapitalizing null returns empty string');
-  equal(decapitalize_decapitalizejsjs(undefined), '', 'Decapitalizing undefined returns empty string');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _decapitalize = require("../decapitalize");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#decapitalize', function () {
+  equal((0, _decapitalize.decapitalizejs)('Fabio'), 'fabio', 'First letter is lower case');
+  equal((0, _decapitalize.decapitalizejs)('FOO'), 'fOO', 'Other letters unchanged');
+  equal((0, _decapitalize.decapitalizejs)(123), '123', 'Non string');
+  equal((0, _decapitalize.decapitalizejs)(''), '', 'Decapitalizing empty string returns empty string');
+  equal((0, _decapitalize.decapitalizejs)(null), '', 'Decapitalizing null returns empty string');
+  equal((0, _decapitalize.decapitalizejs)(undefined), '', 'Decapitalizing undefined returns empty string');
 });
-

@@ -1,9 +1,16 @@
-import { makeStringjs as helpermakeString_makeStringjsjs } from "./helper/makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.titleizejs = undefined;
+
+var _makeString = require("./helper/makeString");
 
 var exportedObject = function titleize(str) {
-  return helpermakeString_makeStringjsjs(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function(c) {
+  return (0, _makeString.makeStringjs)(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function (c) {
     return c.toUpperCase();
   });
 };
 
-export { exportedObject as titleizejs };
+exports.titleizejs = exportedObject;
