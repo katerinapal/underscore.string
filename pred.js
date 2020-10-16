@@ -1,5 +1,7 @@
-var adjacent = require('./helper/adjacent');
+import { adjacentjs as helperadjacent_adjacentjsjs } from "./helper/adjacent";
 
-module.exports = function succ(str) {
-  return adjacent(str, -1);
+var exportedObject = function succ(str) {
+  return helperadjacent_adjacentjsjs(str, -1);
 };
+
+export { exportedObject as predjs };

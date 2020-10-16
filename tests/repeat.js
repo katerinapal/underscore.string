@@ -1,16 +1,17 @@
-var equal = require('assert').equal;
-var repeat = require('../repeat');
+import ext_assert_assert from "assert";
+import { repeatjs as repeat_repeatjsjs } from "../repeat";
+var equal = ext_assert_assert.equal;
 
 
 test('#repeat', function() {
-  equal(repeat('foo'), '');
-  equal(repeat('foo', 3), 'foofoofoo');
-  equal(repeat('foo', '3'), 'foofoofoo');
-  equal(repeat(123, 2), '123123');
-  equal(repeat(1234, 2, '*'), '1234*1234');
-  equal(repeat(1234, 2, 5), '123451234');
-  equal(repeat('', 2), '');
-  equal(repeat(null, 2), '');
-  equal(repeat(undefined, 2), '');
+  equal(repeat_repeatjsjs('foo'), '');
+  equal(repeat_repeatjsjs('foo', 3), 'foofoofoo');
+  equal(repeat_repeatjsjs('foo', '3'), 'foofoofoo');
+  equal(repeat_repeatjsjs(123, 2), '123123');
+  equal(repeat_repeatjsjs(1234, 2, '*'), '1234*1234');
+  equal(repeat_repeatjsjs(1234, 2, 5), '123451234');
+  equal(repeat_repeatjsjs('', 2), '');
+  equal(repeat_repeatjsjs(null, 2), '');
+  equal(repeat_repeatjsjs(undefined, 2), '');
 });
 

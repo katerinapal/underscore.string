@@ -1,5 +1,7 @@
-var toSentence = require('./toSentence');
+import { toSentencejs as toSentence_toSentencejsjs } from "./toSentence";
 
-module.exports = function toSentenceSerial(array, sep, lastSep) {
-  return toSentence(array, sep, lastSep, true);
+var exportedObject = function toSentenceSerial(array, sep, lastSep) {
+  return toSentence_toSentencejsjs(array, sep, lastSep, true);
 };
+
+export { exportedObject as toSentenceSerialjs };

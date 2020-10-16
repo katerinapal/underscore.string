@@ -1,5 +1,6 @@
-var endsWith = require('../endsWith');
+import { endsWithjs as endsWith_endsWithjsjs } from "../endsWith";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  endsWith('foobar', 'xx');
+encapsulated_anonymus = function() {
+  endsWith_endsWithjsjs('foobar', 'xx');
 };

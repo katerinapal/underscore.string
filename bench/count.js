@@ -1,5 +1,6 @@
-var count = require('../count');
+import { countjs as count_countjsjs } from "../count";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  count('Hello worls', 'l');
+encapsulated_anonymus = function() {
+  count_countjsjs('Hello worls', 'l');
 };

@@ -1,15 +1,16 @@
-var ok = require('assert').ok;
-var include = require('../include');
-var s = require('../');
+import ext_assert_assert from "assert";
+import { includejs as include_includejsjs } from "../include";
+import { s as index_sjs } from "../";
+var ok = ext_assert_assert.ok;
 
 
 test('#include', function() {
-  ok(include('foobar', 'bar'), 'foobar includes bar');
-  ok(!include('foobar', 'buzz'), 'foobar does not includes buzz');
-  ok(include(12345, 34), '12345 includes 34');
-  ok(!s.contains(12345, 6), '12345 does not include 6');
-  ok(!include('', 34), 'empty string includes 34');
-  ok(!include(null, 34), 'null includes 34');
-  ok(include(null, ''), 'null includes empty string');
+  ok(include_includejsjs('foobar', 'bar'), 'foobar includes bar');
+  ok(!include_includejsjs('foobar', 'buzz'), 'foobar does not includes buzz');
+  ok(include_includejsjs(12345, 34), '12345 includes 34');
+  ok(!index_sjs.contains(12345, 6), '12345 does not include 6');
+  ok(!include_includejsjs('', 34), 'empty string includes 34');
+  ok(!include_includejsjs(null, 34), 'null includes 34');
+  ok(include_includejsjs(null, ''), 'null includes empty string');
 });
 
