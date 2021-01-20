@@ -1,8 +1,10 @@
-var makeString = require('./helper/makeString');
+import { makeString as makeString_makeString } from "./helper/makeString";
 
-module.exports = function strLeftBack(str, sep) {
-  str = makeString(str);
-  sep = makeString(sep);
+var mod_anonymus = function strLeftBack(str, sep) {
+  str = makeString_makeString(str);
+  sep = makeString_makeString(sep);
   var pos = str.lastIndexOf(sep);
   return~ pos ? str.slice(0, pos) : str;
 };
+
+export { mod_anonymus as strLeftBack };

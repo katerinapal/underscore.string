@@ -1,5 +1,6 @@
-var reverse = require('../reverse');
+import { reverse as reverse_reverse } from "../reverse";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  reverse('Hello World');
+encapsulated_anonymus = function() {
+  reverse_reverse('Hello World');
 };

@@ -1,16 +1,17 @@
-var equal = require('assert').equal;
-var lrpad = require('../lrpad');
+import ext_assert from "assert";
+import { lrpad as lrpad_lrpad } from "../lrpad";
+var equal = ext_assert.equal;
 
 
 test('#lrpad', function() {
-  equal(lrpad('1', 8), '    1   ');
-  equal(lrpad(1, 8), '    1   ');
-  equal(lrpad('1', 8, '0'), '00001000');
-  equal(lrpad('foo', 8, '0'), '000foo00');
-  equal(lrpad('foo', 7, '0'), '00foo00');
-  equal(lrpad('foo', 7, '!@$%dofjrofj'), '!!foo!!');
-  equal(lrpad('', 2), '  ');
-  equal(lrpad(null, 2), '  ');
-  equal(lrpad(undefined, 2), '  ');
+  equal(lrpad_lrpad('1', 8), '    1   ');
+  equal(lrpad_lrpad(1, 8), '    1   ');
+  equal(lrpad_lrpad('1', 8, '0'), '00001000');
+  equal(lrpad_lrpad('foo', 8, '0'), '000foo00');
+  equal(lrpad_lrpad('foo', 7, '0'), '00foo00');
+  equal(lrpad_lrpad('foo', 7, '!@$%dofjrofj'), '!!foo!!');
+  equal(lrpad_lrpad('', 2), '  ');
+  equal(lrpad_lrpad(null, 2), '  ');
+  equal(lrpad_lrpad(undefined, 2), '  ');
 });
 

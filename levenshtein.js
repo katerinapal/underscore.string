@@ -1,12 +1,9 @@
-var makeString = require('./helper/makeString');
+import { makeString as makeString_makeString } from "./helper/makeString";
 
-/**
- * Based on the implementation here: https://github.com/hiddentao/fast-levenshtein
- */
-module.exports = function levenshtein(str1, str2) {
+var mod_anonymus = function levenshtein(str1, str2) {
   'use strict';
-  str1 = makeString(str1);
-  str2 = makeString(str2);
+  str1 = makeString_makeString(str1);
+  str2 = makeString_makeString(str2);
 
   // Short cut cases  
   if (str1 === str2) return 0;
@@ -50,3 +47,8 @@ module.exports = function levenshtein(str1, str2) {
 
   return nextCol;
 };
+
+/**
+ * Based on the implementation here: https://github.com/hiddentao/fast-levenshtein
+ */
+export { mod_anonymus as levenshtein };

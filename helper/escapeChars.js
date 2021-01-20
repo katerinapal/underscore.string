@@ -16,4 +16,7 @@ var escapeChars = {
   '\'' : '#39'
 };
 
-module.exports = escapeChars;
+var mod_escapeChars;
+
+mod_escapeChars = escapeChars;
+export { mod_escapeChars as escapeChars };

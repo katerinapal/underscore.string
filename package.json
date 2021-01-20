@@ -1,72 +1,152 @@
 {
-  "name": "underscore.string",
-  "version": "3.3.4",
-  "description": "String manipulation extensions for Underscore.js javascript library.",
-  "homepage": "http://epeli.github.com/underscore.string/",
-  "contributors": [
-    "Esa-Matti Suuronen <esa-matti@suuronen.org> (http://esa-matti.suuronen.org/)",
-    "Edward Tsech <edtsech@gmail.com>",
-    "Pavel Pravosud <pavel@pravosud.com> (<https://github.com/rwz>)",
-    "Sasha Koss <kossnocorp@gmail.com> (http://koss.nocorp.me/)",
-    "Vladimir Dronnikov <dronnikov@gmail.com>",
-    "Pete Kruckenberg (<https://github.com/kruckenb>)",
-    "Paul Chavard <paul@chavard.net> (<http://tchak.net>)",
-    "Ed Finkler <coj@funkatron.com> (<http://funkatron.com>)",
-    "Christoph Hermann <schtoeffel@gmail.com> (<https://github.com/stoeffel>)"
-  ],
-  "keywords": [
-    "underscore",
-    "string"
-  ],
-  "main": "./index.js",
-  "directories": {
-    "lib": "./"
-  },
-  "engines": {
-    "node": "*"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/epeli/underscore.string.git"
-  },
-  "bugs": {
-    "url": "https://github.com/epeli/underscore.string/issues"
-  },
-  "license": "MIT",
-  "scripts": {
-    "test": "npm run test:unit && npm run coverage",
-    "test:unit": "mocha --ui=qunit tests",
-    "test:lint": "eslint -c .eslintrc .",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha  -- --report=lcov --ui=qunit tests",
-    "build": "npm run build:clean && npm run build:bundle && npm run build:min",
-    "build:clean": "rm -rf dist",
-    "build:bundle": "mkdir dist && browserify index.js -o dist/underscore.string.js -p browserify-header -s s",
-    "build:min": "uglifyjs dist/underscore.string.js -o dist/underscore.string.min.js --comments",
-    "release": "npm test && npm run release:version && npm run build && npm run release:push",
-    "release:version": "node scripts/bump-version.js",
-    "release:push": "node scripts/push-tags.js"
-  },
-  "devDependencies": {
-    "browserify": "^13.0.0",
-    "browserify-header": "^0.9.2",
-    "eslint": "^1.10.3",
-    "istanbul": "^0.4.2",
-    "mocha": "^2.1.0",
-    "mocha-lcov-reporter": "^1.0.0",
-    "replace": "^0.3.0",
-    "uglifyjs": "^2.4.10",
-    "underscore": "^1.7.0"
-  },
-  "jshintConfig": {
-    "node": true,
-    "browser": true,
-    "qunit": true,
-    "globals": {
-      "s": true
+    "name": "underscore.string",
+    "version": "3.3.4",
+    "description": "String manipulation extensions for Underscore.js javascript library.",
+    "homepage": "http://epeli.github.com/underscore.string/",
+    "contributors": [
+        "Esa-Matti Suuronen <esa-matti@suuronen.org> (http://esa-matti.suuronen.org/)",
+        "Edward Tsech <edtsech@gmail.com>",
+        "Pavel Pravosud <pavel@pravosud.com> (<https://github.com/rwz>)",
+        "Sasha Koss <kossnocorp@gmail.com> (http://koss.nocorp.me/)",
+        "Vladimir Dronnikov <dronnikov@gmail.com>",
+        "Pete Kruckenberg (<https://github.com/kruckenb>)",
+        "Paul Chavard <paul@chavard.net> (<http://tchak.net>)",
+        "Ed Finkler <coj@funkatron.com> (<http://funkatron.com>)",
+        "Christoph Hermann <schtoeffel@gmail.com> (<https://github.com/stoeffel>)"
+    ],
+    "keywords": [
+        "underscore",
+        "string"
+    ],
+    "main": "./index.js",
+    "directories": {
+        "lib": "./"
+    },
+    "engines": {
+        "node": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/epeli/underscore.string.git"
+    },
+    "bugs": {
+        "url": "https://github.com/epeli/underscore.string/issues"
+    },
+    "license": "MIT",
+    "scripts": {
+        "test": "npm run test:unit && npm run coverage",
+        "test:unit": "mocha --ui=qunit tests",
+        "test:lint": "eslint -c .eslintrc .",
+        "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha  -- --report=lcov --ui=qunit tests",
+        "build": "npm run build:clean && npm run build:bundle && npm run build:min",
+        "build:clean": "rm -rf dist",
+        "build:bundle": "mkdir dist && browserify index.js -o dist/underscore.string.js -p browserify-header -s s",
+        "build:min": "uglifyjs dist/underscore.string.js -o dist/underscore.string.min.js --comments",
+        "release": "npm test && npm run release:version && npm run build && npm run release:push",
+        "release:version": "node scripts/bump-version.js",
+        "release:push": "node scripts/push-tags.js",
+        "compile-tests": "babel tests --out-dir tests --require babel-polyfill --presets env",
+        "compile-bench": "babel bench --out-dir bench --require babel-polyfill --presets env",
+        "compile-helper": "babel helper --out-dir helper --require babel-polyfill --presets env",
+        "compile-camelizejs": "babel camelize.js -o camelize.js --require babel-polyfill --presets env",
+        "compile-prunejs": "babel prune.js -o prune.js --require babel-polyfill --presets env",
+        "compile-cleanDiacriticsjs": "babel cleanDiacritics.js -o cleanDiacritics.js --require babel-polyfill --presets env",
+        "compile-countjs": "babel count.js -o count.js --require babel-polyfill --presets env",
+        "compile-linesjs": "babel lines.js -o lines.js --require babel-polyfill --presets env",
+        "compile-repeatjs": "babel repeat.js -o repeat.js --require babel-polyfill --presets env",
+        "compile-lrpadjs": "babel lrpad.js -o lrpad.js --require babel-polyfill --presets env",
+        "compile-exportsjs": "babel exports.js -o exports.js --require babel-polyfill --presets env",
+        "compile-indexjs": "babel index.js -o index.js --require babel-polyfill --presets env",
+        "compile-succjs": "babel succ.js -o succ.js --require babel-polyfill --presets env",
+        "compile-includejs": "babel include.js -o include.js --require babel-polyfill --presets env",
+        "compile-dedentjs": "babel dedent.js -o dedent.js --require babel-polyfill --presets env",
+        "compile-unquotejs": "babel unquote.js -o unquote.js --require babel-polyfill --presets env",
+        "compile-decapitalizejs": "babel decapitalize.js -o decapitalize.js --require babel-polyfill --presets env",
+        "compile-meteorprejs": "babel meteor-pre.js -o meteor-pre.js --require babel-polyfill --presets env",
+        "compile-packagejs": "babel package.js -o package.js --require babel-polyfill --presets env",
+        "compile-surroundjs": "babel surround.js -o surround.js --require babel-polyfill --presets env",
+        "compile-truncatejs": "babel truncate.js -o truncate.js --require babel-polyfill --presets env",
+        "compile-padjs": "babel pad.js -o pad.js --require babel-polyfill --presets env",
+        "compile-splicejs": "babel splice.js -o splice.js --require babel-polyfill --presets env",
+        "compile-capitalizejs": "babel capitalize.js -o capitalize.js --require babel-polyfill --presets env",
+        "compile-replaceAlljs": "babel replaceAll.js -o replaceAll.js --require babel-polyfill --presets env",
+        "compile-ltrimjs": "babel ltrim.js -o ltrim.js --require babel-polyfill --presets env",
+        "compile-isBlankjs": "babel isBlank.js -o isBlank.js --require babel-polyfill --presets env",
+        "compile-toNumberjs": "babel toNumber.js -o toNumber.js --require babel-polyfill --presets env",
+        "compile-toBooleanjs": "babel toBoolean.js -o toBoolean.js --require babel-polyfill --presets env",
+        "compile-predjs": "babel pred.js -o pred.js --require babel-polyfill --presets env",
+        "compile-strRightBackjs": "babel strRightBack.js -o strRightBack.js --require babel-polyfill --presets env",
+        "compile-chopjs": "babel chop.js -o chop.js --require babel-polyfill --presets env",
+        "compile-escapeHTMLjs": "babel escapeHTML.js -o escapeHTML.js --require babel-polyfill --presets env",
+        "compile-mapjs": "babel map.js -o map.js --require babel-polyfill --presets env",
+        "compile-charsjs": "babel chars.js -o chars.js --require babel-polyfill --presets env",
+        "compile-quotejs": "babel quote.js -o quote.js --require babel-polyfill --presets env",
+        "compile-lpadjs": "babel lpad.js -o lpad.js --require babel-polyfill --presets env",
+        "compile-wordsjs": "babel words.js -o words.js --require babel-polyfill --presets env",
+        "compile-vsprintfjs": "babel vsprintf.js -o vsprintf.js --require babel-polyfill --presets env",
+        "compile-endsWithjs": "babel endsWith.js -o endsWith.js --require babel-polyfill --presets env",
+        "compile-meteorpostjs": "babel meteor-post.js -o meteor-post.js --require babel-polyfill --presets env",
+        "compile-stripTagsjs": "babel stripTags.js -o stripTags.js --require babel-polyfill --presets env",
+        "compile-wrapjs": "babel wrap.js -o wrap.js --require babel-polyfill --presets env",
+        "compile-numberFormatjs": "babel numberFormat.js -o numberFormat.js --require babel-polyfill --presets env",
+        "compile-joinjs": "babel join.js -o join.js --require babel-polyfill --presets env",
+        "compile-slugifyjs": "babel slugify.js -o slugify.js --require babel-polyfill --presets env",
+        "compile-reversejs": "babel reverse.js -o reverse.js --require babel-polyfill --presets env",
+        "compile-cleanjs": "babel clean.js -o clean.js --require babel-polyfill --presets env",
+        "compile-rpadjs": "babel rpad.js -o rpad.js --require babel-polyfill --presets env",
+        "compile-insertjs": "babel insert.js -o insert.js --require babel-polyfill --presets env",
+        "compile-naturalCmpjs": "babel naturalCmp.js -o naturalCmp.js --require babel-polyfill --presets env",
+        "compile-underscoredjs": "babel underscored.js -o underscored.js --require babel-polyfill --presets env",
+        "compile-dasherizejs": "babel dasherize.js -o dasherize.js --require babel-polyfill --presets env",
+        "compile-strLeftjs": "babel strLeft.js -o strLeft.js --require babel-polyfill --presets env",
+        "compile-toSentenceSerialjs": "babel toSentenceSerial.js -o toSentenceSerial.js --require babel-polyfill --presets env",
+        "compile-strRightjs": "babel strRight.js -o strRight.js --require babel-polyfill --presets env",
+        "compile-toSentencejs": "babel toSentence.js -o toSentence.js --require babel-polyfill --presets env",
+        "compile-levenshteinjs": "babel levenshtein.js -o levenshtein.js --require babel-polyfill --presets env",
+        "compile-rtrimjs": "babel rtrim.js -o rtrim.js --require babel-polyfill --presets env",
+        "compile-unescapeHTMLjs": "babel unescapeHTML.js -o unescapeHTML.js --require babel-polyfill --presets env",
+        "compile-classifyjs": "babel classify.js -o classify.js --require babel-polyfill --presets env",
+        "compile-sprintfjs": "babel sprintf.js -o sprintf.js --require babel-polyfill --presets env",
+        "compile-strLeftBackjs": "babel strLeftBack.js -o strLeftBack.js --require babel-polyfill --presets env",
+        "compile-swapCasejs": "babel swapCase.js -o swapCase.js --require babel-polyfill --presets env",
+        "compile-titleizejs": "babel titleize.js -o titleize.js --require babel-polyfill --presets env",
+        "compile-humanizejs": "babel humanize.js -o humanize.js --require babel-polyfill --presets env",
+        "compile-startsWithjs": "babel startsWith.js -o startsWith.js --require babel-polyfill --presets env",
+        "compile-trimjs": "babel trim.js -o trim.js --require babel-polyfill --presets env",
+        "compile-1_script": "npm run compile-tests && npm run compile-bench && npm run compile-helper && npm run compile-camelizejs && npm run compile-prunejs && npm run compile-cleanDiacriticsjs && npm run compile-countjs && npm run compile-linesjs && npm run compile-repeatjs && npm run compile-lrpadjs && npm run compile-exportsjs && npm run compile-indexjs && npm run compile-succjs && npm run compile-includejs && npm run compile-dedentjs && npm run compile-unquotejs && npm run compile-decapitalizejs && npm run compile-meteorprejs && npm run compile-packagejs && npm run compile-surroundjs",
+        "compile-2_script": "npm run compile-truncatejs && npm run compile-padjs && npm run compile-splicejs && npm run compile-capitalizejs && npm run compile-replaceAlljs && npm run compile-ltrimjs && npm run compile-isBlankjs && npm run compile-toNumberjs && npm run compile-toBooleanjs && npm run compile-predjs && npm run compile-strRightBackjs && npm run compile-chopjs && npm run compile-escapeHTMLjs && npm run compile-mapjs && npm run compile-charsjs && npm run compile-quotejs && npm run compile-lpadjs && npm run compile-wordsjs && npm run compile-vsprintfjs && npm run compile-endsWithjs",
+        "compile-3_script": "npm run compile-meteorpostjs && npm run compile-stripTagsjs && npm run compile-wrapjs && npm run compile-numberFormatjs && npm run compile-joinjs && npm run compile-slugifyjs && npm run compile-reversejs && npm run compile-cleanjs && npm run compile-rpadjs && npm run compile-insertjs && npm run compile-naturalCmpjs && npm run compile-underscoredjs && npm run compile-dasherizejs && npm run compile-strLeftjs && npm run compile-toSentenceSerialjs && npm run compile-strRightjs && npm run compile-toSentencejs && npm run compile-levenshteinjs && npm run compile-rtrimjs && npm run compile-unescapeHTMLjs",
+        "compile-4_script": "npm run compile-classifyjs && npm run compile-sprintfjs && npm run compile-strLeftBackjs && npm run compile-swapCasejs && npm run compile-titleizejs && npm run compile-humanizejs && npm run compile-startsWithjs && npm run compile-trimjs",
+        "compile": "npm run compile-1_script && npm run compile-2_script && npm run compile-3_script && npm run compile-4_script"
+    },
+    "devDependencies": {
+        "browserify": "^13.0.0",
+        "browserify-header": "^0.9.2",
+        "eslint": "^1.10.3",
+        "istanbul": "^0.4.2",
+        "mocha": "^2.1.0",
+        "mocha-lcov-reporter": "^1.0.0",
+        "replace": "^0.3.0",
+        "uglifyjs": "^2.4.10",
+        "underscore": "^1.7.0",
+        "babel-cli": "latest",
+        "babel-core": "latest",
+        "babel-plugin-add-module-exports": "latest",
+        "babel-plugin-transform-es2015-modules-commonjs": "latest",
+        "babel-polyfill": "latest",
+        "babel-plugin-transform-object-rest-spread": "latest",
+        "babel-preset-env": "latest"
+    },
+    "jshintConfig": {
+        "node": true,
+        "browser": true,
+        "qunit": true,
+        "globals": {
+            "s": true
+        }
+    },
+    "dependencies": {
+        "sprintf-js": "^1.0.3",
+        "util-deprecate": "^1.0.2"
     }
-  },
-  "dependencies": {
-    "sprintf-js": "^1.0.3",
-    "util-deprecate": "^1.0.2"
-  }
 }

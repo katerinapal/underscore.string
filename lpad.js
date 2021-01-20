@@ -1,5 +1,7 @@
-var pad = require('./pad');
+import { pad as pad_pad } from "./pad";
 
-module.exports = function lpad(str, length, padStr) {
-  return pad(str, length, padStr);
+var mod_anonymus = function lpad(str, length, padStr) {
+  return pad_pad(str, length, padStr);
 };
+
+export { mod_anonymus as lpad };

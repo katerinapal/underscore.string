@@ -1,6 +1,8 @@
-var makeString = require('./helper/makeString');
+import { makeString as makeString_makeString } from "./helper/makeString";
 
-module.exports = function include(str, needle) {
+var mod_anonymus = function include(str, needle) {
   if (needle === '') return true;
-  return makeString(str).indexOf(needle) !== -1;
+  return makeString_makeString(str).indexOf(needle) !== -1;
 };
+
+export { mod_anonymus as include };

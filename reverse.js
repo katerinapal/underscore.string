@@ -1,5 +1,7 @@
-var chars = require('./chars');
+import { chars as chars_chars } from "./chars";
 
-module.exports = function reverse(str) {
-  return chars(str).reverse().join('');
+var mod_anonymus = function reverse(str) {
+  return chars_chars(str).reverse().join('');
 };
+
+export { mod_anonymus as reverse };

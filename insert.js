@@ -1,5 +1,7 @@
-var splice = require('./splice');
+import { splice as splice_splice } from "./splice";
 
-module.exports = function insert(str, i, substr) {
-  return splice(str, i, 0, substr);
+var mod_anonymus = function insert(str, i, substr) {
+  return splice_splice(str, i, 0, substr);
 };
+
+export { mod_anonymus as insert };

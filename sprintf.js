@@ -1,4 +1,7 @@
-var deprecate = require('util-deprecate');
+import ext_deprecate from "util-deprecate";
+import ext_sprintfjs from "sprintf-js";
 
-module.exports = deprecate(require('sprintf-js').sprintf,
+mod_sprintfjs = ext_deprecate(ext_sprintfjs.sprintf,
   'sprintf() will be removed in the next major release, use the sprintf-js package instead.');
+var mod_sprintfjs;
+export { mod_sprintfjs as sprintfjs };

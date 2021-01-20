@@ -1,8 +1,8 @@
-var makeString = require('./helper/makeString');
-var strRepeat = require('./helper/strRepeat');
+import { makeString as makeString_makeString } from "./helper/makeString";
+import { strRepeat as strRepeat_strRepeat } from "./helper/strRepeat";
 
-module.exports = function pad(str, length, padStr, type) {
-  str = makeString(str);
+var mod_anonymus = function pad(str, length, padStr, type) {
+  str = makeString_makeString(str);
   length = ~~length;
 
   var padlen = 0;
@@ -15,12 +15,14 @@ module.exports = function pad(str, length, padStr, type) {
   switch (type) {
   case 'right':
     padlen = length - str.length;
-    return str + strRepeat(padStr, padlen);
+    return str + strRepeat_strRepeat(padStr, padlen);
   case 'both':
     padlen = length - str.length;
-    return strRepeat(padStr, Math.ceil(padlen / 2)) + str + strRepeat(padStr, Math.floor(padlen / 2));
+    return strRepeat_strRepeat(padStr, Math.ceil(padlen / 2)) + str + strRepeat_strRepeat(padStr, Math.floor(padlen / 2));
   default: // 'left'
     padlen = length - str.length;
-    return strRepeat(padStr, padlen) + str;
+    return strRepeat_strRepeat(padStr, padlen) + str;
   }
 };
+
+export { mod_anonymus as pad };

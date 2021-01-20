@@ -1,9 +1,11 @@
-var makeString = require('./helper/makeString');
-var toPositive = require('./helper/toPositive');
+import { makeString as makeString_makeString } from "./helper/makeString";
+import { toPositive as toPositive_toPositive } from "./helper/toPositive";
 
-module.exports = function startsWith(str, starts, position) {
-  str = makeString(str);
+var mod_anonymus = function startsWith(str, starts, position) {
+  str = makeString_makeString(str);
   starts = '' + starts;
-  position = position == null ? 0 : Math.min(toPositive(position), str.length);
+  position = position == null ? 0 : Math.min(toPositive_toPositive(position), str.length);
   return str.lastIndexOf(starts, position) === position;
 };
+
+export { mod_anonymus as startsWith };

@@ -1,5 +1,7 @@
-var makeString = require('./helper/makeString');
+import { makeString as makeString_makeString } from "./helper/makeString";
 
-module.exports = function stripTags(str) {
-  return makeString(str).replace(/<\/?[^>]+>/g, '');
+var mod_anonymus = function stripTags(str) {
+  return makeString_makeString(str).replace(/<\/?[^>]+>/g, '');
 };
+
+export { mod_anonymus as stripTags };

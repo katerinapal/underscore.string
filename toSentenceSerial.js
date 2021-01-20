@@ -1,5 +1,7 @@
-var toSentence = require('./toSentence');
+import { toSentence as toSentence_toSentence } from "./toSentence";
 
-module.exports = function toSentenceSerial(array, sep, lastSep) {
-  return toSentence(array, sep, lastSep, true);
+var mod_anonymus = function toSentenceSerial(array, sep, lastSep) {
+  return toSentence_toSentence(array, sep, lastSep, true);
 };
+
+export { mod_anonymus as toSentenceSerial };

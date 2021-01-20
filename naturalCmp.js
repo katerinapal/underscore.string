@@ -1,4 +1,4 @@
-module.exports = function naturalCmp(str1, str2) {
+var mod_anonymus = function naturalCmp(str1, str2) {
   if (str1 == str2) return 0;
   if (!str1) return -1;
   if (!str2) return 1;
@@ -27,3 +27,5 @@ module.exports = function naturalCmp(str1, str2) {
 
   return str1 < str2 ? -1 : 1;
 };
+
+export { mod_anonymus as naturalCmp };

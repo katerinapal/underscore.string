@@ -1,10 +1,7 @@
-// Wrap
-// wraps a string by a certain width
+import { makeString as makeString_makeString } from "./helper/makeString";
 
-var makeString = require('./helper/makeString');
-
-module.exports = function wrap(str, options){
-  str = makeString(str);
+var mod_anonymus = function wrap(str, options){
+  str = makeString_makeString(str);
   
   options = options || {};
   
@@ -100,3 +97,5 @@ module.exports = function wrap(str, options){
     return result;
   }
 };
+
+export { mod_anonymus as wrap };

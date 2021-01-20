@@ -1,5 +1,7 @@
-var adjacent = require('./helper/adjacent');
+import { adjacent as adjacent_adjacent } from "./helper/adjacent";
 
-module.exports = function succ(str) {
-  return adjacent(str, -1);
+var mod_anonymus = function succ(str) {
+  return adjacent_adjacent(str, -1);
 };
+
+export { mod_anonymus as pred };

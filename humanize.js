@@ -1,7 +1,9 @@
-var capitalize = require('./capitalize');
-var underscored = require('./underscored');
-var trim = require('./trim');
+import { capitalize as capitalize_capitalize } from "./capitalize";
+import { underscored as underscored_underscored } from "./underscored";
+import { trim as trim_trim } from "./trim";
 
-module.exports = function humanize(str) {
-  return capitalize(trim(underscored(str).replace(/_id$/, '').replace(/_/g, ' ')));
+var mod_anonymus = function humanize(str) {
+  return capitalize_capitalize(trim_trim(underscored_underscored(str).replace(/_id$/, '').replace(/_/g, ' ')));
 };
+
+export { mod_anonymus as humanize };

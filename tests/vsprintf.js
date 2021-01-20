@@ -1,5 +1,6 @@
-var equal = require('assert').equal;
-var vsprintf = require('../vsprintf');
+import ext_assert from "assert";
+import { vsprintfjs as vsprintf } from "../vsprintf";
+var equal = ext_assert.equal;
 
 
 test('#vsprintf', function() {
