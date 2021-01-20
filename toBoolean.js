@@ -1,7 +1,16 @@
-import { trim as trim_trim } from "./trim";
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.toBoolean = undefined;
+
+var _trim = require('./trim');
 
 function boolMatch(s, matchers) {
-  var i, matcher, down = s.toLowerCase();
+  var i,
+      matcher,
+      down = s.toLowerCase();
   matchers = [].concat(matchers);
   for (i = 0; i < matchers.length; i += 1) {
     matcher = matchers[i];
@@ -14,9 +23,9 @@ function boolMatch(s, matchers) {
 var mod_anonymus = function toBoolean(str, trueValues, falseValues) {
   if (typeof str === 'number') str = '' + str;
   if (typeof str !== 'string') return !!str;
-  str = trim_trim(str);
+  str = (0, _trim.trim)(str);
   if (boolMatch(str, trueValues || ['true', '1'])) return true;
   if (boolMatch(str, falseValues || ['false', '0'])) return false;
 };
 
-export { mod_anonymus as toBoolean };
+exports.toBoolean = mod_anonymus;

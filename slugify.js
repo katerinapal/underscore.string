@@ -1,9 +1,18 @@
-import { trim as trim_trim } from "./trim";
-import { dasherize as dasherize_dasherize } from "./dasherize";
-import { cleanDiacritics as cleanDiacritics_cleanDiacritics } from "./cleanDiacritics";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.slugify = undefined;
+
+var _trim = require("./trim");
+
+var _dasherize = require("./dasherize");
+
+var _cleanDiacritics = require("./cleanDiacritics");
 
 var mod_anonymus = function slugify(str) {
-  return trim_trim(dasherize_dasherize(cleanDiacritics_cleanDiacritics(str).replace(/[^\w\s-]/g, '-').toLowerCase()), '-');
+  return (0, _trim.trim)((0, _dasherize.dasherize)((0, _cleanDiacritics.cleanDiacritics)(str).replace(/[^\w\s-]/g, '-').toLowerCase()), '-');
 };
 
-export { mod_anonymus as slugify };
+exports.slugify = mod_anonymus;

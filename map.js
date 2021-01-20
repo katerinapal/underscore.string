@@ -1,11 +1,18 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
+"use strict";
 
-var mod_anonymus = function(str, callback) {
-  str = makeString_makeString(str);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.map = undefined;
+
+var _makeString = require("./helper/makeString");
+
+var mod_anonymus = function mod_anonymus(str, callback) {
+  str = (0, _makeString.makeString)(str);
 
   if (str.length === 0 || typeof callback !== 'function') return str;
 
   return str.replace(/./g, callback);
 };
 
-export { mod_anonymus as map };
+exports.map = mod_anonymus;

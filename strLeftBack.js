@@ -1,10 +1,17 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.strLeftBack = undefined;
+
+var _makeString = require("./helper/makeString");
 
 var mod_anonymus = function strLeftBack(str, sep) {
-  str = makeString_makeString(str);
-  sep = makeString_makeString(sep);
+  str = (0, _makeString.makeString)(str);
+  sep = (0, _makeString.makeString)(sep);
   var pos = str.lastIndexOf(sep);
-  return~ pos ? str.slice(0, pos) : str;
+  return ~pos ? str.slice(0, pos) : str;
 };
 
-export { mod_anonymus as strLeftBack };
+exports.strLeftBack = mod_anonymus;

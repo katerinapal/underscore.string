@@ -1,19 +1,27 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
-import { escapeChars as escapeChars_escapeChars } from "./helper/escapeChars";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.escapeHTML = undefined;
+
+var _makeString = require("./helper/makeString");
+
+var _escapeChars = require("./helper/escapeChars");
 
 var regexString = '[';
-for(var key in escapeChars_escapeChars) {
+for (var key in _escapeChars.escapeChars) {
   regexString += key;
 }
 regexString += ']';
 
-var regex = new RegExp( regexString, 'g');
+var regex = new RegExp(regexString, 'g');
 
 var mod_anonymus = function escapeHTML(str) {
 
-  return makeString_makeString(str).replace(regex, function(m) {
-    return '&' + escapeChars_escapeChars[m] + ';';
+  return (0, _makeString.makeString)(str).replace(regex, function (m) {
+    return '&' + _escapeChars.escapeChars[m] + ';';
   });
 };
 
-export { mod_anonymus as escapeHTML };
+exports.escapeHTML = mod_anonymus;

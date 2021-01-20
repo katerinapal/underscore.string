@@ -1,19 +1,25 @@
-import ext_assert from "assert";
-import { humanize as humanize_humanize } from "../humanize";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#humanize', function(){
-  equal(humanize_humanize('the_humanize_string_method'), 'The humanize string method');
-  equal(humanize_humanize('ThehumanizeStringMethod'), 'Thehumanize string method');
-  equal(humanize_humanize('-ThehumanizeStringMethod'), 'Thehumanize string method');
-  equal(humanize_humanize('the humanize string method'), 'The humanize string method');
-  equal(humanize_humanize('the humanize_id string method_id'), 'The humanize id string method');
-  equal(humanize_humanize('the  humanize string method  '), 'The humanize string method');
-  equal(humanize_humanize('   capitalize dash-CamelCase_underscore trim  '), 'Capitalize dash camel case underscore trim');
-  equal(humanize_humanize(123), '123');
-  equal(humanize_humanize(''), '');
-  equal(humanize_humanize(null), '');
-  equal(humanize_humanize(undefined), '');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _humanize = require("../humanize");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#humanize', function () {
+  equal((0, _humanize.humanize)('the_humanize_string_method'), 'The humanize string method');
+  equal((0, _humanize.humanize)('ThehumanizeStringMethod'), 'Thehumanize string method');
+  equal((0, _humanize.humanize)('-ThehumanizeStringMethod'), 'Thehumanize string method');
+  equal((0, _humanize.humanize)('the humanize string method'), 'The humanize string method');
+  equal((0, _humanize.humanize)('the humanize_id string method_id'), 'The humanize id string method');
+  equal((0, _humanize.humanize)('the  humanize string method  '), 'The humanize string method');
+  equal((0, _humanize.humanize)('   capitalize dash-CamelCase_underscore trim  '), 'Capitalize dash camel case underscore trim');
+  equal((0, _humanize.humanize)(123), '123');
+  equal((0, _humanize.humanize)(''), '');
+  equal((0, _humanize.humanize)(null), '');
+  equal((0, _humanize.humanize)(undefined), '');
 });
-

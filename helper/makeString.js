@@ -1,3 +1,8 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var mod_anonymus = function makeString(object) {
   if (object == null) return '';
   return '' + object;
@@ -6,4 +11,4 @@ var mod_anonymus = function makeString(object) {
 /**
  * Ensure some object is a coerced to a string
  **/
-export { mod_anonymus as makeString };
+exports.makeString = mod_anonymus;

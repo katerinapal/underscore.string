@@ -1,6 +1,9 @@
-import { count as count_count } from "../count";
+'use strict';
+
+var _count = require('../count');
+
 var encapsulated_anonymus;
 
-encapsulated_anonymus = function() {
-  count_count('Hello worls', 'l');
+encapsulated_anonymus = function encapsulated_anonymus() {
+  (0, _count.count)('Hello worls', 'l');
 };

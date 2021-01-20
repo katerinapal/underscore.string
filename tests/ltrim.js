@@ -1,22 +1,29 @@
-import ext_assert from "assert";
-import { ltrim as ltrim_ltrim } from "../ltrim";
-var equal = ext_assert.equal;
+"use strict";
 
-test('#ltrim', function() {
-  equal(ltrim_ltrim(' foo'), 'foo');
-  equal(ltrim_ltrim('    foo'), 'foo');
-  equal(ltrim_ltrim('foo '), 'foo ');
-  equal(ltrim_ltrim(' foo '), 'foo ');
-  equal(ltrim_ltrim(''), '', 'ltrim empty string should return empty string');
-  equal(ltrim_ltrim(null), '', 'ltrim null should return empty string');
-  equal(ltrim_ltrim(undefined), '', 'ltrim undefined should return empty string');
+var _assert = require("assert");
 
-  equal(ltrim_ltrim('ffoo', 'f'), 'oo');
-  equal(ltrim_ltrim('ooff', 'f'), 'ooff');
-  equal(ltrim_ltrim('ffooff', 'f'), 'ooff');
+var _assert2 = _interopRequireDefault(_assert);
 
-  equal(ltrim_ltrim('_-foobar-_', '_-'), 'foobar-_');
+var _ltrim = require("../ltrim");
 
-  equal(ltrim_ltrim(123, 1), '23');
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#ltrim', function () {
+  equal((0, _ltrim.ltrim)(' foo'), 'foo');
+  equal((0, _ltrim.ltrim)('    foo'), 'foo');
+  equal((0, _ltrim.ltrim)('foo '), 'foo ');
+  equal((0, _ltrim.ltrim)(' foo '), 'foo ');
+  equal((0, _ltrim.ltrim)(''), '', 'ltrim empty string should return empty string');
+  equal((0, _ltrim.ltrim)(null), '', 'ltrim null should return empty string');
+  equal((0, _ltrim.ltrim)(undefined), '', 'ltrim undefined should return empty string');
+
+  equal((0, _ltrim.ltrim)('ffoo', 'f'), 'oo');
+  equal((0, _ltrim.ltrim)('ooff', 'f'), 'ooff');
+  equal((0, _ltrim.ltrim)('ffooff', 'f'), 'ooff');
+
+  equal((0, _ltrim.ltrim)('_-foobar-_', '_-'), 'foobar-_');
+
+  equal((0, _ltrim.ltrim)(123, 1), '23');
 });
-

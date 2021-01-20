@@ -1,7 +1,14 @@
-import { trim as trim_trim } from "./trim";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.clean = undefined;
+
+var _trim = require("./trim");
 
 var mod_anonymus = function clean(str) {
-  return trim_trim(str).replace(/\s\s+/g, ' ');
+  return (0, _trim.trim)(str).replace(/\s\s+/g, ' ');
 };
 
-export { mod_anonymus as clean };
+exports.clean = mod_anonymus;

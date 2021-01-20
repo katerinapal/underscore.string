@@ -1,13 +1,19 @@
-import ext_assert from "assert";
-import { swapCase as swapCase_swapCase } from "../swapCase";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#swapCase', function(){
-  equal(swapCase_swapCase('AaBbCcDdEe'), 'aAbBcCdDeE');
-  equal(swapCase_swapCase('Hello World'), 'hELLO wORLD');
-  equal(swapCase_swapCase(''), '');
-  equal(swapCase_swapCase(null), '');
-  equal(swapCase_swapCase(undefined), '');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _swapCase = require("../swapCase");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#swapCase', function () {
+  equal((0, _swapCase.swapCase)('AaBbCcDdEe'), 'aAbBcCdDeE');
+  equal((0, _swapCase.swapCase)('Hello World'), 'hELLO wORLD');
+  equal((0, _swapCase.swapCase)(''), '');
+  equal((0, _swapCase.swapCase)(null), '');
+  equal((0, _swapCase.swapCase)(undefined), '');
 });
-

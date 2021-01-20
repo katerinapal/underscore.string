@@ -1,7 +1,14 @@
-import { pad as pad_pad } from "./pad";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.lrpad = undefined;
+
+var _pad = require("./pad");
 
 var mod_anonymus = function lrpad(str, length, padStr) {
-  return pad_pad(str, length, padStr, 'both');
+  return (0, _pad.pad)(str, length, padStr, 'both');
 };
 
-export { mod_anonymus as lrpad };
+exports.lrpad = mod_anonymus;

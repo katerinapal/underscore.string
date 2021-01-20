@@ -1,7 +1,14 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.chars = undefined;
+
+var _makeString = require("./helper/makeString");
 
 var mod_anonymus = function chars(str) {
-  return makeString_makeString(str).split('');
+  return (0, _makeString.makeString)(str).split('');
 };
 
-export { mod_anonymus as chars };
+exports.chars = mod_anonymus;

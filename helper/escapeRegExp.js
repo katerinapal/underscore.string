@@ -1,7 +1,14 @@
-import { makeString as makeString_makeString } from "./makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.escapeRegExp = undefined;
+
+var _makeString = require("./makeString");
 
 var mod_anonymus = function escapeRegExp(str) {
-  return makeString_makeString(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
+  return (0, _makeString.makeString)(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
 };
 
-export { mod_anonymus as escapeRegExp };
+exports.escapeRegExp = mod_anonymus;

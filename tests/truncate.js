@@ -1,15 +1,21 @@
-import ext_assert from "assert";
-import { truncate as truncate_truncate } from "../truncate";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#truncate', function(){
-  equal(truncate_truncate('Hello world', 6, 'read more'), 'Hello read more');
-  equal(truncate_truncate('Hello world', 5), 'Hello...');
-  equal(truncate_truncate('Hello', 10), 'Hello');
-  equal(truncate_truncate('', 10), '');
-  equal(truncate_truncate(null, 10), '');
-  equal(truncate_truncate(undefined, 10), '');
-  equal(truncate_truncate(1234567890, 5), '12345...');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _truncate = require("../truncate");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#truncate', function () {
+  equal((0, _truncate.truncate)('Hello world', 6, 'read more'), 'Hello read more');
+  equal((0, _truncate.truncate)('Hello world', 5), 'Hello...');
+  equal((0, _truncate.truncate)('Hello', 10), 'Hello');
+  equal((0, _truncate.truncate)('', 10), '');
+  equal((0, _truncate.truncate)(null, 10), '');
+  equal((0, _truncate.truncate)(undefined, 10), '');
+  equal((0, _truncate.truncate)(1234567890, 5), '12345...');
 });
-

@@ -1,12 +1,18 @@
-import ext_assert from "assert";
-import { unquote as unquote_unquote } from "../unquote";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#unquote', function(){
-  equal(unquote_unquote('"foo"'), 'foo');
-  equal(unquote_unquote('""foo""'), '"foo"');
-  equal(unquote_unquote('"1"'), '1');
-  equal(unquote_unquote('\'foo\'', '\''), 'foo');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _unquote = require("../unquote");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#unquote', function () {
+  equal((0, _unquote.unquote)('"foo"'), 'foo');
+  equal((0, _unquote.unquote)('""foo""'), '"foo"');
+  equal((0, _unquote.unquote)('"1"'), '1');
+  equal((0, _unquote.unquote)('\'foo\'', '\''), 'foo');
 });
-

@@ -1,12 +1,21 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
-import { defaultToWhiteSpace as defaultToWhiteSpace_defaultToWhiteSpace } from "./helper/defaultToWhiteSpace";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.trim = undefined;
+
+var _makeString = require("./helper/makeString");
+
+var _defaultToWhiteSpace = require("./helper/defaultToWhiteSpace");
+
 var nativeTrim = String.prototype.trim;
 
 var mod_anonymus = function trim(str, characters) {
-  str = makeString_makeString(str);
+  str = (0, _makeString.makeString)(str);
   if (!characters && nativeTrim) return nativeTrim.call(str);
-  characters = defaultToWhiteSpace_defaultToWhiteSpace(characters);
+  characters = (0, _defaultToWhiteSpace.defaultToWhiteSpace)(characters);
   return str.replace(new RegExp('^' + characters + '+|' + characters + '+$', 'g'), '');
 };
 
-export { mod_anonymus as trim };
+exports.trim = mod_anonymus;

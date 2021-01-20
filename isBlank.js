@@ -1,7 +1,15 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isBlank = undefined;
+
+var _makeString = require("./helper/makeString");
 
 var mod_anonymus = function isBlank(str) {
-  return (/^\s*$/).test(makeString_makeString(str));
+  return (/^\s*$/.test((0, _makeString.makeString)(str))
+  );
 };
 
-export { mod_anonymus as isBlank };
+exports.isBlank = mod_anonymus;

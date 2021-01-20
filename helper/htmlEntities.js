@@ -1,3 +1,8 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 /*
 We're explicitly defining the list of entities that might see in escape HTML strings
 */
@@ -18,5 +23,5 @@ var htmlEntities = {
 
 var mod_htmlEntities;
 
-mod_htmlEntities = htmlEntities;
-export { mod_htmlEntities as htmlEntities };
+exports.htmlEntities = mod_htmlEntities = htmlEntities;
+exports.htmlEntities = mod_htmlEntities;

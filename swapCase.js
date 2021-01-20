@@ -1,9 +1,16 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.swapCase = undefined;
+
+var _makeString = require("./helper/makeString");
 
 var mod_anonymus = function swapCase(str) {
-  return makeString_makeString(str).replace(/\S/g, function(c) {
+  return (0, _makeString.makeString)(str).replace(/\S/g, function (c) {
     return c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase();
   });
 };
 
-export { mod_anonymus as swapCase };
+exports.swapCase = mod_anonymus;

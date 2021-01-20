@@ -1,10 +1,19 @@
-import { capitalize as capitalize_capitalize } from "./capitalize";
-import { camelize as camelize_camelize } from "./camelize";
-import { makeString as makeString_makeString } from "./helper/makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.classify = undefined;
+
+var _capitalize = require("./capitalize");
+
+var _camelize = require("./camelize");
+
+var _makeString = require("./helper/makeString");
 
 var mod_anonymus = function classify(str) {
-  str = makeString_makeString(str);
-  return capitalize_capitalize(camelize_camelize(str.replace(/[\W_]/g, ' ')).replace(/\s/g, ''));
+  str = (0, _makeString.makeString)(str);
+  return (0, _capitalize.capitalize)((0, _camelize.camelize)(str.replace(/[\W_]/g, ' ')).replace(/\s/g, ''));
 };
 
-export { mod_anonymus as classify };
+exports.classify = mod_anonymus;

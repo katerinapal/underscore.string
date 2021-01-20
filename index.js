@@ -1,66 +1,136 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.s = undefined;
+
+var _isBlank = require("./isBlank");
+
+var _stripTags = require("./stripTags");
+
+var _capitalize = require("./capitalize");
+
+var _decapitalize = require("./decapitalize");
+
+var _chop = require("./chop");
+
+var _trim = require("./trim");
+
+var _clean = require("./clean");
+
+var _cleanDiacritics = require("./cleanDiacritics");
+
+var _count = require("./count");
+
+var _chars = require("./chars");
+
+var _swapCase = require("./swapCase");
+
+var _escapeHTML = require("./escapeHTML");
+
+var _unescapeHTML = require("./unescapeHTML");
+
+var _splice = require("./splice");
+
+var _insert = require("./insert");
+
+var _replaceAll = require("./replaceAll");
+
+var _include = require("./include");
+
+var _join = require("./join");
+
+var _lines = require("./lines");
+
+var _dedent = require("./dedent");
+
+var _reverse = require("./reverse");
+
+var _startsWith = require("./startsWith");
+
+var _endsWith = require("./endsWith");
+
+var _pred = require("./pred");
+
+var _succ = require("./succ");
+
+var _titleize = require("./titleize");
+
+var _camelize = require("./camelize");
+
+var _underscored = require("./underscored");
+
+var _dasherize = require("./dasherize");
+
+var _classify = require("./classify");
+
+var _humanize = require("./humanize");
+
+var _ltrim = require("./ltrim");
+
+var _rtrim = require("./rtrim");
+
+var _truncate = require("./truncate");
+
+var _prune = require("./prune");
+
+var _words = require("./words");
+
+var _pad = require("./pad");
+
+var _lpad = require("./lpad");
+
+var _rpad = require("./rpad");
+
+var _lrpad = require("./lrpad");
+
+var _sprintf = require("./sprintf");
+
+var _vsprintf = require("./vsprintf");
+
+var _toNumber = require("./toNumber");
+
+var _numberFormat = require("./numberFormat");
+
+var _strRight = require("./strRight");
+
+var _strRightBack = require("./strRightBack");
+
+var _strLeft = require("./strLeft");
+
+var _strLeftBack = require("./strLeftBack");
+
+var _toSentence = require("./toSentence");
+
+var _toSentenceSerial = require("./toSentenceSerial");
+
+var _slugify = require("./slugify");
+
+var _surround = require("./surround");
+
+var _quote = require("./quote");
+
+var _unquote = require("./unquote");
+
+var _repeat = require("./repeat");
+
+var _naturalCmp = require("./naturalCmp");
+
+var _levenshtein = require("./levenshtein");
+
+var _toBoolean = require("./toBoolean");
+
+var _exports = require("./exports");
+
+var _escapeRegExp = require("./helper/escapeRegExp");
+
+var _wrap = require("./wrap");
+
+var _map = require("./map");
+
 var mod_s = s;
-import { isBlank as isBlank_isBlank } from "./isBlank";
-import { stripTags as stripTags_stripTags } from "./stripTags";
-import { capitalize as capitalize_capitalize } from "./capitalize";
-import { decapitalize as decapitalize_decapitalize } from "./decapitalize";
-import { chop as chop_chop } from "./chop";
-import { trim as trim_trim } from "./trim";
-import { clean as clean_clean } from "./clean";
-import { cleanDiacritics as cleanDiacritics_cleanDiacritics } from "./cleanDiacritics";
-import { count as count_count } from "./count";
-import { chars as chars_chars } from "./chars";
-import { swapCase as swapCase_swapCase } from "./swapCase";
-import { escapeHTML as escapeHTML_escapeHTML } from "./escapeHTML";
-import { unescapeHTML as unescapeHTML_unescapeHTML } from "./unescapeHTML";
-import { splice as splice_splice } from "./splice";
-import { insert as insert_insert } from "./insert";
-import { replaceAll as replaceAll_replaceAll } from "./replaceAll";
-import { include as include_include } from "./include";
-import { join as join_join } from "./join";
-import { lines as lines_lines } from "./lines";
-import { dedent as dedent_dedent } from "./dedent";
-import { reverse as reverse_reverse } from "./reverse";
-import { startsWith as startsWith_startsWith } from "./startsWith";
-import { endsWith as endsWith_endsWith } from "./endsWith";
-import { pred as pred_pred } from "./pred";
-import { succ as succ_succ } from "./succ";
-import { titleize as titleize_titleize } from "./titleize";
-import { camelize as camelize_camelize } from "./camelize";
-import { underscored as underscored_underscored } from "./underscored";
-import { dasherize as dasherize_dasherize } from "./dasherize";
-import { classify as classify_classify } from "./classify";
-import { humanize as humanize_humanize } from "./humanize";
-import { ltrim as ltrim_ltrim } from "./ltrim";
-import { rtrim as rtrim_rtrim } from "./rtrim";
-import { truncate as truncate_truncate } from "./truncate";
-import { prune as prune_prune } from "./prune";
-import { words as words_words } from "./words";
-import { pad as pad_pad } from "./pad";
-import { lpad as lpad_lpad } from "./lpad";
-import { rpad as rpad_rpad } from "./rpad";
-import { lrpad as lrpad_lrpad } from "./lrpad";
-import { sprintfjs } from "./sprintf";
-import { vsprintfjs } from "./vsprintf";
-import { toNumber as toNumber_toNumber } from "./toNumber";
-import { numberFormat as numberFormat_numberFormat } from "./numberFormat";
-import { strRight as strRight_strRight } from "./strRight";
-import { strRightBack as strRightBack_strRightBack } from "./strRightBack";
-import { strLeft as strLeft_strLeft } from "./strLeft";
-import { strLeftBack as strLeftBack_strLeftBack } from "./strLeftBack";
-import { toSentence as toSentence_toSentence } from "./toSentence";
-import { toSentenceSerial as toSentenceSerial_toSentenceSerial } from "./toSentenceSerial";
-import { slugify as slugify_slugify } from "./slugify";
-import { surround as surround_surround } from "./surround";
-import { quote as quote_quote } from "./quote";
-import { unquote as unquote_unquote } from "./unquote";
-import { repeat as repeat_repeat } from "./repeat";
-import { naturalCmp as naturalCmp_naturalCmp } from "./naturalCmp";
-import { levenshtein as levenshtein_levenshtein } from "./levenshtein";
-import { toBoolean as toBoolean_toBoolean } from "./toBoolean";
-import { exports as exports_exports } from "./exports";
-import { escapeRegExp as escapeRegExp_escapeRegExp } from "./helper/escapeRegExp";
-import { wrap as wrap_wrap } from "./wrap";
-import { map as map_map } from "./map";
+
 /*
 * Underscore.string
 * (c) 2010 Esa-Matti Suuronen <esa-matti aet suuronen dot org>
@@ -81,82 +151,81 @@ function s(value) {
 
 s.VERSION = '3.3.4';
 
-s.isBlank          = isBlank_isBlank;
-s.stripTags        = stripTags_stripTags;
-s.capitalize       = capitalize_capitalize;
-s.decapitalize     = decapitalize_decapitalize;
-s.chop             = chop_chop;
-s.trim             = trim_trim;
-s.clean            = clean_clean;
-s.cleanDiacritics  = cleanDiacritics_cleanDiacritics;
-s.count            = count_count;
-s.chars            = chars_chars;
-s.swapCase         = swapCase_swapCase;
-s.escapeHTML       = escapeHTML_escapeHTML;
-s.unescapeHTML     = unescapeHTML_unescapeHTML;
-s.splice           = splice_splice;
-s.insert           = insert_insert;
-s.replaceAll       = replaceAll_replaceAll;
-s.include          = include_include;
-s.join             = join_join;
-s.lines            = lines_lines;
-s.dedent           = dedent_dedent;
-s.reverse          = reverse_reverse;
-s.startsWith       = startsWith_startsWith;
-s.endsWith         = endsWith_endsWith;
-s.pred             = pred_pred;
-s.succ             = succ_succ;
-s.titleize         = titleize_titleize;
-s.camelize         = camelize_camelize;
-s.underscored      = underscored_underscored;
-s.dasherize        = dasherize_dasherize;
-s.classify         = classify_classify;
-s.humanize         = humanize_humanize;
-s.ltrim            = ltrim_ltrim;
-s.rtrim            = rtrim_rtrim;
-s.truncate         = truncate_truncate;
-s.prune            = prune_prune;
-s.words            = words_words;
-s.pad              = pad_pad;
-s.lpad             = lpad_lpad;
-s.rpad             = rpad_rpad;
-s.lrpad            = lrpad_lrpad;
-s.sprintf          = sprintfjs;
-s.vsprintf         = vsprintfjs;
-s.toNumber         = toNumber_toNumber;
-s.numberFormat     = numberFormat_numberFormat;
-s.strRight         = strRight_strRight;
-s.strRightBack     = strRightBack_strRightBack;
-s.strLeft          = strLeft_strLeft;
-s.strLeftBack      = strLeftBack_strLeftBack;
-s.toSentence       = toSentence_toSentence;
-s.toSentenceSerial = toSentenceSerial_toSentenceSerial;
-s.slugify          = slugify_slugify;
-s.surround         = surround_surround;
-s.quote            = quote_quote;
-s.unquote          = unquote_unquote;
-s.repeat           = repeat_repeat;
-s.naturalCmp       = naturalCmp_naturalCmp;
-s.levenshtein      = levenshtein_levenshtein;
-s.toBoolean        = toBoolean_toBoolean;
-s.exports          = exports_exports;
-s.escapeRegExp     = escapeRegExp_escapeRegExp;
-s.wrap             = wrap_wrap;
-s.map              = map_map;
+s.isBlank = _isBlank.isBlank;
+s.stripTags = _stripTags.stripTags;
+s.capitalize = _capitalize.capitalize;
+s.decapitalize = _decapitalize.decapitalize;
+s.chop = _chop.chop;
+s.trim = _trim.trim;
+s.clean = _clean.clean;
+s.cleanDiacritics = _cleanDiacritics.cleanDiacritics;
+s.count = _count.count;
+s.chars = _chars.chars;
+s.swapCase = _swapCase.swapCase;
+s.escapeHTML = _escapeHTML.escapeHTML;
+s.unescapeHTML = _unescapeHTML.unescapeHTML;
+s.splice = _splice.splice;
+s.insert = _insert.insert;
+s.replaceAll = _replaceAll.replaceAll;
+s.include = _include.include;
+s.join = _join.join;
+s.lines = _lines.lines;
+s.dedent = _dedent.dedent;
+s.reverse = _reverse.reverse;
+s.startsWith = _startsWith.startsWith;
+s.endsWith = _endsWith.endsWith;
+s.pred = _pred.pred;
+s.succ = _succ.succ;
+s.titleize = _titleize.titleize;
+s.camelize = _camelize.camelize;
+s.underscored = _underscored.underscored;
+s.dasherize = _dasherize.dasherize;
+s.classify = _classify.classify;
+s.humanize = _humanize.humanize;
+s.ltrim = _ltrim.ltrim;
+s.rtrim = _rtrim.rtrim;
+s.truncate = _truncate.truncate;
+s.prune = _prune.prune;
+s.words = _words.words;
+s.pad = _pad.pad;
+s.lpad = _lpad.lpad;
+s.rpad = _rpad.rpad;
+s.lrpad = _lrpad.lrpad;
+s.sprintf = _sprintf.sprintfjs;
+s.vsprintf = _vsprintf.vsprintfjs;
+s.toNumber = _toNumber.toNumber;
+s.numberFormat = _numberFormat.numberFormat;
+s.strRight = _strRight.strRight;
+s.strRightBack = _strRightBack.strRightBack;
+s.strLeft = _strLeft.strLeft;
+s.strLeftBack = _strLeftBack.strLeftBack;
+s.toSentence = _toSentence.toSentence;
+s.toSentenceSerial = _toSentenceSerial.toSentenceSerial;
+s.slugify = _slugify.slugify;
+s.surround = _surround.surround;
+s.quote = _quote.quote;
+s.unquote = _unquote.unquote;
+s.repeat = _repeat.repeat;
+s.naturalCmp = _naturalCmp.naturalCmp;
+s.levenshtein = _levenshtein.levenshtein;
+s.toBoolean = _toBoolean.toBoolean;
+s.exports = _exports.exports;
+s.escapeRegExp = _escapeRegExp.escapeRegExp;
+s.wrap = _wrap.wrap;
+s.map = _map.map;
 
 // Aliases
-s.strip     = s.trim;
-s.lstrip    = s.ltrim;
-s.rstrip    = s.rtrim;
-s.center    = s.lrpad;
-s.rjust     = s.lpad;
-s.ljust     = s.rpad;
-s.contains  = s.include;
-s.q         = s.quote;
-s.toBool    = s.toBoolean;
+s.strip = s.trim;
+s.lstrip = s.ltrim;
+s.rstrip = s.rtrim;
+s.center = s.lrpad;
+s.rjust = s.lpad;
+s.ljust = s.rpad;
+s.contains = s.include;
+s.q = s.quote;
+s.toBool = s.toBoolean;
 s.camelcase = s.camelize;
-s.mapChars  = s.map;
-
+s.mapChars = s.map;
 
 // Implement chaining
 s.prototype = {
@@ -167,7 +236,7 @@ s.prototype = {
 
 function fn2method(key, fn) {
   if (typeof fn !== 'function') return;
-  s.prototype[key] = function() {
+  s.prototype[key] = function () {
     var args = [this._wrapped].concat(Array.prototype.slice.call(arguments));
     var res = fn.apply(null, args);
     // if the result is non-string stop the chain and return the value
@@ -176,31 +245,21 @@ function fn2method(key, fn) {
 }
 
 // Copy functions to instance methods for chaining
-for (var key in s) fn2method(key, s[key]);
-
-fn2method('tap', function tap(string, fn) {
+for (var key in s) {
+  fn2method(key, s[key]);
+}fn2method('tap', function tap(string, fn) {
   return fn(string);
 });
 
 function prototype2method(methodName) {
-  fn2method(methodName, function(context) {
+  fn2method(methodName, function (context) {
     var args = Array.prototype.slice.call(arguments, 1);
     return String.prototype[methodName].apply(context, args);
   });
 }
 
-var prototypeMethods = [
-  'toUpperCase',
-  'toLowerCase',
-  'split',
-  'replace',
-  'slice',
-  'substring',
-  'substr',
-  'concat'
-];
+var prototypeMethods = ['toUpperCase', 'toLowerCase', 'split', 'replace', 'slice', 'substring', 'substr', 'concat'];
 
-for (var method in prototypeMethods) prototype2method(prototypeMethods[method]);
-
-
-export { mod_s as s };
+for (var method in prototypeMethods) {
+  prototype2method(prototypeMethods[method]);
+}exports.s = mod_s;

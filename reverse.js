@@ -1,7 +1,14 @@
-import { chars as chars_chars } from "./chars";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.reverse = undefined;
+
+var _chars = require("./chars");
 
 var mod_anonymus = function reverse(str) {
-  return chars_chars(str).reverse().join('');
+  return (0, _chars.chars)(str).reverse().join('');
 };
 
-export { mod_anonymus as reverse };
+exports.reverse = mod_anonymus;
