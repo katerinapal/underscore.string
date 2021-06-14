@@ -1,8 +1,14 @@
+'use strict';
 
-import { makeString as makeString_makeString } from "./helper/makeString";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.cleanDiacritics = undefined;
 
-var from  = 'ąàáäâãåæăćčĉęèéëêĝĥìíïîĵłľńňòóöőôõðøśșşšŝťțţŭùúüűûñÿýçżźž',
-  to    = 'aaaaaaaaaccceeeeeghiiiijllnnoooooooossssstttuuuuuunyyczzz';
+var _makeString = require('./helper/makeString');
+
+var from = 'ąàáäâãåæăćčĉęèéëêĝĥìíïîĵłľńňòóöőôõðøśșşšŝťțţŭùúüűûñÿýçżźž',
+    to = 'aaaaaaaaaccceeeeeghiiiijllnnoooooooossssstttuuuuuunyyczzz';
 
 from += from.toUpperCase();
 to += to.toUpperCase();
@@ -13,19 +19,17 @@ to = to.split('');
 from += 'ß';
 to.push('ss');
 
-
 var mod_anonymus = function cleanDiacritics(str) {
-  return makeString_makeString(str).replace(/.{1}/g, function(c){
+  return (0, _makeString.makeString)(str).replace(/.{1}/g, function (c) {
     var index = from.indexOf(c);
     return index === -1 ? c : to[index];
   });
 };
 
-
-mod_anonymus = function cleanDiacritics(str) {
-  return makeString_makeString(str).replace(/.{1}/g, function(c){
+exports.cleanDiacritics = mod_anonymus = function cleanDiacritics(str) {
+  return (0, _makeString.makeString)(str).replace(/.{1}/g, function (c) {
     var index = from.indexOf(c);
     return index === -1 ? c : to[index];
   });
 };
-export { mod_anonymus as cleanDiacritics };
+exports.cleanDiacritics = mod_anonymus;

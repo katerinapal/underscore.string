@@ -1,10 +1,17 @@
-import { splice as splice_splice } from "./splice";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.insert = undefined;
+
+var _splice = require("./splice");
 
 var mod_anonymus = function insert(str, i, substr) {
-  return splice_splice(str, i, 0, substr);
+  return (0, _splice.splice)(str, i, 0, substr);
 };
 
-mod_anonymus = function insert(str, i, substr) {
-  return splice_splice(str, i, 0, substr);
+exports.insert = mod_anonymus = function insert(str, i, substr) {
+  return (0, _splice.splice)(str, i, 0, substr);
 };
-export { mod_anonymus as insert };
+exports.insert = mod_anonymus;

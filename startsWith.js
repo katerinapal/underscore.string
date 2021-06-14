@@ -1,17 +1,25 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
-import { toPositive as toPositive_toPositive } from "./helper/toPositive";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.startsWith = undefined;
+
+var _makeString = require("./helper/makeString");
+
+var _toPositive = require("./helper/toPositive");
 
 var mod_anonymus = function startsWith(str, starts, position) {
-  str = makeString_makeString(str);
+  str = (0, _makeString.makeString)(str);
   starts = '' + starts;
-  position = position == null ? 0 : Math.min(toPositive_toPositive(position), str.length);
+  position = position == null ? 0 : Math.min((0, _toPositive.toPositive)(position), str.length);
   return str.lastIndexOf(starts, position) === position;
 };
 
-mod_anonymus = function startsWith(str, starts, position) {
-  str = makeString_makeString(str);
+exports.startsWith = mod_anonymus = function startsWith(str, starts, position) {
+  str = (0, _makeString.makeString)(str);
   starts = '' + starts;
-  position = position == null ? 0 : Math.min(toPositive_toPositive(position), str.length);
+  position = position == null ? 0 : Math.min((0, _toPositive.toPositive)(position), str.length);
   return str.lastIndexOf(starts, position) === position;
 };
-export { mod_anonymus as startsWith };
+exports.startsWith = mod_anonymus;

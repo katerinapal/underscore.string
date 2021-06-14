@@ -1,4 +1,9 @@
-var mod_anonymus = function() {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var mod_anonymus = function mod_anonymus() {
   var result = {};
 
   for (var prop in this) {
@@ -9,7 +14,7 @@ var mod_anonymus = function() {
   return result;
 };
 
-mod_anonymus = function() {
+exports.exports = mod_anonymus = function mod_anonymus() {
   var result = {};
 
   for (var prop in this) {
@@ -19,4 +24,4 @@ mod_anonymus = function() {
 
   return result;
 };
-export { mod_anonymus as exports };
+exports.exports = mod_anonymus;

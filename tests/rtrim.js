@@ -1,23 +1,30 @@
-import ext_assert from "assert";
-import { rtrim as rtrim_rtrim } from "../rtrim";
-var equal = ext_assert.equal;
+"use strict";
 
-test('#rtrim', function() {
-  equal(rtrim_rtrim('http://foo/', '/'), 'http://foo', 'clean trailing slash');
-  equal(rtrim_rtrim(' foo'), ' foo');
-  equal(rtrim_rtrim('foo '), 'foo');
-  equal(rtrim_rtrim('foo     '), 'foo');
-  equal(rtrim_rtrim('foo  bar     '), 'foo  bar');
-  equal(rtrim_rtrim(' foo '), ' foo');
+var _assert = require("assert");
 
-  equal(rtrim_rtrim('ffoo', 'f'), 'ffoo');
-  equal(rtrim_rtrim('ooff', 'f'), 'oo');
-  equal(rtrim_rtrim('ffooff', 'f'), 'ffoo');
+var _assert2 = _interopRequireDefault(_assert);
 
-  equal(rtrim_rtrim('_-foobar-_', '_-'), '_-foobar');
+var _rtrim = require("../rtrim");
 
-  equal(rtrim_rtrim(123, 3), '12');
-  equal(rtrim_rtrim(''), '', 'rtrim empty string should return empty string');
-  equal(rtrim_rtrim(null), '', 'rtrim null should return empty string');
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#rtrim', function () {
+  equal((0, _rtrim.rtrim)('http://foo/', '/'), 'http://foo', 'clean trailing slash');
+  equal((0, _rtrim.rtrim)(' foo'), ' foo');
+  equal((0, _rtrim.rtrim)('foo '), 'foo');
+  equal((0, _rtrim.rtrim)('foo     '), 'foo');
+  equal((0, _rtrim.rtrim)('foo  bar     '), 'foo  bar');
+  equal((0, _rtrim.rtrim)(' foo '), ' foo');
+
+  equal((0, _rtrim.rtrim)('ffoo', 'f'), 'ffoo');
+  equal((0, _rtrim.rtrim)('ooff', 'f'), 'oo');
+  equal((0, _rtrim.rtrim)('ffooff', 'f'), 'ffoo');
+
+  equal((0, _rtrim.rtrim)('_-foobar-_', '_-'), '_-foobar');
+
+  equal((0, _rtrim.rtrim)(123, 3), '12');
+  equal((0, _rtrim.rtrim)(''), '', 'rtrim empty string should return empty string');
+  equal((0, _rtrim.rtrim)(null), '', 'rtrim null should return empty string');
 });
-

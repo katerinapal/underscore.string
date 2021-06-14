@@ -1,18 +1,24 @@
-import ext_assert from "assert";
-import { classify as classify_classify } from "../classify";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#classify', function(){
-  equal(classify_classify(1), '1');
-  equal(classify_classify('some_class_name'), 'SomeClassName');
-  equal(classify_classify('my wonderfull class_name'), 'MyWonderfullClassName');
-  equal(classify_classify('my wonderfull.class.name'), 'MyWonderfullClassName');
-  equal(classify_classify('myLittleCamel'), 'MyLittleCamel');
-  equal(classify_classify('myLittleCamel.class.name'), 'MyLittleCamelClassName');
-  equal(classify_classify(123), '123');
-  equal(classify_classify(''), '');
-  equal(classify_classify(null), '');
-  equal(classify_classify(undefined), '');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _classify = require("../classify");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#classify', function () {
+  equal((0, _classify.classify)(1), '1');
+  equal((0, _classify.classify)('some_class_name'), 'SomeClassName');
+  equal((0, _classify.classify)('my wonderfull class_name'), 'MyWonderfullClassName');
+  equal((0, _classify.classify)('my wonderfull.class.name'), 'MyWonderfullClassName');
+  equal((0, _classify.classify)('myLittleCamel'), 'MyLittleCamel');
+  equal((0, _classify.classify)('myLittleCamel.class.name'), 'MyLittleCamelClassName');
+  equal((0, _classify.classify)(123), '123');
+  equal((0, _classify.classify)(''), '');
+  equal((0, _classify.classify)(null), '');
+  equal((0, _classify.classify)(undefined), '');
 });
-

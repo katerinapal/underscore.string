@@ -1,36 +1,42 @@
-import ext_assert from "assert";
-import { dedent as dedent_dedent } from "../dedent";
-var equal = ext_assert.equal;
-var deepEqual = ext_assert.deepEqual;
+"use strict";
 
+var _assert = require("assert");
 
-test('#dedent', function() {
-  equal(dedent_dedent('Hello\nWorld'), 'Hello\nWorld');
-  equal(dedent_dedent('Hello\t\nWorld'), 'Hello\t\nWorld');
-  equal(dedent_dedent('Hello \nWorld'), 'Hello \nWorld');
-  equal(dedent_dedent('Hello\n  World'), 'Hello\n  World');
-  equal(dedent_dedent('    Hello\n  World'), '  Hello\nWorld');
-  equal(dedent_dedent('  Hello\nWorld'), '  Hello\nWorld');
-  equal(dedent_dedent('  Hello World'), 'Hello World');
-  equal(dedent_dedent('  Hello\n  World'), 'Hello\nWorld');
-  equal(dedent_dedent('  Hello\n    World'), 'Hello\n  World');
-  equal(dedent_dedent('\t\tHello\tWorld'), 'Hello\tWorld');
-  equal(dedent_dedent('\t\tHello\n\t\tWorld'), 'Hello\nWorld');
-  equal(dedent_dedent('Hello\n\t\tWorld'), 'Hello\n\t\tWorld');
-  equal(dedent_dedent('\t\tHello\n\t\t\t\tWorld'), 'Hello\n\t\tWorld');
-  equal(dedent_dedent('\t\tHello\r\n\t\t\t\tWorld'), 'Hello\r\n\t\tWorld');
-  equal(dedent_dedent('\t\tHello\r\n\r\n\t\t\t\tWorld'), 'Hello\r\n\r\n\t\tWorld');
-  equal(dedent_dedent('\t\tHello\n\n\n\n\t\t\t\tWorld'), 'Hello\n\n\n\n\t\tWorld');
-  equal(dedent_dedent('\t\t\tHello\n\t\tWorld', '\\t'), '\t\tHello\n\tWorld');
-  equal(dedent_dedent('    Hello\n    World', '  '), '  Hello\n  World');
-  equal(dedent_dedent('    Hello\n    World', ''), '    Hello\n    World');
-  equal(dedent_dedent('\t\tHello\n\n\n\n\t\t\t\tWorld', '\\t'), '\tHello\n\n\n\n\t\t\tWorld');
-  equal(dedent_dedent('Hello\n\t\tWorld', '\t'), 'Hello\n\t\tWorld');
-  equal(dedent_dedent('Hello\n  World', ' '), 'Hello\n  World');
-  equal(dedent_dedent('  Hello\nWorld', ' '), '  Hello\nWorld');
-  deepEqual(dedent_dedent(123), '123');
-  deepEqual(dedent_dedent(''), '');
-  deepEqual(dedent_dedent(null), '');
-  deepEqual(dedent_dedent(undefined), '');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _dedent = require("../dedent");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+var deepEqual = _assert2.default.deepEqual;
+
+test('#dedent', function () {
+  equal((0, _dedent.dedent)('Hello\nWorld'), 'Hello\nWorld');
+  equal((0, _dedent.dedent)('Hello\t\nWorld'), 'Hello\t\nWorld');
+  equal((0, _dedent.dedent)('Hello \nWorld'), 'Hello \nWorld');
+  equal((0, _dedent.dedent)('Hello\n  World'), 'Hello\n  World');
+  equal((0, _dedent.dedent)('    Hello\n  World'), '  Hello\nWorld');
+  equal((0, _dedent.dedent)('  Hello\nWorld'), '  Hello\nWorld');
+  equal((0, _dedent.dedent)('  Hello World'), 'Hello World');
+  equal((0, _dedent.dedent)('  Hello\n  World'), 'Hello\nWorld');
+  equal((0, _dedent.dedent)('  Hello\n    World'), 'Hello\n  World');
+  equal((0, _dedent.dedent)('\t\tHello\tWorld'), 'Hello\tWorld');
+  equal((0, _dedent.dedent)('\t\tHello\n\t\tWorld'), 'Hello\nWorld');
+  equal((0, _dedent.dedent)('Hello\n\t\tWorld'), 'Hello\n\t\tWorld');
+  equal((0, _dedent.dedent)('\t\tHello\n\t\t\t\tWorld'), 'Hello\n\t\tWorld');
+  equal((0, _dedent.dedent)('\t\tHello\r\n\t\t\t\tWorld'), 'Hello\r\n\t\tWorld');
+  equal((0, _dedent.dedent)('\t\tHello\r\n\r\n\t\t\t\tWorld'), 'Hello\r\n\r\n\t\tWorld');
+  equal((0, _dedent.dedent)('\t\tHello\n\n\n\n\t\t\t\tWorld'), 'Hello\n\n\n\n\t\tWorld');
+  equal((0, _dedent.dedent)('\t\t\tHello\n\t\tWorld', '\\t'), '\t\tHello\n\tWorld');
+  equal((0, _dedent.dedent)('    Hello\n    World', '  '), '  Hello\n  World');
+  equal((0, _dedent.dedent)('    Hello\n    World', ''), '    Hello\n    World');
+  equal((0, _dedent.dedent)('\t\tHello\n\n\n\n\t\t\t\tWorld', '\\t'), '\tHello\n\n\n\n\t\t\tWorld');
+  equal((0, _dedent.dedent)('Hello\n\t\tWorld', '\t'), 'Hello\n\t\tWorld');
+  equal((0, _dedent.dedent)('Hello\n  World', ' '), 'Hello\n  World');
+  equal((0, _dedent.dedent)('  Hello\nWorld', ' '), '  Hello\nWorld');
+  deepEqual((0, _dedent.dedent)(123), '123');
+  deepEqual((0, _dedent.dedent)(''), '');
+  deepEqual((0, _dedent.dedent)(null), '');
+  deepEqual((0, _dedent.dedent)(undefined), '');
 });
-

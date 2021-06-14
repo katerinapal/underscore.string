@@ -1,43 +1,45 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
-import { rtrim as rtrim_rtrim } from "./rtrim";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.prune = undefined;
+
+var _makeString = require("./helper/makeString");
+
+var _rtrim = require("./rtrim");
 
 var mod_anonymus = function prune(str, length, pruneStr) {
-  str = makeString_makeString(str);
+  str = (0, _makeString.makeString)(str);
   length = ~~length;
   pruneStr = pruneStr != null ? String(pruneStr) : '...';
 
   if (str.length <= length) return str;
 
-  var tmpl = function(c) {
-      return c.toUpperCase() !== c.toLowerCase() ? 'A' : ' ';
-    },
-    template = str.slice(0, length + 1).replace(/.(?=\W*\w*$)/g, tmpl); // 'Hello, world' -> 'HellAA AAAAA'
+  var tmpl = function tmpl(c) {
+    return c.toUpperCase() !== c.toLowerCase() ? 'A' : ' ';
+  },
+      template = str.slice(0, length + 1).replace(/.(?=\W*\w*$)/g, tmpl); // 'Hello, world' -> 'HellAA AAAAA'
 
-  if (template.slice(template.length - 2).match(/\w\w/))
-    template = template.replace(/\s*\S+$/, '');
-  else
-    template = rtrim_rtrim(template.slice(0, template.length - 1));
+  if (template.slice(template.length - 2).match(/\w\w/)) template = template.replace(/\s*\S+$/, '');else template = (0, _rtrim.rtrim)(template.slice(0, template.length - 1));
 
   return (template + pruneStr).length > str.length ? str : str.slice(0, template.length) + pruneStr;
 };
 
-mod_anonymus = function prune(str, length, pruneStr) {
-  str = makeString_makeString(str);
+exports.prune = mod_anonymus = function prune(str, length, pruneStr) {
+  str = (0, _makeString.makeString)(str);
   length = ~~length;
   pruneStr = pruneStr != null ? String(pruneStr) : '...';
 
   if (str.length <= length) return str;
 
-  var tmpl = function(c) {
-      return c.toUpperCase() !== c.toLowerCase() ? 'A' : ' ';
-    },
-    template = str.slice(0, length + 1).replace(/.(?=\W*\w*$)/g, tmpl); // 'Hello, world' -> 'HellAA AAAAA'
+  var tmpl = function tmpl(c) {
+    return c.toUpperCase() !== c.toLowerCase() ? 'A' : ' ';
+  },
+      template = str.slice(0, length + 1).replace(/.(?=\W*\w*$)/g, tmpl); // 'Hello, world' -> 'HellAA AAAAA'
 
-  if (template.slice(template.length - 2).match(/\w\w/))
-    template = template.replace(/\s*\S+$/, '');
-  else
-    template = rtrim_rtrim(template.slice(0, template.length - 1));
+  if (template.slice(template.length - 2).match(/\w\w/)) template = template.replace(/\s*\S+$/, '');else template = (0, _rtrim.rtrim)(template.slice(0, template.length - 1));
 
   return (template + pruneStr).length > str.length ? str : str.slice(0, template.length) + pruneStr;
 };
-export { mod_anonymus as prune };
+exports.prune = mod_anonymus;

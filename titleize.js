@@ -1,14 +1,21 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.titleize = undefined;
+
+var _makeString = require("./helper/makeString");
 
 var mod_anonymus = function titleize(str) {
-  return makeString_makeString(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function(c) {
+  return (0, _makeString.makeString)(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function (c) {
     return c.toUpperCase();
   });
 };
 
-mod_anonymus = function titleize(str) {
-  return makeString_makeString(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function(c) {
+exports.titleize = mod_anonymus = function titleize(str) {
+  return (0, _makeString.makeString)(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function (c) {
     return c.toUpperCase();
   });
 };
-export { mod_anonymus as titleize };
+exports.titleize = mod_anonymus;

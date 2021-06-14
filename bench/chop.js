@@ -1,6 +1,9 @@
-import { chop as chop_chop } from "../chop";
+"use strict";
+
+var _chop = require("../chop");
+
 var encapsulated_anonymus;
 
-encapsulated_anonymus = function() {
-  chop_chop('whitespace', 2);
+encapsulated_anonymus = function encapsulated_anonymus() {
+  (0, _chop.chop)('whitespace', 2);
 };

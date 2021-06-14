@@ -1,6 +1,9 @@
-import { startsWith as startsWith_startsWith } from "../startsWith";
+'use strict';
+
+var _startsWith = require('../startsWith');
+
 var encapsulated_anonymus;
 
-encapsulated_anonymus = function() {
-  startsWith_startsWith('foobar', 'foo');
+encapsulated_anonymus = function encapsulated_anonymus() {
+  (0, _startsWith.startsWith)('foobar', 'foo');
 };

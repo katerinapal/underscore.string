@@ -1,25 +1,30 @@
+"use strict";
 
-import ext_assert from "assert";
-import { cleanDiacritics as cleanDiacritics_cleanDiacritics } from "../cleanDiacritics";
-var equal = ext_assert.equal;
+var _assert = require("assert");
 
-var from  = 'ąàáäâãåæăćčĉęèéëêĝĥìíïîĵłľńňòóöőôõðøśșşšŝťțţŭùúüűûñÿýçżźž',
-  to    = 'aaaaaaaaaccceeeeeghiiiijllnnoooooooossssstttuuuuuunyyczzz';
+var _assert2 = _interopRequireDefault(_assert);
 
-test('#cleanDiacritics', function() {
+var _cleanDiacritics = require("../cleanDiacritics");
 
-  equal(cleanDiacritics_cleanDiacritics(from), to);
-  equal(cleanDiacritics_cleanDiacritics(from.toUpperCase()), to.toUpperCase());
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var equal = _assert2.default.equal;
 
-  equal(cleanDiacritics_cleanDiacritics('ä'), 'a');
-  equal(cleanDiacritics_cleanDiacritics('Ä Ø'), 'A O');
-  equal(cleanDiacritics_cleanDiacritics('1 foo ääkkönen'), '1 foo aakkonen');
-  equal(cleanDiacritics_cleanDiacritics('Äöö ÖÖ'), 'Aoo OO');
-  equal(cleanDiacritics_cleanDiacritics(' ä '), ' a ');
-  equal(cleanDiacritics_cleanDiacritics('- " , £ $ ä'), '- " , £ $ a');
+var from = 'ąàáäâãåæăćčĉęèéëêĝĥìíïîĵłľńňòóöőôõðøśșşšŝťțţŭùúüűûñÿýçżźž',
+    to = 'aaaaaaaaaccceeeeeghiiiijllnnoooooooossssstttuuuuuunyyczzz';
 
-  equal(cleanDiacritics_cleanDiacritics('ß'), 'ss');
-  equal(cleanDiacritics_cleanDiacritics('Schuß'), 'Schuss');
+test('#cleanDiacritics', function () {
+
+  equal((0, _cleanDiacritics.cleanDiacritics)(from), to);
+  equal((0, _cleanDiacritics.cleanDiacritics)(from.toUpperCase()), to.toUpperCase());
+
+  equal((0, _cleanDiacritics.cleanDiacritics)('ä'), 'a');
+  equal((0, _cleanDiacritics.cleanDiacritics)('Ä Ø'), 'A O');
+  equal((0, _cleanDiacritics.cleanDiacritics)('1 foo ääkkönen'), '1 foo aakkonen');
+  equal((0, _cleanDiacritics.cleanDiacritics)('Äöö ÖÖ'), 'Aoo OO');
+  equal((0, _cleanDiacritics.cleanDiacritics)(' ä '), ' a ');
+  equal((0, _cleanDiacritics.cleanDiacritics)('- " , £ $ ä'), '- " , £ $ a');
+
+  equal((0, _cleanDiacritics.cleanDiacritics)('ß'), 'ss');
+  equal((0, _cleanDiacritics.cleanDiacritics)('Schuß'), 'Schuss');
 });
-

@@ -1,32 +1,39 @@
-import ext_assert from "assert";
-import { map as map_map } from "../map";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#map', function() {
-  equal(map_map('Hello world', function(x) {
+var _assert2 = _interopRequireDefault(_assert);
+
+var _map = require("../map");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#map', function () {
+  equal((0, _map.map)('Hello world', function (x) {
     return x;
   }), 'Hello world');
-  equal(map_map(12345, function(x) {
+  equal((0, _map.map)(12345, function (x) {
     return x;
   }), '12345');
-  equal(map_map('Hello world', function(x) {
+  equal((0, _map.map)('Hello world', function (x) {
     if (x === 'o') x = 'O';
     return x;
   }), 'HellO wOrld');
-  equal(map_map('', function(x) {
+  equal((0, _map.map)('', function (x) {
     return x;
   }), '');
-  equal(map_map(null, function(x) {
+  equal((0, _map.map)(null, function (x) {
     return x;
   }), '');
-  equal(map_map(undefined, function(x) {
+  equal((0, _map.map)(undefined, function (x) {
     return x;
   }), '');
-  equal(map_map('Hello world', ''), 'Hello world');
-  equal(map_map('Hello world', null), 'Hello world');
-  equal(map_map('Hello world', undefined), 'Hello world');
-  equal(map_map('', ''), '');
-  equal(map_map(null, null), '');
-  equal(map_map(undefined, undefined), '');
+  equal((0, _map.map)('Hello world', ''), 'Hello world');
+  equal((0, _map.map)('Hello world', null), 'Hello world');
+  equal((0, _map.map)('Hello world', undefined), 'Hello world');
+  equal((0, _map.map)('', ''), '');
+  equal((0, _map.map)(null, null), '');
+  equal((0, _map.map)(undefined, undefined), '');
 });

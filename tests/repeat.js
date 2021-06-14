@@ -1,17 +1,23 @@
-import ext_assert from "assert";
-import { repeat as repeat_repeat } from "../repeat";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#repeat', function() {
-  equal(repeat_repeat('foo'), '');
-  equal(repeat_repeat('foo', 3), 'foofoofoo');
-  equal(repeat_repeat('foo', '3'), 'foofoofoo');
-  equal(repeat_repeat(123, 2), '123123');
-  equal(repeat_repeat(1234, 2, '*'), '1234*1234');
-  equal(repeat_repeat(1234, 2, 5), '123451234');
-  equal(repeat_repeat('', 2), '');
-  equal(repeat_repeat(null, 2), '');
-  equal(repeat_repeat(undefined, 2), '');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _repeat = require("../repeat");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#repeat', function () {
+  equal((0, _repeat.repeat)('foo'), '');
+  equal((0, _repeat.repeat)('foo', 3), 'foofoofoo');
+  equal((0, _repeat.repeat)('foo', '3'), 'foofoofoo');
+  equal((0, _repeat.repeat)(123, 2), '123123');
+  equal((0, _repeat.repeat)(1234, 2, '*'), '1234*1234');
+  equal((0, _repeat.repeat)(1234, 2, 5), '123451234');
+  equal((0, _repeat.repeat)('', 2), '');
+  equal((0, _repeat.repeat)(null, 2), '');
+  equal((0, _repeat.repeat)(undefined, 2), '');
 });
-

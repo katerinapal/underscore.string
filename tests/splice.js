@@ -1,11 +1,16 @@
-import ext_assert from "assert";
-import { splice as splice_splice } from "../splice";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#splice', function(){
-  equal(splice_splice('https://edtsech@bitbucket.org/edtsech/underscore.strings', 30, 7, 'epeli'),
-         'https://edtsech@bitbucket.org/epeli/underscore.strings');
-  equal(splice_splice(12345, 1, 2, 321), '132145', 'Non strings');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _splice = require("../splice");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#splice', function () {
+  equal((0, _splice.splice)('https://edtsech@bitbucket.org/edtsech/underscore.strings', 30, 7, 'epeli'), 'https://edtsech@bitbucket.org/epeli/underscore.strings');
+  equal((0, _splice.splice)(12345, 1, 2, 321), '132145', 'Non strings');
 });
-

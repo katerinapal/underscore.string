@@ -1,10 +1,15 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var mod_anonymus = function lines(str) {
   if (str == null) return [];
   return String(str).split(/\r\n?|\n/);
 };
 
-mod_anonymus = function lines(str) {
+exports.lines = mod_anonymus = function lines(str) {
   if (str == null) return [];
   return String(str).split(/\r\n?|\n/);
 };
-export { mod_anonymus as lines };
+exports.lines = mod_anonymus;

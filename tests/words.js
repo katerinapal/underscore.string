@@ -1,18 +1,24 @@
-import ext_assert from "assert";
-import { words as words_words } from "../words";
-var deepEqual = ext_assert.deepEqual;
+"use strict";
 
+var _assert = require("assert");
 
-test('#words', function() {
-  deepEqual(words_words('I love you!'), ['I', 'love', 'you!']);
-  deepEqual(words_words(' I    love   you!  '), ['I', 'love', 'you!']);
-  deepEqual(words_words('I_love_you!', '_'), ['I', 'love', 'you!']);
-  deepEqual(words_words('I-love-you!', /-/), ['I', 'love', 'you!']);
-  deepEqual(words_words(123), ['123'], '123 number has one word "123".');
-  deepEqual(words_words(0), ['0'], 'Zero number has one word "0".');
-  deepEqual(words_words(''), [], 'Empty strings has no words.');
-  deepEqual(words_words('   '), [], 'Blank strings has no words.');
-  deepEqual(words_words(null), [], 'null has no words.');
-  deepEqual(words_words(undefined), [], 'undefined has no words.');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _words = require("../words");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var deepEqual = _assert2.default.deepEqual;
+
+test('#words', function () {
+  deepEqual((0, _words.words)('I love you!'), ['I', 'love', 'you!']);
+  deepEqual((0, _words.words)(' I    love   you!  '), ['I', 'love', 'you!']);
+  deepEqual((0, _words.words)('I_love_you!', '_'), ['I', 'love', 'you!']);
+  deepEqual((0, _words.words)('I-love-you!', /-/), ['I', 'love', 'you!']);
+  deepEqual((0, _words.words)(123), ['123'], '123 number has one word "123".');
+  deepEqual((0, _words.words)(0), ['0'], 'Zero number has one word "0".');
+  deepEqual((0, _words.words)(''), [], 'Empty strings has no words.');
+  deepEqual((0, _words.words)('   '), [], 'Blank strings has no words.');
+  deepEqual((0, _words.words)(null), [], 'null has no words.');
+  deepEqual((0, _words.words)(undefined), [], 'undefined has no words.');
 });
-

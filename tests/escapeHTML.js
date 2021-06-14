@@ -1,16 +1,23 @@
-import ext_assert from "assert";
-import { escapeHTML as escapeHTML_escapeHTML } from "../escapeHTML";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#escapeHTML', function(){
-  equal(escapeHTML_escapeHTML('<div>Blah & "blah" & \'blah\'</div>'), '&lt;div&gt;Blah &amp; &quot;blah&quot; &amp; &#39;blah&#39;&lt;/div&gt;');
-  equal(escapeHTML_escapeHTML('&lt;'), '&amp;lt;');
-  equal(escapeHTML_escapeHTML(' '), ' ');
-  equal(escapeHTML_escapeHTML('¢'), '&cent;');
-  equal(escapeHTML_escapeHTML('¢ £ ¥ € © ®'), '&cent; &pound; &yen; &euro; &copy; &reg;');
-  equal(escapeHTML_escapeHTML(5), '5');
-  equal(escapeHTML_escapeHTML(''), '');
-  equal(escapeHTML_escapeHTML(null), '');
-  equal(escapeHTML_escapeHTML(undefined), '');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _escapeHTML = require("../escapeHTML");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#escapeHTML', function () {
+  equal((0, _escapeHTML.escapeHTML)('<div>Blah & "blah" & \'blah\'</div>'), '&lt;div&gt;Blah &amp; &quot;blah&quot; &amp; &#39;blah&#39;&lt;/div&gt;');
+  equal((0, _escapeHTML.escapeHTML)('&lt;'), '&amp;lt;');
+  equal((0, _escapeHTML.escapeHTML)(' '), ' ');
+  equal((0, _escapeHTML.escapeHTML)('¢'), '&cent;');
+  equal((0, _escapeHTML.escapeHTML)('¢ £ ¥ € © ®'), '&cent; &pound; &yen; &euro; &copy; &reg;');
+  equal((0, _escapeHTML.escapeHTML)(5), '5');
+  equal((0, _escapeHTML.escapeHTML)(''), '');
+  equal((0, _escapeHTML.escapeHTML)(null), '');
+  equal((0, _escapeHTML.escapeHTML)(undefined), '');
 });
