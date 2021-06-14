@@ -1,17 +1,25 @@
-var makeString = require('./helper/makeString');
-var escapeChars = require('./helper/escapeChars');
+import { makeString as makeString_makeString } from "./helper/makeString";
+import { escapeChars as escapeChars_escapeChars } from "./helper/escapeChars";
 
 var regexString = '[';
-for(var key in escapeChars) {
+for(var key in escapeChars_escapeChars) {
   regexString += key;
 }
 regexString += ']';
 
 var regex = new RegExp( regexString, 'g');
 
-module.exports = function escapeHTML(str) {
+var mod_anonymus = function escapeHTML(str) {
 
-  return makeString(str).replace(regex, function(m) {
-    return '&' + escapeChars[m] + ';';
+  return makeString_makeString(str).replace(regex, function(m) {
+    return '&' + escapeChars_escapeChars[m] + ';';
   });
 };
+
+mod_anonymus = function escapeHTML(str) {
+
+  return makeString_makeString(str).replace(regex, function(m) {
+    return '&' + escapeChars_escapeChars[m] + ';';
+  });
+};
+export { mod_anonymus as escapeHTML };

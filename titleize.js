@@ -1,7 +1,14 @@
-var makeString = require('./helper/makeString');
+import { makeString as makeString_makeString } from "./helper/makeString";
 
-module.exports = function titleize(str) {
-  return makeString(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function(c) {
+var mod_anonymus = function titleize(str) {
+  return makeString_makeString(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function(c) {
     return c.toUpperCase();
   });
 };
+
+mod_anonymus = function titleize(str) {
+  return makeString_makeString(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function(c) {
+    return c.toUpperCase();
+  });
+};
+export { mod_anonymus as titleize };

@@ -1,5 +1,6 @@
-var escapeHTML = require('../escapeHTML');
+import { escapeHTML as escapeHTML_escapeHTML } from "../escapeHTML";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  escapeHTML('<div>Blah blah blah</div>');
+encapsulated_anonymus = function() {
+  escapeHTML_escapeHTML('<div>Blah blah blah</div>');
 };

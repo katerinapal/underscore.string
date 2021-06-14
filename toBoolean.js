@@ -1,4 +1,4 @@
-var trim = require('./trim');
+import { trim as trim_trim } from "./trim";
 
 function boolMatch(s, matchers) {
   var i, matcher, down = s.toLowerCase();
@@ -11,10 +11,19 @@ function boolMatch(s, matchers) {
   }
 }
 
-module.exports = function toBoolean(str, trueValues, falseValues) {
+var mod_anonymus = function toBoolean(str, trueValues, falseValues) {
   if (typeof str === 'number') str = '' + str;
   if (typeof str !== 'string') return !!str;
-  str = trim(str);
+  str = trim_trim(str);
   if (boolMatch(str, trueValues || ['true', '1'])) return true;
   if (boolMatch(str, falseValues || ['false', '0'])) return false;
 };
+
+mod_anonymus = function toBoolean(str, trueValues, falseValues) {
+  if (typeof str === 'number') str = '' + str;
+  if (typeof str !== 'string') return !!str;
+  str = trim_trim(str);
+  if (boolMatch(str, trueValues || ['true', '1'])) return true;
+  if (boolMatch(str, falseValues || ['false', '0'])) return false;
+};
+export { mod_anonymus as toBoolean };

@@ -1,5 +1,10 @@
-var makeString = require('./makeString');
+import { makeString as makeString_makeString } from "./makeString";
 
-module.exports = function escapeRegExp(str) {
-  return makeString(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
+var mod_anonymus = function escapeRegExp(str) {
+  return makeString_makeString(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
 };
+
+mod_anonymus = function escapeRegExp(str) {
+  return makeString_makeString(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
+};
+export { mod_anonymus as escapeRegExp };

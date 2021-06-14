@@ -1,17 +1,18 @@
-var equal = require('assert').equal;
-var classify = require('../classify');
+import ext_assert from "assert";
+import { classify as classify_classify } from "../classify";
+var equal = ext_assert.equal;
 
 
 test('#classify', function(){
-  equal(classify(1), '1');
-  equal(classify('some_class_name'), 'SomeClassName');
-  equal(classify('my wonderfull class_name'), 'MyWonderfullClassName');
-  equal(classify('my wonderfull.class.name'), 'MyWonderfullClassName');
-  equal(classify('myLittleCamel'), 'MyLittleCamel');
-  equal(classify('myLittleCamel.class.name'), 'MyLittleCamelClassName');
-  equal(classify(123), '123');
-  equal(classify(''), '');
-  equal(classify(null), '');
-  equal(classify(undefined), '');
+  equal(classify_classify(1), '1');
+  equal(classify_classify('some_class_name'), 'SomeClassName');
+  equal(classify_classify('my wonderfull class_name'), 'MyWonderfullClassName');
+  equal(classify_classify('my wonderfull.class.name'), 'MyWonderfullClassName');
+  equal(classify_classify('myLittleCamel'), 'MyLittleCamel');
+  equal(classify_classify('myLittleCamel.class.name'), 'MyLittleCamelClassName');
+  equal(classify_classify(123), '123');
+  equal(classify_classify(''), '');
+  equal(classify_classify(null), '');
+  equal(classify_classify(undefined), '');
 });
 
