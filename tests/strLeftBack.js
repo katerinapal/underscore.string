@@ -1,16 +1,17 @@
-var equal = require('assert').equal;
-var strLeftBack = require('../strLeftBack');
+import ext_assert from "assert";
+import { strLeftBack as strLeftBack_strLeftBack } from "../strLeftBack";
+var equal = ext_assert.equal;
 
 
 test('#strLeftBack', function() {
-  equal(strLeftBack('This_is_a_test_string', '_'), 'This_is_a_test');
-  equal(strLeftBack('This_is_a_test_string', 'This'), '');
-  equal(strLeftBack('This_is_a_test_string'), 'This_is_a_test_string');
-  equal(strLeftBack('This_is_a_test_string', ''), 'This_is_a_test_string');
-  equal(strLeftBack('This_is_a_test_string', '-'), 'This_is_a_test_string');
-  equal(strLeftBack('', 'foo'), '');
-  equal(strLeftBack(null, 'foo'), '');
-  equal(strLeftBack(undefined, 'foo'), '');
-  equal(strLeftBack(123454321, 3), '123454');
+  equal(strLeftBack_strLeftBack('This_is_a_test_string', '_'), 'This_is_a_test');
+  equal(strLeftBack_strLeftBack('This_is_a_test_string', 'This'), '');
+  equal(strLeftBack_strLeftBack('This_is_a_test_string'), 'This_is_a_test_string');
+  equal(strLeftBack_strLeftBack('This_is_a_test_string', ''), 'This_is_a_test_string');
+  equal(strLeftBack_strLeftBack('This_is_a_test_string', '-'), 'This_is_a_test_string');
+  equal(strLeftBack_strLeftBack('', 'foo'), '');
+  equal(strLeftBack_strLeftBack(null, 'foo'), '');
+  equal(strLeftBack_strLeftBack(undefined, 'foo'), '');
+  equal(strLeftBack_strLeftBack(123454321, 3), '123454');
 });
 

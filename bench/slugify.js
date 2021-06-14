@@ -1,5 +1,6 @@
-var slugify = require('../slugify');
+import { slugify as slugify_slugify } from "../slugify";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  slugify('Un éléphant à l\'orée du bois');
+encapsulated_anonymus = function() {
+  slugify_slugify('Un éléphant à l\'orée du bois');
 };

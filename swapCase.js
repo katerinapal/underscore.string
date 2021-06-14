@@ -1,7 +1,14 @@
-var makeString = require('./helper/makeString');
+import { makeString as makeString_makeString } from "./helper/makeString";
 
-module.exports = function swapCase(str) {
-  return makeString(str).replace(/\S/g, function(c) {
+var mod_anonymus = function swapCase(str) {
+  return makeString_makeString(str).replace(/\S/g, function(c) {
     return c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase();
   });
 };
+
+mod_anonymus = function swapCase(str) {
+  return makeString_makeString(str).replace(/\S/g, function(c) {
+    return c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase();
+  });
+};
+export { mod_anonymus as swapCase };

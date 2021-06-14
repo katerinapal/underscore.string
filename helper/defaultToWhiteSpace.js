@@ -1,10 +1,20 @@
-var escapeRegExp = require('./escapeRegExp');
+import { escapeRegExp as escapeRegExp_escapeRegExp } from "./escapeRegExp";
 
-module.exports = function defaultToWhiteSpace(characters) {
+var mod_anonymus = function defaultToWhiteSpace(characters) {
   if (characters == null)
     return '\\s';
   else if (characters.source)
     return characters.source;
   else
-    return '[' + escapeRegExp(characters) + ']';
+    return '[' + escapeRegExp_escapeRegExp(characters) + ']';
 };
+
+mod_anonymus = function defaultToWhiteSpace(characters) {
+  if (characters == null)
+    return '\\s';
+  else if (characters.source)
+    return characters.source;
+  else
+    return '[' + escapeRegExp_escapeRegExp(characters) + ']';
+};
+export { mod_anonymus as defaultToWhiteSpace };

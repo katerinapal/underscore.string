@@ -1,9 +1,17 @@
-var makeString = require('./helper/makeString');
+import { makeString as makeString_makeString } from "./helper/makeString";
 var slice = [].slice;
 
-module.exports = function join() {
+var mod_anonymus = function join() {
   var args = slice.call(arguments),
     separator = args.shift();
 
-  return args.join(makeString(separator));
+  return args.join(makeString_makeString(separator));
 };
+
+mod_anonymus = function join() {
+  var args = slice.call(arguments),
+    separator = args.shift();
+
+  return args.join(makeString_makeString(separator));
+};
+export { mod_anonymus as join };

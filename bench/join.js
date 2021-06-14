@@ -1,5 +1,6 @@
-var join = require('../join');
+import { join as join_join } from "../join";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  join('separator', 1, 2, 3, 4, 5, 6, 7, 8, 'foo', 'bar', 'lol', 'wut');
+encapsulated_anonymus = function() {
+  join_join('separator', 1, 2, 3, 4, 5, 6, 7, 8, 'foo', 'bar', 'lol', 'wut');
 };

@@ -1,5 +1,5 @@
 
-var makeString = require('./helper/makeString');
+import { makeString as makeString_makeString } from "./helper/makeString";
 
 var from  = 'ąàáäâãåæăćčĉęèéëêĝĥìíïîĵłľńňòóöőôõðøśșşšŝťțţŭùúüűûñÿýçżźž',
   to    = 'aaaaaaaaaccceeeeeghiiiijllnnoooooooossssstttuuuuuunyyczzz';
@@ -14,9 +14,18 @@ from += 'ß';
 to.push('ss');
 
 
-module.exports = function cleanDiacritics(str) {
-  return makeString(str).replace(/.{1}/g, function(c){
+var mod_anonymus = function cleanDiacritics(str) {
+  return makeString_makeString(str).replace(/.{1}/g, function(c){
     var index = from.indexOf(c);
     return index === -1 ? c : to[index];
   });
 };
+
+
+mod_anonymus = function cleanDiacritics(str) {
+  return makeString_makeString(str).replace(/.{1}/g, function(c){
+    var index = from.indexOf(c);
+    return index === -1 ? c : to[index];
+  });
+};
+export { mod_anonymus as cleanDiacritics };

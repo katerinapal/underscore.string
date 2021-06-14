@@ -1,5 +1,6 @@
-var equal = require('assert').equal;
-var sprintf = require('../sprintf');
+import ext_assert from "assert";
+import { sprintfjs as sprintf } from "../sprintf";
+var equal = ext_assert.equal;
 
 
 test('#sprintf', function() {

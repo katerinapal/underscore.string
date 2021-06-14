@@ -1,27 +1,28 @@
-var s = require('../');
-var equal = require('assert').equal;
-var deepEqual = require('assert').deepEqual;
-var strictEqual = require('assert').strictEqual;
+import { s as _s, trim as indexjs_trim } from "../";
+import ext_assert from "assert";
+var equal = ext_assert.equal;
+var deepEqual = ext_assert.deepEqual;
+var strictEqual = ext_assert.strictEqual;
 
 
 test('provides standalone functions via the s global', function() {
-  equal(typeof s.trim, 'function');
+  equal(typeof indexjs_trim, 'function');
 });
 
 test('has standalone chaining', function() {
-  var res = s('  foo  ').trim().capitalize().value();
+  var res = _s('  foo  ').trim().capitalize().value();
   equal(res, 'Foo');
 });
 
 test('chaining supports tapping', function() {
-  var res = s('foo').tap(function(value) {
+  var res = _s('foo').tap(function(value) {
     return 'BAR' + value + 'BAR';
   }).value();
   equal(res, 'BARfooBAR');
 });
 
 test('tap breaks the chain if the return value is not a string', function() {
-  var res = s('foo').tap(function(value) {
+  var res = _s('foo').tap(function(value) {
     return value === 'foo';
   });
 
@@ -29,19 +30,19 @@ test('tap breaks the chain if the return value is not a string', function() {
 });
 
 test('chain objects are immutable', function() {
-  var chain = s('foo');
+  var chain = _s('foo');
   chain.capitalize();
   equal(chain.value(), 'foo');
 });
 
 test('methods returning non-string values stops the chain', function() {
-  strictEqual(s('foobar').startsWith('foo'), true);
-  strictEqual(s('foobar').endsWith('foo'), false);
-  deepEqual(s('hello\nworld').lines(), ['hello', 'world']);
+  strictEqual(_s('foobar').startsWith('foo'), true);
+  strictEqual(_s('foobar').endsWith('foo'), false);
+  deepEqual(_s('hello\nworld').lines(), ['hello', 'world']);
 });
 
 test('prototype methods are available in the chain', function() {
-  var chain = s('foo');
+  var chain = _s('foo');
   [
     'toUpperCase',
     'toLowerCase',
@@ -58,40 +59,40 @@ test('prototype methods are available in the chain', function() {
 });
 
 test('PROTOTYPE: toUpperCase', function() {
-  equal(s('foo').toUpperCase().value(), 'FOO');
+  equal(_s('foo').toUpperCase().value(), 'FOO');
 });
 
 test('PROTOTYPE: toLowerCase', function() {
-  equal(s('BAR').toLowerCase().value(), 'bar');
+  equal(_s('BAR').toLowerCase().value(), 'bar');
 });
 
 test('PROTOTYPE: split', function() {
-  deepEqual(s('foo bar').split(' '), ['foo', 'bar']);
+  deepEqual(_s('foo bar').split(' '), ['foo', 'bar']);
 });
 
 test('PROTOTYPE: replace', function() {
-  equal(s('faa').replace('a', 'o').value(), 'foa');
+  equal(_s('faa').replace('a', 'o').value(), 'foa');
 });
 
 test('PROTOTYPE: slice', function() {
-  equal(s('#anchor').slice(1).value(), 'anchor');
+  equal(_s('#anchor').slice(1).value(), 'anchor');
 });
 
 test('PROTOTYPE: substring', function() {
-  equal(s('foobar').substring(0, 3).value(), 'foo');
+  equal(_s('foobar').substring(0, 3).value(), 'foo');
 });
 
 test('PROTOTYPE: substring', function() {
-  equal(s('foobar!').substr(3, 3).value(), 'bar');
+  equal(_s('foobar!').substr(3, 3).value(), 'bar');
 });
 
 test('PROTOTYPE: concat', function() {
-  equal(s('foo').concat('bar').value(), 'foobar');
+  equal(_s('foo').concat('bar').value(), 'foobar');
 });
 
 test('PROTOTYPE: can combine methods', function() {
   equal(
-    s('  foo  bar').toUpperCase().concat('   BAZ').clean().value(),
+    _s('  foo  bar').toUpperCase().concat('   BAZ').clean().value(),
     'FOO BAR BAZ'
   );
 });

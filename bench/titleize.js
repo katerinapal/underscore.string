@@ -1,5 +1,6 @@
-var titleize = require('../titleize');
+import { titleize as titleize_titleize } from "../titleize";
+var encapsulated_anonymus;
 
-module.exports = function() {
-  titleize('the titleize string method');
+encapsulated_anonymus = function() {
+  titleize_titleize('the titleize string method');
 };
