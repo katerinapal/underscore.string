@@ -1,6 +1,9 @@
-import { endsWith as endsWith_endsWith } from "../endsWith";
+'use strict';
+
+var _endsWith = require('../endsWith');
+
 var encapsulated_anonymus;
 
-encapsulated_anonymus = function() {
-  endsWith_endsWith('foobar', 'xx');
+encapsulated_anonymus = function encapsulated_anonymus() {
+  (0, _endsWith.endsWith)('foobar', 'xx');
 };

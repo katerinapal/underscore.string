@@ -1,16 +1,22 @@
-import ext_assert from "assert";
-import { rpad as rpad_rpad } from "../rpad";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#rpad', function() {
-  equal(rpad_rpad('1', 8), '1       ');
-  equal(rpad_rpad(1, 8), '1       ');
-  equal(rpad_rpad('1', 8, '0'), '10000000');
-  equal(rpad_rpad('foo', 8, '0'), 'foo00000');
-  equal(rpad_rpad('foo', 7, '0'), 'foo0000');
-  equal(rpad_rpad('', 2), '  ');
-  equal(rpad_rpad(null, 2), '  ');
-  equal(rpad_rpad(undefined, 2), '  ');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _rpad = require("../rpad");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#rpad', function () {
+  equal((0, _rpad.rpad)('1', 8), '1       ');
+  equal((0, _rpad.rpad)(1, 8), '1       ');
+  equal((0, _rpad.rpad)('1', 8, '0'), '10000000');
+  equal((0, _rpad.rpad)('foo', 8, '0'), 'foo00000');
+  equal((0, _rpad.rpad)('foo', 7, '0'), 'foo0000');
+  equal((0, _rpad.rpad)('', 2), '  ');
+  equal((0, _rpad.rpad)(null, 2), '  ');
+  equal((0, _rpad.rpad)(undefined, 2), '  ');
 });
-

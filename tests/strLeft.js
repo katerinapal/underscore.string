@@ -1,17 +1,23 @@
-import ext_assert from "assert";
-import { strLeft as strLeft_strLeft } from "../strLeft";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#strLeft', function() {
-  equal(strLeft_strLeft('This_is_a_test_string', '_'), 'This');
-  equal(strLeft_strLeft('This_is_a_test_string', 'This'), '');
-  equal(strLeft_strLeft('This_is_a_test_string'), 'This_is_a_test_string');
-  equal(strLeft_strLeft('This_is_a_test_string', ''), 'This_is_a_test_string');
-  equal(strLeft_strLeft('This_is_a_test_string', '-'), 'This_is_a_test_string');
-  equal(strLeft_strLeft('', 'foo'), '');
-  equal(strLeft_strLeft(null, 'foo'), '');
-  equal(strLeft_strLeft(undefined, 'foo'), '');
-  equal(strLeft_strLeft(123454321, 3), '12');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _strLeft = require("../strLeft");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#strLeft', function () {
+  equal((0, _strLeft.strLeft)('This_is_a_test_string', '_'), 'This');
+  equal((0, _strLeft.strLeft)('This_is_a_test_string', 'This'), '');
+  equal((0, _strLeft.strLeft)('This_is_a_test_string'), 'This_is_a_test_string');
+  equal((0, _strLeft.strLeft)('This_is_a_test_string', ''), 'This_is_a_test_string');
+  equal((0, _strLeft.strLeft)('This_is_a_test_string', '-'), 'This_is_a_test_string');
+  equal((0, _strLeft.strLeft)('', 'foo'), '');
+  equal((0, _strLeft.strLeft)(null, 'foo'), '');
+  equal((0, _strLeft.strLeft)(undefined, 'foo'), '');
+  equal((0, _strLeft.strLeft)(123454321, 3), '12');
 });
-

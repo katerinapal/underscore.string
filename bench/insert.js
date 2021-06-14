@@ -1,6 +1,9 @@
-import { insert as insert_insert } from "../insert";
+'use strict';
+
+var _insert = require('../insert');
+
 var encapsulated_anonymus;
 
-encapsulated_anonymus = function() {
-  insert_insert('Hello ', 6, 'world');
+encapsulated_anonymus = function encapsulated_anonymus() {
+  (0, _insert.insert)('Hello ', 6, 'world');
 };

@@ -1,10 +1,17 @@
-import { toSentence as toSentence_toSentence } from "./toSentence";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.toSentenceSerial = undefined;
+
+var _toSentence = require("./toSentence");
 
 var mod_anonymus = function toSentenceSerial(array, sep, lastSep) {
-  return toSentence_toSentence(array, sep, lastSep, true);
+  return (0, _toSentence.toSentence)(array, sep, lastSep, true);
 };
 
-mod_anonymus = function toSentenceSerial(array, sep, lastSep) {
-  return toSentence_toSentence(array, sep, lastSep, true);
+exports.toSentenceSerial = mod_anonymus = function toSentenceSerial(array, sep, lastSep) {
+  return (0, _toSentence.toSentence)(array, sep, lastSep, true);
 };
-export { mod_anonymus as toSentenceSerial };
+exports.toSentenceSerial = mod_anonymus;

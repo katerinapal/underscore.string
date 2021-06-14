@@ -1,30 +1,36 @@
-import { trim as trim_trim } from "../trim";
-import ext_assert from "assert";
-var equal = ext_assert.equal;
+"use strict";
 
-test('#trim', function() {
-  equal(trim_trim(123), '123', 'Non string');
-  equal(trim_trim(' foo'), 'foo');
-  equal(trim_trim('foo '), 'foo');
-  equal(trim_trim(' foo '), 'foo');
-  equal(trim_trim('    foo     '), 'foo');
-  equal(trim_trim('    foo     '), 'foo', 'Manually set whitespace');
-  equal(trim_trim('\t    foo \t  '), 'foo', 'Manually set RegExp /\\s+/');
+var _trim = require("../trim");
 
-  equal(trim_trim('ffoo', 'ff'), 'oo');
-  equal(trim_trim('ooff', 'ff'), 'oo');
-  equal(trim_trim('ffooff', 'ff'), 'oo');
+var _assert = require("assert");
 
+var _assert2 = _interopRequireDefault(_assert);
 
-  equal(trim_trim('_-foobar-_', '_-'), 'foobar');
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  equal(trim_trim('http://foo/', '/'), 'http://foo');
-  equal(trim_trim('c:\\', '\\'), 'c:');
+var equal = _assert2.default.equal;
 
-  equal(trim_trim(123), '123');
-  equal(trim_trim(123, 3), '12');
-  equal(trim_trim(''), '', 'Trim empty string should return empty string');
-  equal(trim_trim(null), '', 'Trim null should return empty string');
-  equal(trim_trim(undefined), '', 'Trim undefined should return empty string');
+test('#trim', function () {
+  equal((0, _trim.trim)(123), '123', 'Non string');
+  equal((0, _trim.trim)(' foo'), 'foo');
+  equal((0, _trim.trim)('foo '), 'foo');
+  equal((0, _trim.trim)(' foo '), 'foo');
+  equal((0, _trim.trim)('    foo     '), 'foo');
+  equal((0, _trim.trim)('    foo     '), 'foo', 'Manually set whitespace');
+  equal((0, _trim.trim)('\t    foo \t  '), 'foo', 'Manually set RegExp /\\s+/');
+
+  equal((0, _trim.trim)('ffoo', 'ff'), 'oo');
+  equal((0, _trim.trim)('ooff', 'ff'), 'oo');
+  equal((0, _trim.trim)('ffooff', 'ff'), 'oo');
+
+  equal((0, _trim.trim)('_-foobar-_', '_-'), 'foobar');
+
+  equal((0, _trim.trim)('http://foo/', '/'), 'http://foo');
+  equal((0, _trim.trim)('c:\\', '\\'), 'c:');
+
+  equal((0, _trim.trim)(123), '123');
+  equal((0, _trim.trim)(123, 3), '12');
+  equal((0, _trim.trim)(''), '', 'Trim empty string should return empty string');
+  equal((0, _trim.trim)(null), '', 'Trim null should return empty string');
+  equal((0, _trim.trim)(undefined), '', 'Trim undefined should return empty string');
 });
-

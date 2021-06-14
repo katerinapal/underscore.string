@@ -1,40 +1,46 @@
-import ext_assert from "assert";
-import { startsWith as startsWith_startsWith } from "../startsWith";
-var ok = ext_assert.ok;
-var strictEqual = ext_assert.strictEqual;
+"use strict";
 
+var _assert = require("assert");
 
-test('#startsWith', function() {
-  ok(startsWith_startsWith('foobar', 'foo'), 'foobar starts with foo');
-  ok(!startsWith_startsWith('oobar', 'foo'), 'oobar does not start with foo');
-  ok(startsWith_startsWith('oobar', 'o'), 'oobar starts with o');
-  ok(startsWith_startsWith(12345, 123), '12345 starts with 123');
-  ok(!startsWith_startsWith(2345, 123), '2345 does not start with 123');
-  ok(startsWith_startsWith('', ''), 'empty string starts with empty string');
-  ok(startsWith_startsWith(null, ''), 'null starts with empty string');
-  ok(!startsWith_startsWith(null, 'foo'), 'null starts with foo');
-  ok(startsWith_startsWith('-foobar', 'foo', 1), 'foobar starts with foo at position 1');
-  ok(startsWith_startsWith('foobar', 'foo', 0), 'foobar starts with foo at position 0');
-  ok(!startsWith_startsWith('foobar', 'foo', 1), 'foobar starts not with foo at position 1');
-  ok(startsWith_startsWith('Äpfel', 'Ä'), 'string starts with a unicode');
+var _assert2 = _interopRequireDefault(_assert);
 
-  strictEqual(startsWith_startsWith('hello', 'hell'), true);
-  strictEqual(startsWith_startsWith('HELLO', 'HELL'), true);
-  strictEqual(startsWith_startsWith('HELLO', 'hell'), false);
-  strictEqual(startsWith_startsWith('HELLO', 'hell'), false);
-  strictEqual(startsWith_startsWith('hello', 'hell', 0), true);
-  strictEqual(startsWith_startsWith('HELLO', 'HELL', 0), true);
-  strictEqual(startsWith_startsWith('HELLO', 'hell', 0), false);
-  strictEqual(startsWith_startsWith('HELLO', 'hell', 0), false);
-  strictEqual(startsWith_startsWith('HELLO'), false);
-  strictEqual(startsWith_startsWith('undefined'), true);
-  strictEqual(startsWith_startsWith('null', null), true);
-  strictEqual(startsWith_startsWith('hello', 'hell', -20), true);
-  strictEqual(startsWith_startsWith('hello', 'hell', 1), false);
-  strictEqual(startsWith_startsWith('hello', 'hell', 2), false);
-  strictEqual(startsWith_startsWith('hello', 'hell', 3), false);
-  strictEqual(startsWith_startsWith('hello', 'hell', 4), false);
-  strictEqual(startsWith_startsWith('hello', 'hell', 5), false);
-  strictEqual(startsWith_startsWith('hello', 'hell', 20), false);
+var _startsWith = require("../startsWith");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ok = _assert2.default.ok;
+var strictEqual = _assert2.default.strictEqual;
+
+test('#startsWith', function () {
+  ok((0, _startsWith.startsWith)('foobar', 'foo'), 'foobar starts with foo');
+  ok(!(0, _startsWith.startsWith)('oobar', 'foo'), 'oobar does not start with foo');
+  ok((0, _startsWith.startsWith)('oobar', 'o'), 'oobar starts with o');
+  ok((0, _startsWith.startsWith)(12345, 123), '12345 starts with 123');
+  ok(!(0, _startsWith.startsWith)(2345, 123), '2345 does not start with 123');
+  ok((0, _startsWith.startsWith)('', ''), 'empty string starts with empty string');
+  ok((0, _startsWith.startsWith)(null, ''), 'null starts with empty string');
+  ok(!(0, _startsWith.startsWith)(null, 'foo'), 'null starts with foo');
+  ok((0, _startsWith.startsWith)('-foobar', 'foo', 1), 'foobar starts with foo at position 1');
+  ok((0, _startsWith.startsWith)('foobar', 'foo', 0), 'foobar starts with foo at position 0');
+  ok(!(0, _startsWith.startsWith)('foobar', 'foo', 1), 'foobar starts not with foo at position 1');
+  ok((0, _startsWith.startsWith)('Äpfel', 'Ä'), 'string starts with a unicode');
+
+  strictEqual((0, _startsWith.startsWith)('hello', 'hell'), true);
+  strictEqual((0, _startsWith.startsWith)('HELLO', 'HELL'), true);
+  strictEqual((0, _startsWith.startsWith)('HELLO', 'hell'), false);
+  strictEqual((0, _startsWith.startsWith)('HELLO', 'hell'), false);
+  strictEqual((0, _startsWith.startsWith)('hello', 'hell', 0), true);
+  strictEqual((0, _startsWith.startsWith)('HELLO', 'HELL', 0), true);
+  strictEqual((0, _startsWith.startsWith)('HELLO', 'hell', 0), false);
+  strictEqual((0, _startsWith.startsWith)('HELLO', 'hell', 0), false);
+  strictEqual((0, _startsWith.startsWith)('HELLO'), false);
+  strictEqual((0, _startsWith.startsWith)('undefined'), true);
+  strictEqual((0, _startsWith.startsWith)('null', null), true);
+  strictEqual((0, _startsWith.startsWith)('hello', 'hell', -20), true);
+  strictEqual((0, _startsWith.startsWith)('hello', 'hell', 1), false);
+  strictEqual((0, _startsWith.startsWith)('hello', 'hell', 2), false);
+  strictEqual((0, _startsWith.startsWith)('hello', 'hell', 3), false);
+  strictEqual((0, _startsWith.startsWith)('hello', 'hell', 4), false);
+  strictEqual((0, _startsWith.startsWith)('hello', 'hell', 5), false);
+  strictEqual((0, _startsWith.startsWith)('hello', 'hell', 20), false);
 });
-

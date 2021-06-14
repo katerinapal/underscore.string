@@ -1,4 +1,9 @@
-var mod_anonymus = function strRepeat(str, qty){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var mod_anonymus = function strRepeat(str, qty) {
   if (qty < 1) return '';
   var result = '';
   while (qty > 0) {
@@ -8,7 +13,7 @@ var mod_anonymus = function strRepeat(str, qty){
   return result;
 };
 
-mod_anonymus = function strRepeat(str, qty){
+exports.strRepeat = mod_anonymus = function strRepeat(str, qty) {
   if (qty < 1) return '';
   var result = '';
   while (qty > 0) {
@@ -17,4 +22,4 @@ mod_anonymus = function strRepeat(str, qty){
   }
   return result;
 };
-export { mod_anonymus as strRepeat };
+exports.strRepeat = mod_anonymus;

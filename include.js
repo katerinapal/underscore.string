@@ -1,12 +1,19 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.include = undefined;
+
+var _makeString = require('./helper/makeString');
 
 var mod_anonymus = function include(str, needle) {
   if (needle === '') return true;
-  return makeString_makeString(str).indexOf(needle) !== -1;
+  return (0, _makeString.makeString)(str).indexOf(needle) !== -1;
 };
 
-mod_anonymus = function include(str, needle) {
+exports.include = mod_anonymus = function include(str, needle) {
   if (needle === '') return true;
-  return makeString_makeString(str).indexOf(needle) !== -1;
+  return (0, _makeString.makeString)(str).indexOf(needle) !== -1;
 };
-export { mod_anonymus as include };
+exports.include = mod_anonymus;

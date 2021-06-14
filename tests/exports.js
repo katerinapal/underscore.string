@@ -1,10 +1,19 @@
-import ext__ from "underscore";
-import ext_assert from "assert";
-import { exports as indexjs_exports } from "../";
-var deepEqual = ext_assert.deepEqual;
+"use strict";
 
-test('#exports', function() {
-  deepEqual(ext__.intersection(Object.keys(indexjs_exports()), ext__.functions(ext__)), [],
-    'Conflicts exist between exports and underscore functions'
-  );
+var _underscore = require("underscore");
+
+var _underscore2 = _interopRequireDefault(_underscore);
+
+var _assert = require("assert");
+
+var _assert2 = _interopRequireDefault(_assert);
+
+var _ = require("../");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var deepEqual = _assert2.default.deepEqual;
+
+test('#exports', function () {
+  deepEqual(_underscore2.default.intersection(Object.keys((0, _.exports)()), _underscore2.default.functions(_underscore2.default)), [], 'Conflicts exist between exports and underscore functions');
 });

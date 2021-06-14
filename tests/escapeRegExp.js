@@ -1,10 +1,16 @@
-import ext_assert from "assert";
-import { escapeRegExp as escapeRegExp_escapeRegExp } from "../helper/escapeRegExp";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#escapeRegExp', function(){
-  equal(escapeRegExp_escapeRegExp(/hello(?=\sworld)/.source), 'hello\\(\\?\\=\\\\sworld\\)', 'with lookahead');
-  equal(escapeRegExp_escapeRegExp(/hello(?!\shell)/.source), 'hello\\(\\?\\!\\\\shell\\)', 'with negative lookahead');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _escapeRegExp = require("../helper/escapeRegExp");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#escapeRegExp', function () {
+  equal((0, _escapeRegExp.escapeRegExp)(/hello(?=\sworld)/.source), 'hello\\(\\?\\=\\\\sworld\\)', 'with lookahead');
+  equal((0, _escapeRegExp.escapeRegExp)(/hello(?!\shell)/.source), 'hello\\(\\?\\!\\\\shell\\)', 'with negative lookahead');
 });
-

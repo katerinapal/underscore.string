@@ -1,16 +1,23 @@
-import ext_assert from "assert";
-import { include as include_include } from "../include";
-import { contains as indexjs_contains } from "../";
-var ok = ext_assert.ok;
+"use strict";
 
+var _assert = require("assert");
 
-test('#include', function() {
-  ok(include_include('foobar', 'bar'), 'foobar includes bar');
-  ok(!include_include('foobar', 'buzz'), 'foobar does not includes buzz');
-  ok(include_include(12345, 34), '12345 includes 34');
-  ok(!indexjs_contains(12345, 6), '12345 does not include 6');
-  ok(!include_include('', 34), 'empty string includes 34');
-  ok(!include_include(null, 34), 'null includes 34');
-  ok(include_include(null, ''), 'null includes empty string');
+var _assert2 = _interopRequireDefault(_assert);
+
+var _include = require("../include");
+
+var _ = require("../");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ok = _assert2.default.ok;
+
+test('#include', function () {
+  ok((0, _include.include)('foobar', 'bar'), 'foobar includes bar');
+  ok(!(0, _include.include)('foobar', 'buzz'), 'foobar does not includes buzz');
+  ok((0, _include.include)(12345, 34), '12345 includes 34');
+  ok(!(0, _.contains)(12345, 6), '12345 does not include 6');
+  ok(!(0, _include.include)('', 34), 'empty string includes 34');
+  ok(!(0, _include.include)(null, 34), 'null includes 34');
+  ok((0, _include.include)(null, ''), 'null includes empty string');
 });
-

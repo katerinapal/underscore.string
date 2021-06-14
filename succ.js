@@ -1,10 +1,17 @@
-import { adjacent as adjacent_adjacent } from "./helper/adjacent";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.succ = undefined;
+
+var _adjacent = require("./helper/adjacent");
 
 var mod_anonymus = function succ(str) {
-  return adjacent_adjacent(str, 1);
+  return (0, _adjacent.adjacent)(str, 1);
 };
 
-mod_anonymus = function succ(str) {
-  return adjacent_adjacent(str, 1);
+exports.succ = mod_anonymus = function succ(str) {
+  return (0, _adjacent.adjacent)(str, 1);
 };
-export { mod_anonymus as succ };
+exports.succ = mod_anonymus;

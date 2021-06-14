@@ -1,27 +1,35 @@
-import { trim as trim_trim } from "./trim";
-import { decapitalize as decap } from "./decapitalize";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.camelize = undefined;
+
+var _trim = require("./trim");
+
+var _decapitalize = require("./decapitalize");
 
 var mod_anonymus = function camelize(str, decapitalize) {
-  str = trim_trim(str).replace(/[-_\s]+(.)?/g, function(match, c) {
+  str = (0, _trim.trim)(str).replace(/[-_\s]+(.)?/g, function (match, c) {
     return c ? c.toUpperCase() : '';
   });
 
   if (decapitalize === true) {
-    return decap(str);
+    return (0, _decapitalize.decapitalize)(str);
   } else {
     return str;
   }
 };
 
-mod_anonymus = function camelize(str, decapitalize) {
-  str = trim_trim(str).replace(/[-_\s]+(.)?/g, function(match, c) {
+exports.camelize = mod_anonymus = function camelize(str, decapitalize) {
+  str = (0, _trim.trim)(str).replace(/[-_\s]+(.)?/g, function (match, c) {
     return c ? c.toUpperCase() : '';
   });
 
   if (decapitalize === true) {
-    return decap(str);
+    return (0, _decapitalize.decapitalize)(str);
   } else {
     return str;
   }
 };
-export { mod_anonymus as camelize };
+exports.camelize = mod_anonymus;

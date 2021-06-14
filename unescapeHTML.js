@@ -1,16 +1,24 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
-import { htmlEntities as htmlEntities_htmlEntities } from "./helper/htmlEntities";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.unescapeHTML = undefined;
+
+var _makeString = require("./helper/makeString");
+
+var _htmlEntities = require("./helper/htmlEntities");
 
 var mod_anonymus = function unescapeHTML(str) {
-  return makeString_makeString(str).replace(/\&([^;]+);/g, function(entity, entityCode) {
+  return (0, _makeString.makeString)(str).replace(/\&([^;]+);/g, function (entity, entityCode) {
     var match;
 
-    if (entityCode in htmlEntities_htmlEntities) {
-      return htmlEntities_htmlEntities[entityCode];
-    /*eslint no-cond-assign: 0*/
+    if (entityCode in _htmlEntities.htmlEntities) {
+      return _htmlEntities.htmlEntities[entityCode];
+      /*eslint no-cond-assign: 0*/
     } else if (match = entityCode.match(/^#x([\da-fA-F]+)$/)) {
       return String.fromCharCode(parseInt(match[1], 16));
-    /*eslint no-cond-assign: 0*/
+      /*eslint no-cond-assign: 0*/
     } else if (match = entityCode.match(/^#(\d+)$/)) {
       return String.fromCharCode(~~match[1]);
     } else {
@@ -19,16 +27,16 @@ var mod_anonymus = function unescapeHTML(str) {
   });
 };
 
-mod_anonymus = function unescapeHTML(str) {
-  return makeString_makeString(str).replace(/\&([^;]+);/g, function(entity, entityCode) {
+exports.unescapeHTML = mod_anonymus = function unescapeHTML(str) {
+  return (0, _makeString.makeString)(str).replace(/\&([^;]+);/g, function (entity, entityCode) {
     var match;
 
-    if (entityCode in htmlEntities_htmlEntities) {
-      return htmlEntities_htmlEntities[entityCode];
-    /*eslint no-cond-assign: 0*/
+    if (entityCode in _htmlEntities.htmlEntities) {
+      return _htmlEntities.htmlEntities[entityCode];
+      /*eslint no-cond-assign: 0*/
     } else if (match = entityCode.match(/^#x([\da-fA-F]+)$/)) {
       return String.fromCharCode(parseInt(match[1], 16));
-    /*eslint no-cond-assign: 0*/
+      /*eslint no-cond-assign: 0*/
     } else if (match = entityCode.match(/^#(\d+)$/)) {
       return String.fromCharCode(~~match[1]);
     } else {
@@ -36,4 +44,4 @@ mod_anonymus = function unescapeHTML(str) {
     }
   });
 };
-export { mod_anonymus as unescapeHTML };
+exports.unescapeHTML = mod_anonymus;

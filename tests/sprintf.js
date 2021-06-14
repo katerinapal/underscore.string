@@ -1,16 +1,22 @@
-import ext_assert from "assert";
-import { sprintfjs as sprintf } from "../sprintf";
-var equal = ext_assert.equal;
+"use strict";
 
+var _assert = require("assert");
 
-test('#sprintf', function() {
+var _assert2 = _interopRequireDefault(_assert);
+
+var _sprintf = require("../sprintf");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var equal = _assert2.default.equal;
+
+test('#sprintf', function () {
   // Should be very tested function already.  Thanks to
   // http://www.diveintojavascript.com/projects/sprintf-for-javascript
-  equal(sprintf('Hello %s', 'me'), 'Hello me', 'basic');
-  equal(sprintf('Hello %s', 'me'), 'Hello me', 'object');
-  equal(sprintf('%.1f', 1.22222), '1.2', 'round');
-  equal(sprintf('%.1f', 1.17), '1.2', 'round 2');
-  equal(sprintf('%(id)d - %(name)s', {id: 824, name: 'Hello World'}), '824 - Hello World', 'Named replacements work');
-  equal(sprintf('%(args[0].id)d - %(args[1].name)s', {args: [{id: 824}, {name: 'Hello World'}]}), '824 - Hello World', 'Named replacements with arrays work');
+  equal((0, _sprintf.sprintfjs)('Hello %s', 'me'), 'Hello me', 'basic');
+  equal((0, _sprintf.sprintfjs)('Hello %s', 'me'), 'Hello me', 'object');
+  equal((0, _sprintf.sprintfjs)('%.1f', 1.22222), '1.2', 'round');
+  equal((0, _sprintf.sprintfjs)('%.1f', 1.17), '1.2', 'round 2');
+  equal((0, _sprintf.sprintfjs)('%(id)d - %(name)s', { id: 824, name: 'Hello World' }), '824 - Hello World', 'Named replacements work');
+  equal((0, _sprintf.sprintfjs)('%(args[0].id)d - %(args[1].name)s', { args: [{ id: 824 }, { name: 'Hello World' }] }), '824 - Hello World', 'Named replacements with arrays work');
 });
-

@@ -1,18 +1,25 @@
-import { makeString as makeString_makeString } from "./makeString";
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.adjacent = undefined;
+
+var _makeString = require('./makeString');
 
 var mod_anonymus = function adjacent(str, direction) {
-  str = makeString_makeString(str);
+  str = (0, _makeString.makeString)(str);
   if (str.length === 0) {
     return '';
   }
   return str.slice(0, -1) + String.fromCharCode(str.charCodeAt(str.length - 1) + direction);
 };
 
-mod_anonymus = function adjacent(str, direction) {
-  str = makeString_makeString(str);
+exports.adjacent = mod_anonymus = function adjacent(str, direction) {
+  str = (0, _makeString.makeString)(str);
   if (str.length === 0) {
     return '';
   }
   return str.slice(0, -1) + String.fromCharCode(str.charCodeAt(str.length - 1) + direction);
 };
-export { mod_anonymus as adjacent };
+exports.adjacent = mod_anonymus;

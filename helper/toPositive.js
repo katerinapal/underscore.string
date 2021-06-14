@@ -1,8 +1,13 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var mod_anonymus = function toPositive(number) {
-  return number < 0 ? 0 : (+number || 0);
+  return number < 0 ? 0 : +number || 0;
 };
 
-mod_anonymus = function toPositive(number) {
-  return number < 0 ? 0 : (+number || 0);
+exports.toPositive = mod_anonymus = function toPositive(number) {
+  return number < 0 ? 0 : +number || 0;
 };
-export { mod_anonymus as toPositive };
+exports.toPositive = mod_anonymus;

@@ -1,9 +1,16 @@
-import { makeString as makeString_makeString } from "./helper/makeString";
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.dedent = undefined;
+
+var _makeString = require('./helper/makeString');
 
 function getIndent(str) {
   var matches = str.match(/^[\s\\t]*/gm);
   var indent = matches[0].length;
-  
+
   for (var i = 1; i < matches.length; i++) {
     indent = Math.min(matches[i].length, indent);
   }
@@ -12,7 +19,7 @@ function getIndent(str) {
 }
 
 var mod_anonymus = function dedent(str, pattern) {
-  str = makeString_makeString(str);
+  str = (0, _makeString.makeString)(str);
   var indent = getIndent(str);
   var reg;
 
@@ -27,8 +34,8 @@ var mod_anonymus = function dedent(str, pattern) {
   return str.replace(reg, '');
 };
 
-mod_anonymus = function dedent(str, pattern) {
-  str = makeString_makeString(str);
+exports.dedent = mod_anonymus = function dedent(str, pattern) {
+  str = (0, _makeString.makeString)(str);
   var indent = getIndent(str);
   var reg;
 
@@ -42,4 +49,4 @@ mod_anonymus = function dedent(str, pattern) {
 
   return str.replace(reg, '');
 };
-export { mod_anonymus as dedent };
+exports.dedent = mod_anonymus;

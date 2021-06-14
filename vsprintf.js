@@ -1,7 +1,20 @@
-import ext_deprecate from "util-deprecate";
-import ext_sprintfjs from "sprintf-js";
+"use strict";
 
-mod_vsprintfjs = ext_deprecate(ext_sprintfjs.vsprintf,
-  'vsprintf() will be removed in the next major release, use the sprintf-js package instead.');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.vsprintfjs = undefined;
+
+var _utilDeprecate = require("util-deprecate");
+
+var _utilDeprecate2 = _interopRequireDefault(_utilDeprecate);
+
+var _sprintfJs = require("sprintf-js");
+
+var _sprintfJs2 = _interopRequireDefault(_sprintfJs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.vsprintfjs = mod_vsprintfjs = (0, _utilDeprecate2.default)(_sprintfJs2.default.vsprintf, 'vsprintf() will be removed in the next major release, use the sprintf-js package instead.');
 var mod_vsprintfjs;
-export { mod_vsprintfjs as vsprintfjs };
+exports.vsprintfjs = mod_vsprintfjs;

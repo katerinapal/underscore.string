@@ -1,3 +1,5 @@
+'use strict';
+
 // package metadata file for Meteor.js
 
 Package.describe({
@@ -8,9 +10,8 @@ Package.describe({
   documentation: 'README.markdown'
 });
 
-
 Package.onUse(function (api) {
   api.versionsFrom('METEOR@1.0');
-  api.addFiles(['meteor-pre.js','dist/underscore.string.js','meteor-post.js']);
+  api.addFiles(['meteor-pre.js', 'dist/underscore.string.js', 'meteor-post.js']);
   api.export("s");
 });

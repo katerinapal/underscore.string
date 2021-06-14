@@ -1,30 +1,37 @@
-import ext_assert from "assert";
-import { toBoolean as toBoolean_toBoolean } from "../toBoolean";
-var strictEqual = ext_assert.strictEqual;
+"use strict";
 
-test('#toBoolean', function() {
-  strictEqual(toBoolean_toBoolean('false'), false);
-  strictEqual(toBoolean_toBoolean('false'), false);
-  strictEqual(toBoolean_toBoolean('False'), false);
-  strictEqual(toBoolean_toBoolean('Falsy',null,['false', 'falsy']), false);
-  strictEqual(toBoolean_toBoolean('true'), true);
-  strictEqual(toBoolean_toBoolean('the truth', 'the truth', 'this is falsy'), true);
-  strictEqual(toBoolean_toBoolean('this is falsy', 'the truth', 'this is falsy'), false);
-  strictEqual(toBoolean_toBoolean('true'), true);
-  strictEqual(toBoolean_toBoolean('trUe'), true);
-  strictEqual(toBoolean_toBoolean('trUe', /tru?/i), true);
-  strictEqual(toBoolean_toBoolean('something else'), undefined);
-  strictEqual(toBoolean_toBoolean(function(){}), true);
-  strictEqual(toBoolean_toBoolean(/regexp/), true);
-  strictEqual(toBoolean_toBoolean(''), undefined);
-  strictEqual(toBoolean_toBoolean(0), false);
-  strictEqual(toBoolean_toBoolean(1), true);
-  strictEqual(toBoolean_toBoolean('1'), true);
-  strictEqual(toBoolean_toBoolean('0'), false);
-  strictEqual(toBoolean_toBoolean(2), undefined);
-  strictEqual(toBoolean_toBoolean('foo true bar'), undefined);
-  strictEqual(toBoolean_toBoolean('foo true bar', /true/), true);
-  strictEqual(toBoolean_toBoolean('foo FALSE bar', null, /FALSE/), false);
-  strictEqual(toBoolean_toBoolean(' true  '), true);
+var _assert = require("assert");
+
+var _assert2 = _interopRequireDefault(_assert);
+
+var _toBoolean = require("../toBoolean");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var strictEqual = _assert2.default.strictEqual;
+
+test('#toBoolean', function () {
+  strictEqual((0, _toBoolean.toBoolean)('false'), false);
+  strictEqual((0, _toBoolean.toBoolean)('false'), false);
+  strictEqual((0, _toBoolean.toBoolean)('False'), false);
+  strictEqual((0, _toBoolean.toBoolean)('Falsy', null, ['false', 'falsy']), false);
+  strictEqual((0, _toBoolean.toBoolean)('true'), true);
+  strictEqual((0, _toBoolean.toBoolean)('the truth', 'the truth', 'this is falsy'), true);
+  strictEqual((0, _toBoolean.toBoolean)('this is falsy', 'the truth', 'this is falsy'), false);
+  strictEqual((0, _toBoolean.toBoolean)('true'), true);
+  strictEqual((0, _toBoolean.toBoolean)('trUe'), true);
+  strictEqual((0, _toBoolean.toBoolean)('trUe', /tru?/i), true);
+  strictEqual((0, _toBoolean.toBoolean)('something else'), undefined);
+  strictEqual((0, _toBoolean.toBoolean)(function () {}), true);
+  strictEqual((0, _toBoolean.toBoolean)(/regexp/), true);
+  strictEqual((0, _toBoolean.toBoolean)(''), undefined);
+  strictEqual((0, _toBoolean.toBoolean)(0), false);
+  strictEqual((0, _toBoolean.toBoolean)(1), true);
+  strictEqual((0, _toBoolean.toBoolean)('1'), true);
+  strictEqual((0, _toBoolean.toBoolean)('0'), false);
+  strictEqual((0, _toBoolean.toBoolean)(2), undefined);
+  strictEqual((0, _toBoolean.toBoolean)('foo true bar'), undefined);
+  strictEqual((0, _toBoolean.toBoolean)('foo true bar', /true/), true);
+  strictEqual((0, _toBoolean.toBoolean)('foo FALSE bar', null, /FALSE/), false);
+  strictEqual((0, _toBoolean.toBoolean)(' true  '), true);
 });
-
